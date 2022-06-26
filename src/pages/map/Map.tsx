@@ -1,11 +1,11 @@
 import React from "react";
-import {Bar, Button} from '@kaineee/nier-automata-ui-library';
+import {Title, Bar, Button, Footer} from '@kaineee/nier-automata-ui-library';
 import styles from './Map.module.scss';
 
 const Map = () => {
   return(
     <div className={styles.Map}>
-      
+        <Title text="MAP"/>
       <div className={styles.ContentContainer}>
         <div className={styles.LeftPanel}>
             <div className={styles.LeftPanelChild}>
@@ -31,7 +31,7 @@ const Map = () => {
         </div>
       </div>
       <div>
-        footer
+        <Footer text="Footer"/>
       </div>
     </div>
   )
