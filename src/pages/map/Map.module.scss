@@ -1,0 +1,15 @@
+.Map{
+  .LeftPanel{
+    display: flex;
+    flex-direction: row;
+    .Button{
+      width: 300px;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+    .bar{
+      height: max-content;
+    }
+  }
+}
