@@ -1,15 +1,49 @@
 .Map{
-  .LeftPanel{
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 6%;
+  h1{
+    margin: 0;
+  }
+  .ContentContainer{
+    width: 100%;
+    height: 100%;
     display: flex;
-    flex-direction: row;
-    .Button{
-      width: 300px;
+    flex: row;
+    justify-content: space-between;
+    gap: 10%;
+    .LeftPanel{
       display: flex;
       flex-direction: column;
-      gap: 20px;
+      justify-content: space-between;
+      .LeftPanelChild{
+        display: flex;
+        flex-direction: row;
+        height: max-content;
+        .Button{
+          width: 300px;
+          display: flex;
+          flex-direction: column;
+          gap: 20px;
+        }
+      }
+      .LeftPanelFooter{
+
+      }
     }
-    .bar{
-      height: max-content;
+    .RightPanel{
+      width: 100%;
+      background-color: #57544a;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      text-align: center;
+      .MapPanel{
+        color: #b4af9a;
+      }
     }
   }
 }

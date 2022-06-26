@@ -1,5 +1,7 @@
 parts of my reverse engineering NieR Automata ui and ux projects
-web created to see nier automata archives on web with re imagining game settings ui on web
+
+[]: #
+web to see nier automata archives on web with re imagining game settings ui on web
 
 ui library are from
 [NPM](https://www.npmjs.com/package/@kaineee/nier-automata-ui-library)
@@ -8,3 +10,4 @@ ui library are from
 #### to do : 
 - routing
 - templates page
+- font style
