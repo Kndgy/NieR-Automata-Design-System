@@ -2,4 +2,12 @@
   width: 100vw;
   height: 100vh;
   padding: 2% 4% 6% 4%;
+  display: flex;
+  flex-direction: column;
+  .NavBar{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 2rem;
+  }
 }
