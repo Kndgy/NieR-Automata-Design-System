@@ -1,7 +1,8 @@
+## [Web Preview](https://yorha-archive.netlify.app/)
 parts of my reverse engineering NieR Automata ui and ux projects
+project supposedly to rebuild nier automata game settings ui on web with all of its informations
 
-[]: #
-web to see nier automata archives on web with re imagining game settings ui on web
+---
 
 ui library are from
 [NPM](https://www.npmjs.com/package/@kaineee/nier-automata-ui-library)
