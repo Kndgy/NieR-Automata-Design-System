@@ -12,35 +12,43 @@ export const RoutesPages = () => {
   )
 }
 
+export const NestedRoutes = () => {
+  return(
+    <Routes>
+      <Route path="/Items" element={<Quest/>} />
+    </Routes>
+  )
+}
+
 export const RoutesConfig = {
  RoutesConfigs: [
   {
-    Text:`MAP`,
-    Link:``
-  },
-  {
-    Text:"QUESTS",
-    Link:`Quest`
-  },
-  {
-    Text:"ITEMS",
-    Link:`Items`
-  },
-  {
-    Text:"WEAPONS",
-    Link:`Weapons`
-  },
-  {
-    Text:"SKILLS",
-    Link:`Skills`
-  },
-  {
-    Text:"INTEL",
-    Link:`Intel`
-  },
-  {
-    Text:"SYSTEM",
-    Link:`System`
-  }
+      Text:`MAP`,
+      Link:``
+    },
+    {
+      Text:"QUESTS",
+      Link:`Quest`
+    },
+    {
+      Text:"ITEMS",
+      Link:`Items`
+    },
+    {
+      Text:"WEAPONS",
+      Link:`Weapons`
+    },
+    {
+      Text:"SKILLS",
+      Link:`Skills`
+    },
+    {
+      Text:"INTEL",
+      Link:`Intel`
+    },
+    {
+      Text:"SYSTEM",
+      Link:`System`
+    }
  ]
 }

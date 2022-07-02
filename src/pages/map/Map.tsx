@@ -13,9 +13,9 @@ const Map = () => {
                 <Bar/>
               </div>
               <div className={styles.Button}>
-                <Button text="Quick Save"/>
-                <Button text="Map Mode"/>
-                <Button text="Map Icons"/>
+                <Button disabled={true} text="Quick Save"/>
+                <Button disabled={true} text="Map Mode"/>
+                <Button disabled={true} text="Map Icons"/>
               </div>
             </div>
             <div className={styles.LeftPanelFooter}>
@@ -31,7 +31,7 @@ const Map = () => {
         </div>
       </div>
       <div>
-        <Footer text="Footer"/>
+        <Footer text="Quests Footer."/>
       </div>
     </div>
   )

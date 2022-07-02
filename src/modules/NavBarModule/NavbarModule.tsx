@@ -1,18 +1,26 @@
-import { Bar, Button } from "@kaineee/nier-automata-ui-library";
 import React from "react";
-import { Link } from "react-router-dom";
+import { Bar, Button } from "@kaineee/nier-automata-ui-library";
+import { NavLink } from "react-router-dom";
 import styles from "./Navbar.module.scss";
-import { RoutesConfig } from "../../routes/Routes";
+import { NestedRoutes, RoutesConfig } from "../../routes/Routes";
 
 const NavbarModule = () =>{
+  const activeStyle = { 
+    color: 'red',
+    backgroundImage: 'none',
+  }
   return(
     <div className={styles.NavBarModule}>
     <Bar/>
     {RoutesConfig.RoutesConfigs.map((item,key)=>{
       return(
-      <Link className={styles.link} to={`/${item.Link}`} >
+      <>
+      <NavLink style={({ isActive }) =>
+      isActive ? activeStyle : undefined
+    } className={styles.link} to={`/${item.Link}`} >
         <Button key={key} text={item.Text} />
-      </Link>
+      </NavLink>
+      </>
       )
     })}
   </div>
