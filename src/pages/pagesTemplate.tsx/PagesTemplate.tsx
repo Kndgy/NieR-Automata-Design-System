@@ -1,5 +1,5 @@
 import React from "react";
-import {Title, Bar, Button, Footer} from '@kaineee/nier-automata-ui-library';
+import {Title, Bar, Footer} from '@kaineee/nier-automata-ui-library';
 import styles from './PagesTemplate.module.scss';
 
 type PagesTemplateProps = {

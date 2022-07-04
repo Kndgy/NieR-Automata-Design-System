@@ -1,4 +1,4 @@
-import { Button, Widget } from "@kaineee/nier-automata-ui-library";
+import { Button} from "@kaineee/nier-automata-ui-library";
 import React from "react";
 import PagesTemplate from "../pagesTemplate.tsx";
 import styles from './Quest.module.scss';
