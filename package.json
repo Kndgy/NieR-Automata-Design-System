@@ -1,33 +1,25 @@
 {
-  "name": "nier-archive-web",
-  "version": "0.1.0",
+  "name": "@kaineee/nier-automata-ui-library",
+  "version": "0.2.3",
+  "description": "react ui library component based of nier automata settings ui",
   "private": false,
-  "dependencies": {
-    "@kaineee/nier-automata-ui-library": "^0.2.2",
-    "@testing-library/jest-dom": "^5.16.4",
-    "@testing-library/react": "^13.3.0",
-    "@testing-library/user-event": "^13.5.0",
-    "@types/jest": "^27.5.2",
-    "@types/node": "^16.11.41",
-    "@types/react": "^18.0.14",
-    "@types/react-dom": "^18.0.5",
-    "node-sass": "^7.0.1",
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0",
-    "react-router-dom": "^6.3.0",
-    "react-scripts": "5.0.1",
-    "sass": "^1.53.0",
-    "styled-components": "^5.3.5",
-    "typescript": "^4.7.4"
-  },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "storybook": "start-storybook -p 6006 -s public",
-    "build-storybook": "build-storybook -s public"
+    "build-storybook": "build-storybook -s public",
+    "buildLib": "npm run clean && rollup -c  && cp package.json README.md ./dist ",
+    "clean": "rm -rf dist",
+    "publish": "npm publish ./dist --access public"
   },
+  "author": "Kaine",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Kndgy/NieR-Automata-Design-System/issues"
+  },
+  "homepage": "https://nier-ui-storybook.netlify.app/",
   "eslintConfig": {
     "extends": [
       "react-app",
@@ -57,6 +49,8 @@
     ]
   },
   "devDependencies": {
+    "@kaineee/nier-automata-ui-library": "^0.2.2",
+    "@rollup/plugin-json": "^4.1.0",
     "@storybook/addon-actions": "^6.5.9",
     "@storybook/addon-essentials": "^6.5.9",
     "@storybook/addon-interactions": "^6.5.9",
@@ -67,8 +61,35 @@
     "@storybook/preset-create-react-app": "^4.1.2",
     "@storybook/react": "^6.5.9",
     "@storybook/testing-library": "^0.0.13",
+    "@testing-library/jest-dom": "^5.16.4",
+    "@testing-library/react": "^13.3.0",
+    "@testing-library/user-event": "^13.5.0",
+    "@types/jest": "^27.5.2",
+    "@types/node": "^16.11.41",
+    "@types/react": "^18.0.14",
+    "@types/react-dom": "^18.0.5",
+    "@types/styled-components": "^5.1.25",
     "babel-plugin-named-exports-order": "^0.0.2",
+    "node-sass": "^7.0.1",
     "prop-types": "^15.8.1",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-router-dom": "^6.3.0",
+    "react-scripts": "5.0.1",
+    "rollup": "^2.75.7",
+    "rollup-plugin-dts": "^4.2.2",
+    "rollup-plugin-esbuild": "^4.9.1",
+    "sass": "^1.53.0",
+    "typescript": "^4.7.4",
     "webpack": "^5.73.0"
+  },
+  "dependencies": {
+    "styled-components": "^5"
+  },
+  "peerDependencies": {
+    "styled-components": "^5"
+  },
+  "resolutions": {
+    "styled-components": "^5"
   }
 }
