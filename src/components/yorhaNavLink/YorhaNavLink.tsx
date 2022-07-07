@@ -1,9 +1,6 @@
 import React from "react";
-import { Bar} from "@kaineee/nier-automata-ui-library";
-import { NavLink } from "react-router-dom";
-import styles from './Navbar.module.scss';
-import {RoutesConfig } from "../../routes/Routes";
-import styled from 'styled-components';
+import styled from "styled-components";
+import {NavLink} from "react-router-dom"
 
 type YorhaNavLinkProps = {
   text?: string;
@@ -49,7 +46,7 @@ const Button = styled.button`
     }
 `
 
-const YorhaNavLink = styled(YorhaCustomLink)`
+const CustomNavLink = styled(YorhaCustomLink)`
   .mainClass{
     height: 100%;
     width: 100%;
@@ -84,21 +81,8 @@ const YorhaNavLink = styled(YorhaCustomLink)`
   }
 `
 
-const NavbarModule = () =>{
-
+export const YorhaNavLink = ({to, text, ...args}:YorhaNavLinkProps) =>{
   return(
-    <div className={styles.NavBarModule}>
-    <Bar/>
-    {RoutesConfig.RoutesConfigs.map((item)=>{
-      return(
-      <div className={styles.bar}>
-        <YorhaNavLink key={item.Text} to={`/${item.Link}`} text={item.Text}/>
-      </div>
-      )
-    })}
-    <a className={styles.link} href="/Quest">test</a>
-  </div>
+    <CustomNavLink to={to} text={text} {...args}/>
   )
 }
-
-export default NavbarModule;

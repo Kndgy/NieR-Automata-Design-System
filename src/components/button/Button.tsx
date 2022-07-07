@@ -82,26 +82,17 @@ ButtonParent.defaultProps = {
   }
 }
 
-const theme = {
-  main: `0.6`,
-  pointer: `pointer-events: none;`
-}
-
 export const Button = ({text, disabled=false, ...props}:ButtonProps) => {
   const [isChecked, setIsChecked] = React.useState(false);
 
   const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
 
     if(event.target.checked == true){
-      console.log('checked');
       return setIsChecked(true);
     } else{
-      console.log('unchecked');
       return setIsChecked(false);
     }
   };
-
-  console.log(isChecked)
 
   const checker = () =>{
     if(isChecked == true){
