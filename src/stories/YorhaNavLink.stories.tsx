@@ -1,18 +1,19 @@
 import React from "react";
-import { ComponentStory, ComponentMeta } from "@storybook/react";
+import { ComponentMeta } from "@storybook/react";
 import {YorhaNavLink} from "../components/yorhaNavLink";
-import { BrowserRouter } from "react-router-dom";
+import { withRouter } from 'storybook-addon-react-router-v6';
 
 export default {
   title: 'Library/YorhaNavLink',
-  component: YorhaNavLink
+  component: YorhaNavLink,
+  decorators: [withRouter],
 } as ComponentMeta<typeof YorhaNavLink>;
 
-const Template: ComponentStory<typeof YorhaNavLink> = (args) => <BrowserRouter>
-  <div style={{"height":"80px"}}><YorhaNavLink {...args} /></div>
-</BrowserRouter>;
-
-export const yorhaNavLink = Template.bind({});
-yorhaNavLink.args = {
-  text: "YorhaNavLink",
-};
+export const Test = () => <div>
+  <YorhaNavLink text="aaaabbb" to="" />
+  <YorhaNavLink text="aaaabbb" to="aa" disabled={true}/>
+</div>;
+Test.story = {
+  parameters: {
+  }
+}
