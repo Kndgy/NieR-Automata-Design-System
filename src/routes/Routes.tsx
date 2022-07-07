@@ -49,6 +49,6 @@ export const RoutesConfig = {
     {
       Text:"SYSTEM",
       Link:`System`
-    }
+    },
  ]
 }

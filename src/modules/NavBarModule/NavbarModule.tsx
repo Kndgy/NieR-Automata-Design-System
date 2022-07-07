@@ -1,12 +1,15 @@
 import React from "react";
-import { Bar, Button } from "@kaineee/nier-automata-ui-library";
-import { NavLink } from "react-router-dom";
+import { Bar} from "@kaineee/nier-automata-ui-library";
+import { Link, NavLink } from "react-router-dom";
 import styles from "./Navbar.module.scss";
 import {RoutesConfig } from "../../routes/Routes";
-import styled from 'styled-components';
+import styled, {ThemeProvider} from 'styled-components';
 
 type YorhaNavLinkProps = {
   text?: string;
+  to?: string;
+  className?: string;
+  disabled?: boolean;
 }
 
 const Icon = styled.div`
@@ -19,93 +22,80 @@ const Icon = styled.div`
   transition: .1s linear;
 `;
 
-const ButtonParent = styled.button`
-  border: none;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  gap: 10px;
-  justify-content: left;
-  width: 100%;
-  height: 100%;
-  font-size: 12px;
-  padding: 10px;
-  background-color: transparent;
-  background-image: linear-gradient(90deg,rgba(180, 175, 154, 0) 50%, rgba(180, 175, 154, 0) 50%, rgba(87, 84, 74, 1) 50%, rgba(87, 84, 74, 1) 100%);
-  z-index: 1;
-  background-size: 200%;
-  transition: .2s linear;
-  &:hover{
-    color: #b4af9a;
-    background-position: -100%;
-  }
-  &:hover ${Icon}{
-    background-position: -100%;
-  }
-  &:focus{
-    color: #b4af9a;
-    background-position: -100%;
-    outline: none;
-  }
-  &:focus ${Icon}{
-    background-position: -100%;
-  }
-  &:disabled{
-    background-image: linear-gradient(90deg, #b4af9a 50%, #b4af9a 50%, #57544a 50%, #57544a 100%);
-    background-size: 200%;
-    opacity: 0.6;
-    pointer-events: none;
-  }
-`;
-
-const YorhaNavLink = ({text}: YorhaNavLinkProps) => {
-  const activeStyle = { 
-    color: '#b4af9a',
-    backgroundImage: 'linear-gradient(90deg, #b4af9a 50%, #b4af9a 50%, #57544a 50%, #57544a 100%)',
-    backgroundSize: '200%',
-    backgroundPosition: '-100%',
-    zIndex: '100',
-    textDecoration: 'none'
-  }
-  const normalStyle = {
-    color: "#57544a",
-    textDecoration: 'none'
-  }
+const YorhaCustomLink = ({className,text, to, disabled=false, ...props}:YorhaNavLinkProps)=>{
   return(
-    <NavLink style={({ isActive }) =>
-    isActive ? activeStyle : normalStyle }to='/testtt'>
-      {/* <div style={{ display:"flex", flexDirection:'row', alignItems:'center', gap:'10px', justifyContent:'left', width:'100%', height:'100%', padding:'10px'}}>
-      <Icon/>
-        {text}
-      </div> */}
-      <ButtonParent>
-        <Icon/>
-        {text}
-      </ButtonParent>
-    </NavLink>
+    <div className={className}>
+      <Button disabled={disabled} {...props}>
+      <NavLink className={['mainClass', ({isActive}) => (isActive ? "active" : "inactive")].join(' ')} 
+        to={to}>
+        <Icon/> {text}
+      </NavLink>
+      </Button>
+    </div>
+
   )
 }
 
-const NavbarModule = () =>{
-  const activeStyle = { 
-    
-    backgroundImage: 'none',
+const Button = styled.button`
+    width: 100%;
+    height: 100%;
+    background-color: transparent;
+    border: none;
+    display: flex;
+    flex-direction: row;
+    &:disabled{
+      opacity: 0.6;
+      pointer-events: none;
+    }
+`
+
+const YorhaNavLink = styled(YorhaCustomLink)`
+  .mainClass{
+    height: 100%;
+    width: 100%;
+    text-decoration: none;
+    display: flex;
+    flex-direction: row;
+    padding: 10px;
+    gap: 10px;
+    color: #57544a;
+    align-items: center;
+    background-image: linear-gradient(90deg, #b4af9a 50%, #b4af9a 50%, #57544a 50%, #57544a 100%);
+    background-size: 200%;
+    transition: .2s linear;
+    &:hover{
+      background-position: -100%;
+      color: #b4af9a;
+    }
+    &:hover ${Icon}{
+      background-position: -100%;
+    }
   }
+  .active{
+    background-position: -100%;
+    color: #b4af9a;
+  }
+  .active ${Icon}{
+    background-position: -100%;
+    color: #b4af9a;
+  }
+  .inactive{
+    color: #57544a;
+  }
+`
+
+const NavbarModule = () =>{
+
   return(
     <div className={styles.NavBarModule}>
     <Bar/>
     {RoutesConfig.RoutesConfigs.map((item)=>{
       return(
-      <>
-      <NavLink style={({ isActive }) =>
-      isActive ? activeStyle : undefined
-    } className={styles.link} to={`/${item.Link}`} >
-      <Button key={item.Text} text={item.Text}/>
-      </NavLink>
-      </>
+      <div className={styles.bar}>
+        <YorhaNavLink key={item.Text} to={`/${item.Link}`} text={item.Text}/>
+      </div>
       )
     })}
-    <YorhaNavLink text="test" />
   </div>
   )
 }
