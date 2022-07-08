@@ -1,6 +1,5 @@
 import React from "react";
-// import { Bar} from "@kaineee/nier-automata-ui-library";
-import { Bar } from "../../components/bar";
+import { Bar} from "@kaineee/nier-automata-ui-library";
 import styles from './Navbar.module.scss';
 import {RoutesConfig } from "../../routes/Routes";
 import { YorhaNavLink } from "../../components/yorhaNavLink";

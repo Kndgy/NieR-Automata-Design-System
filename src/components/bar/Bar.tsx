@@ -36,14 +36,14 @@ const theme = {
 
 export const Bar = ({dark=false, ...props}:BarProps) => {
   const checker = () =>{
-    if(dark == false){
+    if(dark === false){
       return (
         <>
         <BarItem/>
         <BarItem/>
         </>
       )
-    } else if(dark == true){
+    } else if(dark === true){
       return (
         <ThemeProvider theme={theme}>
           <BarItem/>

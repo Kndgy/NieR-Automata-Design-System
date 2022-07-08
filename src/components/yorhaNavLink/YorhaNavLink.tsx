@@ -149,11 +149,11 @@ const theme = {
 
 export const YorhaNavLink = ({to, variant, text, ...props}:YorhaNavLinkProps) =>{
   const checker = () =>{
-    if(variant == "nav"){
+    if(variant === "nav"){
       return(
         <CustomNavLink to={to} variant={variant} text={text} {...props}/>
       )      
-    } else if(variant == "button"){
+    } else if(variant === "button"){
       return(
         <ThemeProvider theme={theme}>
           <CustomNavLink to={to} variant={variant} text={text} {...props}/>
