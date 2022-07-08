@@ -5,15 +5,6 @@ import styles from './Navbar.module.scss';
 import {RoutesConfig } from "../../routes/Routes";
 import { YorhaNavLink } from "../../components/yorhaNavLink";
 
-
-type YorhaNavLinkProps = {
-  text?: string;
-  to?: string;
-  className?: string;
-  disabled?: boolean;
-}
-
-
 const NavbarModule = () =>{
 
   return(
