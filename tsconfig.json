@@ -21,7 +21,7 @@
     "jsx": "react-jsx"
   },
   "include": [
-    "src/components"
+    "src"
   ],
   "exclude": [
     "node_modules",

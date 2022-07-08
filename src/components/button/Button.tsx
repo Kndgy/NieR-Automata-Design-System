@@ -6,6 +6,7 @@ type ButtonProps = {
   // icon?: any;
   text?: string;
   disabled?: boolean;
+  variant?: 'checkbox' | 'button';
 }
 
 const Icon = styled.div`
@@ -82,7 +83,7 @@ ButtonParent.defaultProps = {
   }
 }
 
-export const Button = ({text, disabled=false, ...props}:ButtonProps) => {
+export const Button = ({text, variant, disabled=false, ...props}:ButtonProps) => {
   const [isChecked, setIsChecked] = React.useState(false);
 
   const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
@@ -106,8 +107,21 @@ export const Button = ({text, disabled=false, ...props}:ButtonProps) => {
     }
   }
 
+  const variantChecker = () =>{
+    if(variant == 'button'){
+      return(
+        <>test button variant</>
+      )
+    }else{
+      return(
+        <>test something else</>
+      )
+    }
+  }
+
     return(
       <Switch>
+        {/* {variantChecker()} */}
         <SwitchInput disabled={disabled} onChange={handleChange}  {...props}/>
           <ButtonParent>
             {checker()}

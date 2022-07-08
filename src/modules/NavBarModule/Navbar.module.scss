@@ -4,7 +4,23 @@
   justify-content: space-between;
   gap: 2rem;
   width: 100%;
+  position: relative;
+  height: 2.5rem;
   .bar{
+  }
+  .nav{
     width: 100%;
+  }
+}
+
+@media(max-width: 1366px) {
+  .NavBarModule{
+    gap: 1rem;
+  }
+}
+
+@media(max-width: 768px) {
+  .NavBarModule{
+    gap: 0.5rem;
   }
 }

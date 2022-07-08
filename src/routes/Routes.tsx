@@ -6,8 +6,13 @@ import Quest from "../pages/quests"
 export const RoutesPages = () => {
   return(
     <Routes>
-      <Route path="/" element={<Map/>} />
-      <Route path="/Quest" element={<Quest/>} />
+      {RoutesConfig.RoutesConfigs.map((item)=>{
+        return(
+          <Route key={item.Text} path={`/${item.Link}`} element={item.element}>
+          </Route>
+        )
+      })}
+      <Route path="/debug" element={<>debug</>} />
     </Routes>
   )
 }
@@ -24,31 +29,33 @@ export const RoutesConfig = {
  RoutesConfigs: [
   {
       Text:`MAP`,
-      Link:``
+      Link:``,
+      element:<Map/>
     },
     {
       Text:"QUESTS",
-      Link:`Quest`
+      Link:`quest`,
+      element:<Quest/>
     },
     {
       Text:"ITEMS",
-      Link:`Items`
+      Link:`items`
     },
     {
       Text:"WEAPONS",
-      Link:`Weapons`
+      Link:`weapons`
     },
     {
       Text:"SKILLS",
-      Link:`Skills`
+      Link:`skills`
     },
     {
       Text:"INTEL",
-      Link:`Intel`
+      Link:`intel`
     },
     {
       Text:"SYSTEM",
-      Link:`System`
+      Link:`system`,
     },
  ]
 }

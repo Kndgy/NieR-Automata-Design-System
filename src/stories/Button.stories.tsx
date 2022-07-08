@@ -14,6 +14,7 @@ const Template: ComponentStory<typeof Button> = (args) => <div style={{"width":"
 export const button = Template.bind({});
 button.args = {
   text: 'Button',
+  variant:"button"
 };
 
 
