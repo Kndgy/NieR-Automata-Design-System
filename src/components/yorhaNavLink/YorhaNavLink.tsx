@@ -147,7 +147,7 @@ const theme = {
   padding: `0rem`
 };
 
-export const YorhaNavLink = ({to, variant, text, ...props}:YorhaNavLinkProps) =>{
+export const YorhaNavLink = ({to, variant="nav", text, ...props}:YorhaNavLinkProps) =>{
   const checker = () =>{
     if(variant === "nav"){
       return(

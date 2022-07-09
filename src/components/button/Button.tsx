@@ -83,7 +83,7 @@ ButtonParent.defaultProps = {
   }
 }
 
-export const Button = ({text, variant, disabled=false, ...props}:ButtonProps) => {
+export const Button = ({text, variant='button', disabled=false, ...props}:ButtonProps) => {
   const [isChecked, setIsChecked] = React.useState(false);
 
   const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
@@ -110,23 +110,30 @@ export const Button = ({text, variant, disabled=false, ...props}:ButtonProps) =>
   const variantChecker = () =>{
     if(variant == 'button'){
       return(
-        <>test button variant</>
+        <>
+          <ButtonParent>
+            {checker()}
+            {text}
+          </ButtonParent>
+        </>
       )
-    }else{
+    }else if(variant == 'checkbox'){
       return(
-        <>test something else</>
+        <>
+          <SwitchInput disabled={disabled} onChange={handleChange}  {...props}/>
+          <ButtonParent>
+            {checker()}
+            {text}
+          </ButtonParent>
+        </>
       )
     }
   }
 
     return(
       <Switch>
-        {/* {variantChecker()} */}
-        <SwitchInput disabled={disabled} onChange={handleChange}  {...props}/>
-          <ButtonParent>
-            {checker()}
-            {text}
-          </ButtonParent>
+        {variantChecker()}
+        
       </Switch>
     )
 }

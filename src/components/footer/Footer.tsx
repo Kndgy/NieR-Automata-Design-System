@@ -21,6 +21,7 @@ const TextContainer = styled.div`
 font-size: 24px;
   padding: 0.5rem;
   color: ${colors.colors[2].hex};
+  align-items: center;
 `
 
 export const Footer = ({text, ...props}: FooterProps) => {

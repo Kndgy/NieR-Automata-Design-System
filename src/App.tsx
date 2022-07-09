@@ -7,6 +7,8 @@ function App() {
   return (
       <div className={styles.App}>
         <NavbarModule/>
+        <hr/>
+        <div className={styles.dottedspaced}/>
         <RoutesPages/>
       </div>
   );

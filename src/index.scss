@@ -11,6 +11,8 @@ body {
   background-size: 0.3rem 0.3rem;
   background-image: linear-gradient(to right, #ccc8b1 1px, rgba(204,200,177,0) 1px), linear-gradient(to bottom, #ccc8b1 1px, rgba(204,200,177,0) 1px);
   position: absolute;
+  overflow-x: hidden;
+  overflow-y: hidden;
 }
 
 code {
