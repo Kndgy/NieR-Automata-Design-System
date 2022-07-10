@@ -1,5 +1,6 @@
 import React from 'react';
 import styled, { ThemeProvider } from 'styled-components';
+import { NavLink } from 'react-router-dom';
 
 var colors = [
 	{
@@ -27,7 +28,7 @@ var colors$1 = {
 	colors: colors
 };
 
-const Icon = styled.div`
+const Icon$1 = styled.div`
   z-index: 10;
   width: 5%;
   height: 5%;
@@ -71,7 +72,7 @@ const ButtonParent = styled.div`
     background-position: -100%;
     color: ${colors$1.colors[1].hex};
   }
-  &:hover ${Icon}{
+  &:hover ${Icon$1}{
     background-position: -100%;
   }
 `;
@@ -95,30 +96,34 @@ ButtonParent.defaultProps = {
     main: `1`
   }
 };
-const Button = ({ text, disabled = false, ...props }) => {
+const Button$1 = ({ text, variant = "button", disabled = false, ...props }) => {
   const [isChecked, setIsChecked] = React.useState(false);
   const handleChange = (event) => {
     if (event.target.checked == true) {
-      console.log("checked");
       return setIsChecked(true);
     } else {
-      console.log("unchecked");
       return setIsChecked(false);
     }
   };
-  console.log(isChecked);
   const checker = () => {
     if (isChecked == true) {
       return /* @__PURE__ */ React.createElement(IconAlt, null);
     } else {
-      return /* @__PURE__ */ React.createElement(Icon, null);
+      return /* @__PURE__ */ React.createElement(Icon$1, null);
     }
   };
-  return /* @__PURE__ */ React.createElement(Switch, null, /* @__PURE__ */ React.createElement(SwitchInput, {
-    disabled,
-    onChange: handleChange,
-    ...props
-  }), /* @__PURE__ */ React.createElement(ButtonParent, null, checker(), text));
+  const variantChecker = () => {
+    if (variant == "button") {
+      return /* @__PURE__ */ React.createElement(React.Fragment, null, /* @__PURE__ */ React.createElement(ButtonParent, null, checker(), text));
+    } else if (variant == "checkbox") {
+      return /* @__PURE__ */ React.createElement(React.Fragment, null, /* @__PURE__ */ React.createElement(SwitchInput, {
+        disabled,
+        onChange: handleChange,
+        ...props
+      }), /* @__PURE__ */ React.createElement(ButtonParent, null, checker(), text));
+    }
+  };
+  return /* @__PURE__ */ React.createElement(Switch, null, variantChecker());
 };
 
 const BarParent = styled.div`
@@ -140,16 +145,16 @@ BarItem.defaultProps = {
     main: `${colors$1.colors[1].hex}`
   }
 };
-const theme$1 = {
+const theme$2 = {
   main: `${colors$1.colors[2].hex}`
 };
 const Bar = ({ dark = false, ...props }) => {
   const checker = () => {
-    if (dark == false) {
+    if (dark === false) {
       return /* @__PURE__ */ React.createElement(React.Fragment, null, /* @__PURE__ */ React.createElement(BarItem, null), /* @__PURE__ */ React.createElement(BarItem, null));
-    } else if (dark == true) {
+    } else if (dark === true) {
       return /* @__PURE__ */ React.createElement(ThemeProvider, {
-        theme: theme$1
+        theme: theme$2
       }, /* @__PURE__ */ React.createElement(BarItem, null), /* @__PURE__ */ React.createElement(BarItem, null));
     }
   };
@@ -186,7 +191,7 @@ Header.defaultProps = {
     color: `${colors$1.colors[2].hex}`
   }
 };
-const theme = {
+const theme$1 = {
   main: `${colors$1.colors[2].hex}`,
   color: `${colors$1.colors[0].hex}`
 };
@@ -200,7 +205,7 @@ const Widget = ({ dark = false, title, content, ...props }) => {
       }, title));
     } else if (dark == true) {
       return /* @__PURE__ */ React.createElement(ThemeProvider, {
-        theme
+        theme: theme$1
       }, /* @__PURE__ */ React.createElement(Header, null, /* @__PURE__ */ React.createElement("div", {
         className: "icon"
       }, "wip icon"), /* @__PURE__ */ React.createElement("div", {
@@ -237,6 +242,7 @@ const TextContainer = styled.div`
 font-size: 24px;
   padding: 0.5rem;
   color: ${colors$1.colors[2].hex};
+  align-items: center;
 `;
 const Footer = ({ text, ...props }) => {
   return /* @__PURE__ */ React.createElement(FooterParent, {
@@ -246,4 +252,157 @@ const Footer = ({ text, ...props }) => {
   }), /* @__PURE__ */ React.createElement(TextContainer, null, text));
 };
 
-export { Bar, Button, Footer, Title, Widget };
+const Icon = styled.div`
+  width: 5%;
+  height: 5%;
+  min-width: 20px;
+  min-height: 20px;
+  background-image: linear-gradient(90deg, #57544a 50%, #57544a 50%, #b4af9a 50%, #b4af9a 100%);
+  background-size: 200%;
+  transition: .1s linear;
+`;
+const YorhaCustomLink = ({ className, text, to, disabled = false, ...props }) => {
+  return /* @__PURE__ */ React.createElement("div", {
+    className
+  }, /* @__PURE__ */ React.createElement(Button, {
+    disabled,
+    ...props
+  }, /* @__PURE__ */ React.createElement(NavLink, {
+    className: ["mainClass", ({ isActive }) => isActive ? "active" : "inactive"].join(" "),
+    to
+  }, /* @__PURE__ */ React.createElement("div", {
+    className: "wrapper"
+  }, /* @__PURE__ */ React.createElement(Icon, null), " ", text))));
+};
+const Button = styled.button`
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  background-color: transparent;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  border: none;
+  &:disabled{
+    opacity: 0.6;
+    pointer-events: none;
+  }
+`;
+const CustomNavLink = styled(YorhaCustomLink)`
+  .mainClass{
+    height: 100%;
+    width: 100%;
+    text-decoration: none;
+    display: flex;
+    flex-direction: column;
+    color: #57544a;
+    align-items: flex-start;
+    background-image: linear-gradient(90deg, #b4af9a 50%, #b4af9a 50%, #57544a 50%, #57544a 100%);
+    background-size: 200%;
+    transition: .2s linear;
+    z-index: 2;
+    &:hover{
+      background-position: -100%;
+      color: #b4af9a;
+    }
+    &:hover ${Icon}{
+      background-position: -100%;
+    }
+    &::before{
+      height: 0px;
+      width: 100%;
+      background-color: #57544a;
+      content: "";
+      transform: translate(0px, 0px);
+      transition: 0.2s;
+    }
+    &::after{
+      height: 0px;
+      width: 100%;
+      background-color: #57544a;
+      content: "";
+      transform: translate(0px, 0px);
+      transition: 0.2s;
+      z-index: -1;
+    }
+    &:hover{
+      &::before{
+        height: 2px;
+        width: 100%;
+        content: "";
+        transform: translate(0px, -8px);
+    }
+      &::after{
+        height: 2px;
+        z-index: -1;
+        width: 100%;
+        content: "";
+        transform: translate(0px, 8px);
+      }
+    }
+  }
+  .active{
+    background-position: -100%;
+    width: ${(props) => props.theme.width};
+    padding-bottom: ${(props) => props.theme.padding};
+    color: #b4af9a;
+    &:hover{
+      &::before{
+        height: 0px;
+        transform: translate(0px, 0px);
+      }
+      &::after{
+        height: 0px;
+        transform: translate(0px, 0px);
+      }
+    }
+  }
+  .active ${Icon}{
+    background-position: -100%;
+    color: #b4af9a;
+  }
+  .inactive{
+    color: #57544a;
+  }
+  .wrapper{
+    padding: 10px;
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    align-items: center;
+  }
+`;
+CustomNavLink.defaultProps = {
+  theme: {
+    padding: `2rem`,
+    width: `100%`
+  }
+};
+const theme = {
+  width: `140%`,
+  padding: `0rem`
+};
+const YorhaNavLink = ({ to, variant = "nav", text, ...props }) => {
+  const checker = () => {
+    if (variant === "nav") {
+      return /* @__PURE__ */ React.createElement(CustomNavLink, {
+        to,
+        variant,
+        text,
+        ...props
+      });
+    } else if (variant === "button") {
+      return /* @__PURE__ */ React.createElement(ThemeProvider, {
+        theme
+      }, /* @__PURE__ */ React.createElement(CustomNavLink, {
+        to,
+        variant,
+        text,
+        ...props
+      }));
+    }
+  };
+  return /* @__PURE__ */ React.createElement(React.Fragment, null, checker());
+};
+
+export { Bar, Button$1 as Button, Footer, Title, Widget, YorhaNavLink };

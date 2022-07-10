@@ -1,8 +1,9 @@
 declare type ButtonProps = {
     text?: string;
     disabled?: boolean;
+    variant?: 'checkbox' | 'button';
 };
-declare const Button: ({ text, disabled, ...props }: ButtonProps) => JSX.Element;
+declare const Button: ({ text, variant, disabled, ...props }: ButtonProps) => JSX.Element;
 
 interface BarProps {
     dark?: boolean;
@@ -26,4 +27,13 @@ declare type FooterProps = {
 };
 declare const Footer: ({ text, ...props }: FooterProps) => JSX.Element;
 
-export { Bar, Button, Footer, Title, Widget };
+declare type YorhaNavLinkProps = {
+    text?: string;
+    to?: string;
+    className?: string;
+    disabled?: boolean;
+    variant?: "button" | "nav";
+};
+declare const YorhaNavLink: ({ to, variant, text, ...props }: YorhaNavLinkProps) => JSX.Element;
+
+export { Bar, Button, Footer, Title, Widget, YorhaNavLink };
