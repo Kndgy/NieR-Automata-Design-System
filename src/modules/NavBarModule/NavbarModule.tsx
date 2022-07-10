@@ -5,7 +5,6 @@ import {RoutesConfig } from "../../routes/Routes";
 import { YorhaNavLink } from "../../components/yorhaNavLink";
 
 const NavbarModule = () =>{
-
   return(
     <div className={styles.NavBarModule}>
     <div className={styles.bar}>
@@ -13,7 +12,7 @@ const NavbarModule = () =>{
     </div>
     {RoutesConfig.RoutesConfigs.map((item)=>{
       return(
-      <div className={styles.nav}>
+      <div key={item.Text} className={styles.nav}>
         <YorhaNavLink variant="nav" key={item.Text} to={`/${item.Link}`} text={item.Text}/>
       </div>
       )
