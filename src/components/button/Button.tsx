@@ -61,6 +61,34 @@ const ButtonParent = styled.div`
   }
 `;
 
+const ButtonVariant = styled.button`
+  padding: 0;
+  border: none;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 10px;
+  justify-content: left;
+  height: 100%;
+  width: 100%;
+  padding: 10px;
+  color: ${colors.colors[2].hex};
+  background-image: linear-gradient(90deg, #b4af9a 50%, #b4af9a 50%, #57544a 50%, #57544a 100%);
+  background-size: 200%;
+  transition: .2s linear;
+  &:hover{
+    background-position: -100%;
+    color: ${colors.colors[1].hex};
+  }
+  &:hover ${Icon}{
+    background-position: -100%;
+  }
+  &:disabled{
+    opacity: 0.6;
+    pointer-events: none;
+  }
+`
+
 const SwitchInput = styled.input.attrs({
   type: 'checkbox',
 })`
@@ -83,7 +111,7 @@ ButtonParent.defaultProps = {
   }
 }
 
-export const Button = ({text, variant='button', disabled=false, ...props}:ButtonProps) => {
+export const Button = ({text, variant='button', disabled, ...props}:ButtonProps) => {
   const [isChecked, setIsChecked] = React.useState(false);
 
   const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
@@ -111,29 +139,28 @@ export const Button = ({text, variant='button', disabled=false, ...props}:Button
     if(variant == 'button'){
       return(
         <>
-          <ButtonParent>
+          <ButtonVariant disabled={disabled} {...props}>
             {checker()}
             {text}
-          </ButtonParent>
+          </ButtonVariant>
         </>
       )
     }else if(variant == 'checkbox'){
       return(
-        <>
+        <Switch>
           <SwitchInput disabled={disabled} onChange={handleChange}  {...props}/>
           <ButtonParent>
             {checker()}
             {text}
           </ButtonParent>
-        </>
+        </Switch>
       )
     }
   }
 
     return(
-      <Switch>
-        {variantChecker()}
-        
-      </Switch>
+        <>
+          {variantChecker()}
+        </>
     )
 }

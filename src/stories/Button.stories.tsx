@@ -21,5 +21,19 @@ button.args = {
 export const disabledButton = Template.bind({});
 disabledButton.args = {
   text: 'Disabled Button',
+  variant:"button",
+  disabled: true,
+};
+
+export const checkbox = Template.bind({});
+checkbox.args = {
+  text: 'Checkbox Variant',
+  variant:"checkbox"
+};
+
+export const disabledCheckbox = Template.bind({});
+disabledCheckbox.args = {
+  text: 'Disabled checkbox',
+  variant:"checkbox",
   disabled: true,
 };
