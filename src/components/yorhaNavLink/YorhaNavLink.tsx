@@ -1,12 +1,14 @@
 import React from "react";
 import styled, { ThemeProvider } from "styled-components";
-import {NavLink} from "react-router-dom"
+import {NavLink, useSearchParams} from "react-router-dom"
 
 type YorhaNavLinkProps = {
   text?: string;
   to?: string;
+  filter?: string;
   className?: string;
   disabled?: boolean;
+  filterType?: string;
   variant?:  "button" | "nav";
 }
 
@@ -20,12 +22,15 @@ const Icon = styled.div`
   transition: .1s linear;
 `;
 
-const YorhaCustomLink = ({className,text, to, disabled=false, ...props}:YorhaNavLinkProps)=>{
+export const YorhaCustomLink = ({className,text, filter, filterType, to, disabled=false, ...props}:YorhaNavLinkProps)=>{
+  let [params] = useSearchParams();
+  let isActive = params.get(filterType) === filter;
+
   return(
     <div className={className}>
       <Button disabled={disabled} {...props}>
-        <NavLink className={['mainClass', ({isActive}) => (isActive ? "active" : "inactive")].join(' ')} 
-          to={to!}>
+        <NavLink className={['mainClass', isActive ? "active" : "inactive"].join(' ')} 
+          to={`${to}` + filter}>
           <div className='wrapper'>
           <Icon/> {text}
           </div>
@@ -124,7 +129,7 @@ const CustomNavLink = styled(YorhaCustomLink)`
     color: #b4af9a;
   }
   .inactive{
-    color: #57544a;
+    color: inherit;
   }
   .wrapper{
     padding: 10px;
@@ -132,6 +137,10 @@ const CustomNavLink = styled(YorhaCustomLink)`
     flex-direction: row;
     gap: 10px;
     align-items: center;
+    color: inherit;
+  }
+  .active > .wrapper{
+    color: #b4af9a;
   }
 `
 
@@ -147,16 +156,17 @@ const theme = {
   padding: `0rem`
 };
 
-export const YorhaNavLink = ({to, variant="nav", text, ...props}:YorhaNavLinkProps) =>{
+export const YorhaNavLink = ({to, filter="", filterType, variant="nav", text, ...props}:YorhaNavLinkProps) =>{
+
   const checker = () =>{
     if(variant === "nav"){
       return(
-        <CustomNavLink to={to} variant={variant} text={text} {...props}/>
+        <CustomNavLink to={to} filter={filter} text={text} filterType={filterType} variant={variant} {...props}/>
       )      
     } else if(variant === "button"){
       return(
         <ThemeProvider theme={theme}>
-          <CustomNavLink to={to} variant={variant} text={text} {...props}/>
+          <CustomNavLink to={to} filter={filter} filterType={filterType} variant={variant} text={text} {...props}/>
         </ThemeProvider>
       )
     }
