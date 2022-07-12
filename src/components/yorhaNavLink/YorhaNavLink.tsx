@@ -82,6 +82,7 @@ const CustomNavLink = styled(YorhaCustomLink)`
       content: "";
       transform: translate(0px, 0px);
       transition: 0.2s;
+      pointer-events: none;
     }
     &::after{
       height: 0px;
@@ -91,6 +92,7 @@ const CustomNavLink = styled(YorhaCustomLink)`
       transform: translate(0px, 0px);
       transition: 0.2s;
       z-index: -1;
+      pointer-events: none;
     }
     &:hover{
       &::before{
@@ -98,6 +100,7 @@ const CustomNavLink = styled(YorhaCustomLink)`
         width: 100%;
         content: "";
         transform: translate(0px, -8px);
+        pointer-events: none;
     }
       &::after{
         height: 2px;
@@ -105,6 +108,7 @@ const CustomNavLink = styled(YorhaCustomLink)`
         width: 100%;
         content: "";
         transform: translate(0px, 8px);
+        pointer-events: none;
       }
     }
   }
