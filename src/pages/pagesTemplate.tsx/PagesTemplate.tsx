@@ -1,5 +1,5 @@
 import React from "react";
-import {Title, Bar, Footer} from '@kaineee/nier-automata-ui-library';
+import {Title, Footer} from '@kaineee/nier-automata-ui-library';
 import styles from './PagesTemplate.module.scss';
 
 type PagesTemplateProps = {
@@ -14,16 +14,10 @@ const PagesTemplate = ({title, footer, chilld, className}:  PagesTemplateProps) 
   return(
     <div className={styles.PagesTemplate}>
         <Title text={title} />
-
         <div className={[styles.LeftPanel, className].join(' ')}>
-            <div className={styles.LeftPanelChild}>
-              <div className={styles.Bar}>
-                <Bar/>
-              </div>
-              <div className={styles.Button}>
-                {chilld}
-              </div>
-            </div>
+          <div className={styles.Child}>
+            {chilld}
+          </div>
         </div>
       <div>
         <Footer text={footer} />
