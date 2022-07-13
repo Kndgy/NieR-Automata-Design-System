@@ -46,7 +46,7 @@ const theme = {
 
 export const Widget = ({dark = false , title, content, ...props}: WidgetProps) => {
   const checker = () => {
-    if(dark == false){
+    if(dark === false){
       return(
         <Header>
           <div className={'icon'}>
@@ -57,7 +57,7 @@ export const Widget = ({dark = false , title, content, ...props}: WidgetProps) =
           </div>
         </Header>
       )
-    }else if(dark == true){
+    }else if(dark === true){
       return(
         <ThemeProvider theme={theme}>
           <Header>
