@@ -11,27 +11,25 @@ interface WidgetProps {
 const WidgetParent = styled.div`
   width: 100%;
   height: 100%;
+  position: relative;
 `
 
 const Header = styled.div`
   display: flex;
   flex-direction: row;
+  align-items: center;
+  height: 10%;
   gap: 10px;
   background-color: ${props => props.theme.main};
   color: ${props => props.theme.color};
   padding: 10px;
 `;
 
-const ContentParent = styled.div`
-  width: 100%;
-  height: 100%;
-  background-color: #dad4bb;
-`;
-
 const Content = styled.div`
   width: 100%;
-  height: 100%;
+  height: 90%;
   padding: 10px;
+  background-color: #dad4bb;
 `;
   
 Header.defaultProps = {
@@ -77,11 +75,9 @@ export const Widget = ({dark = false , title, content, ...props}: WidgetProps) =
   return(
     <WidgetParent>
       {checker()}
-      <ContentParent {...props}>
         <Content>
           {content}
         </Content>
-      </ContentParent>
     </WidgetParent>
   )
 }

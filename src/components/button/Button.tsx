@@ -1,5 +1,5 @@
 import React from "react";
-import styled, { ThemeProvider } from 'styled-components';
+import styled from 'styled-components';
 import colors from '../colors/colors.json'
 
 type ButtonProps = {
@@ -167,7 +167,7 @@ export const Button = ({text, variant='button', disabled, ...props}:ButtonProps)
 
   const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
 
-    if(event.target.checked == true){
+    if(event.target.checked === true){
       return setIsChecked(true);
     } else{
       return setIsChecked(false);
@@ -175,7 +175,7 @@ export const Button = ({text, variant='button', disabled, ...props}:ButtonProps)
   };
 
   const checker = () =>{
-    if(isChecked == true){
+    if(isChecked === true){
       return(
         <IconAlt/>
       )
@@ -187,7 +187,7 @@ export const Button = ({text, variant='button', disabled, ...props}:ButtonProps)
   }
 
   const variantChecker = () =>{
-    if(variant == 'button'){
+    if(variant === 'button'){
       return(
           <ParentElement>
             <ButtonVariant disabled={disabled} {...props}>
@@ -196,7 +196,7 @@ export const Button = ({text, variant='button', disabled, ...props}:ButtonProps)
             </ButtonVariant>
           </ParentElement>
       )
-    }else if(variant == 'checkbox'){
+    }else if(variant === 'checkbox'){
       return(
         <ParentElement>
           <Switch>
