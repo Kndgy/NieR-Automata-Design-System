@@ -1,10 +1,10 @@
 import { Title } from "@kaineee/nier-automata-ui-library"
 import React from "react"
-import { Routes, Route } from "react-router-dom"
+import { Routes, Route} from "react-router-dom"
 import Map from "../pages/map"
 import Quest from "../pages/quests"
-import ActiveQuestsModule from "../pages/quests/QuestsModule"
-import QuestModule from "../pages/quests/QuestModule"
+import ActiveQuestsModule from "../modules/questsModule/ActiveQuestsModule"
+import QuestModule from "../modules/questsModule/QuestModule"
 
 export const RoutesPages = () => {
   return(
@@ -12,26 +12,21 @@ export const RoutesPages = () => {
         <Route path={`/`} element={<Map/>}>
         </Route>
         <Route path={`/quest`} element={<Quest/>}>
-          <Route
-            index
-            element={
-              <>
-              WIP STATUS
-              </>
-            }
-          />
-          
-          <Route path="/quest/quests" element={<ActiveQuestsModule/>}>
-          <Route
-            index
-            element={
-              <>
-              select a data
-              </>
-            }
-          />
-          <Route path={':invoiceID'} element={<QuestModule/>}/>
-          </Route>
+          {QuestList.map((item)=>{
+            return(
+              <Route path={`/quest/${item.type}/`} element={<ActiveQuestsModule/>}>
+                <Route
+                  index
+                  element={
+                    <>
+                    select a data
+                    </>
+                  }
+                />
+                <Route path={`:questid`} element={<QuestModule/>}/>
+            </Route>
+            )
+          })}
         </Route>
         <Route path="/debug" element={<>debug</>} />
         <Route
@@ -42,6 +37,22 @@ export const RoutesPages = () => {
         />
     </Routes>
   )
+}
+
+let QuestList = [
+  {
+    type:"active"
+  },
+  {
+    type:"all"
+  },
+  {
+    type:"completed"
+  }
+]
+
+export function QuestsRoute() {
+  return QuestList;
 }
 
 export const RoutesConfig = {

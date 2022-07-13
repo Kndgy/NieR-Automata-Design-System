@@ -1,24 +1,52 @@
-import { Button} from "@kaineee/nier-automata-ui-library";
 import React from "react";
-import { Link, Outlet} from "react-router-dom";
+import { Bar} from "@kaineee/nier-automata-ui-library";
+import { Outlet} from "react-router-dom";
+import { YorhaNavLink } from "../../components";
 import PagesTemplate from "../pagesTemplate.tsx";
 import styles from './Quest.module.scss';
 
-const Quest = () => {
+let QuestList = [
+  {
+    Link:"active",
+    Text:"Active Quests",
+    type:"/quest/active/?filter=",
+  },
+  {
+    Link:"",
+    Text:"All Quests",
+    type:"/quest/all/?filter=",
+  },
+  {
+    Link:"completed",
+    Text:"Cleared Quests",
+    type:"/quest/completed/?filter=",
+  },
+]
 
+const Quest = () => {
+  
   return(
     <PagesTemplate
       title="QUEST"
       footer="quests footer."
       chilld={
-        <>
-          <Button text="Active Qeusts"/>
-          <Link to={'/quest/quests'}>
-          <Button text="All Quests"/>
-          </Link>
-          <Button text="Cleared Quests"/>
-          <Outlet/>
-        </>
+        <div className={styles.QuestContainer}>
+          <div className={styles.QuestsChild}>
+            <div className={styles.QuestContainer}>
+              <div className={styles.bar}>
+                <Bar/>
+              </div>
+              <div className={styles.QuestButton}>
+                {QuestList.map((item)=>(
+                  <YorhaNavLink key={item.Link} to={item.type} filter={item.Link} filterType={"filter"} text={item.Text}/>
+                ))}
+              </div>
+            </div>
+            <div className={styles.outletChild}>
+              <Outlet/>
+            </div>
+          </div>
+        </div>
       }
       className={styles.Quest}
     />

@@ -49,7 +49,7 @@
     ]
   },
   "devDependencies": {
-    "@kaineee/nier-automata-ui-library": "^0.2.3",
+    "@kaineee/nier-automata-ui-library": "^0.2.4",
     "@rollup/plugin-json": "^4.1.0",
     "@storybook/addon-actions": "^6.5.9",
     "@storybook/addon-essentials": "^6.5.9",

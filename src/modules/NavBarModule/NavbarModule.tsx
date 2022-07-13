@@ -8,7 +8,7 @@ const NavbarModule = () =>{
   return(
     <div className={styles.NavBarModule}>
     <div className={styles.bar}>
-      <Bar dark={true}/>
+      <Bar/>
     </div>
     {RoutesConfig.RoutesConfigs.map((item)=>{
       return(
