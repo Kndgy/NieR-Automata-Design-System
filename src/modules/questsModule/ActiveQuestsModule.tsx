@@ -4,7 +4,7 @@ import {Outlet,
   // useLocation,
   useSearchParams 
 } from "react-router-dom";
-import { YorhaNavLink } from "../../components";
+import { Tab, YorhaNavLink } from "../../components";
 import { getArchive } from "../../mockData/mockData";
 import styles from './QuestModule.module.scss';
 
@@ -20,6 +20,7 @@ const ActiveQuestsModule = () => {
         <div>
           <Bar/>
         </div>
+       <Tab content={
         <div className={styles.QuestList}>
           {archive
             .filter((archive) => {
@@ -32,8 +33,9 @@ const ActiveQuestsModule = () => {
                 <YorhaNavLink variant="transparent"
                 to={`/quest/${item.status}/${item.link}`} //+ location.search
                 key={item.title} text={item.title}/>
-              ))}
+            ))}
         </div>
+       }/>
       </div>
       <div className={styles.outletChild}>
         <Outlet/>
