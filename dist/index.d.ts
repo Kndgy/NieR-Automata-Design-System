@@ -30,10 +30,12 @@ declare const Footer: ({ text, ...props }: FooterProps) => JSX.Element;
 declare type YorhaNavLinkProps = {
     text?: string;
     to?: string;
+    filter?: string;
     className?: string;
     disabled?: boolean;
-    variant?: "button" | "nav";
+    filterType?: string;
+    variant?: "button" | "nav" | "transparent" | "neutral";
 };
-declare const YorhaNavLink: ({ to, variant, text, ...props }: YorhaNavLinkProps) => JSX.Element;
+declare const YorhaNavLink: ({ to, filter, filterType, variant, text, ...props }: YorhaNavLinkProps) => JSX.Element;
 
 export { Bar, Button, Footer, Title, Widget, YorhaNavLink };

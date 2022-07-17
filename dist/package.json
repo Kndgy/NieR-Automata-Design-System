@@ -1,6 +1,6 @@
 {
   "name": "@kaineee/nier-automata-ui-library",
-  "version": "0.2.4",
+  "version": "0.2.5",
   "description": "react ui library component based of nier automata settings ui",
   "private": false,
   "scripts": {
@@ -49,7 +49,7 @@
     ]
   },
   "devDependencies": {
-    "@kaineee/nier-automata-ui-library": "^0.2.3",
+    "@kaineee/nier-automata-ui-library": "^0.2.5",
     "@rollup/plugin-json": "^4.1.0",
     "@storybook/addon-actions": "^6.5.9",
     "@storybook/addon-essentials": "^6.5.9",
@@ -85,6 +85,7 @@
     "webpack": "^5.73.0"
   },
   "dependencies": {
+    "rollup-plugin-scss": "^3.0.0",
     "styled-components": "^5"
   },
   "peerDependencies": {

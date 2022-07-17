@@ -1,6 +1,6 @@
 import React from 'react';
 import styled, { ThemeProvider } from 'styled-components';
-import { NavLink } from 'react-router-dom';
+import { useSearchParams, NavLink } from 'react-router-dom';
 
 var colors = [
 	{
@@ -48,21 +48,63 @@ const IconAlt = styled.div`
   background-size: 200%;
   transition: .1s linear;
 `;
+const ParentElement = styled.div`
+  pointer-events: none;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+  z-index: 10;
+  &::before{
+      height: 0px;
+      width: 100%;
+      background-color: #57544a;
+      content: "";
+      transform: translate(0px, 0px);
+      transition: 0.2s;
+      pointer-events: none;
+    }
+    &::after{
+      height: 0px;
+      width: 100%;
+      background-color: #57544a;
+      content: "";
+      transform: translate(0px, 0px);
+      transition: 0.2s;
+      z-index: -1;
+      pointer-events: none;
+    }
+    &:hover{
+      &::before{
+        height: 2px;
+        width: 100%;
+        content: "";
+        transform: translate(0px, -8px);
+        pointer-events: none;
+    }
+      &::after{
+        height: 2px;
+        z-index: -1;
+        width: 100%;
+        content: "";
+        transform: translate(0px, 8px);
+        pointer-events: none;
+      }
+    }
+`;
 const Switch = styled.label`
   position: relative;
   display: flex;
+  flex-direction: column;
   width: 100%;
   height: 100%;
   z-index: 10;
 `;
 const ButtonParent = styled.div`
+  pointer-events: auto;
   display: flex;
-  flex-direction: row;
-  align-items: center;
-  gap: 10px;
-  justify-content: left;
   height: 100%;
-  width: 100%;
   padding: 10px;
   color: ${colors$1.colors[2].hex};
   background-image: linear-gradient(90deg, #b4af9a 50%, #b4af9a 50%, #57544a 50%, #57544a 100%);
@@ -74,6 +116,36 @@ const ButtonParent = styled.div`
   }
   &:hover ${Icon$1}{
     background-position: -100%;
+  }
+`;
+const ButtonVariant = styled.button`
+  pointer-events: auto;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 10px;
+  justify-content: left;
+  height: 100%;
+  width: 100%;
+  padding: 10px;
+  border: none;
+  display: flex;
+  height: 100%;
+  width: 100%;
+  color: ${colors$1.colors[2].hex};
+  background-image: linear-gradient(90deg, #b4af9a 50%, #b4af9a 50%, #57544a 50%, #57544a 100%);
+  background-size: 200%;
+  transition: .2s linear;
+  &:hover{
+    background-position: -100%;
+    color: ${colors$1.colors[1].hex};
+  }
+  &:hover ${Icon$1}{
+    background-position: -100%;
+  }
+  &:disabled{
+    opacity: 0.6;
+    pointer-events: none;
   }
 `;
 const SwitchInput = styled.input.attrs({
@@ -91,39 +163,50 @@ opacity: 0;
   pointer-events: none;
 }
 `;
+const Wrapper = styled.div`
+  font-size: 1rem;
+  display: flex;
+  flex-direction: row;
+  gap:10px;
+  align-items: center;
+  justify-content: left;
+`;
 ButtonParent.defaultProps = {
   theme: {
     main: `1`
   }
 };
-const Button$1 = ({ text, variant = "button", disabled = false, ...props }) => {
+const Button$1 = ({ text, variant = "button", disabled, ...props }) => {
   const [isChecked, setIsChecked] = React.useState(false);
   const handleChange = (event) => {
-    if (event.target.checked == true) {
+    if (event.target.checked === true) {
       return setIsChecked(true);
     } else {
       return setIsChecked(false);
     }
   };
   const checker = () => {
-    if (isChecked == true) {
+    if (isChecked === true) {
       return /* @__PURE__ */ React.createElement(IconAlt, null);
     } else {
       return /* @__PURE__ */ React.createElement(Icon$1, null);
     }
   };
   const variantChecker = () => {
-    if (variant == "button") {
-      return /* @__PURE__ */ React.createElement(React.Fragment, null, /* @__PURE__ */ React.createElement(ButtonParent, null, checker(), text));
-    } else if (variant == "checkbox") {
-      return /* @__PURE__ */ React.createElement(React.Fragment, null, /* @__PURE__ */ React.createElement(SwitchInput, {
+    if (variant === "button") {
+      return /* @__PURE__ */ React.createElement(ParentElement, null, /* @__PURE__ */ React.createElement(ButtonVariant, {
+        disabled,
+        ...props
+      }, /* @__PURE__ */ React.createElement(Wrapper, null, checker(), text)));
+    } else if (variant === "checkbox") {
+      return /* @__PURE__ */ React.createElement(ParentElement, null, /* @__PURE__ */ React.createElement(Switch, null, /* @__PURE__ */ React.createElement(SwitchInput, {
         disabled,
         onChange: handleChange,
         ...props
-      }), /* @__PURE__ */ React.createElement(ButtonParent, null, checker(), text));
+      }), /* @__PURE__ */ React.createElement(ButtonParent, null, /* @__PURE__ */ React.createElement(Wrapper, null, checker(), text))));
     }
   };
-  return /* @__PURE__ */ React.createElement(Switch, null, variantChecker());
+  return /* @__PURE__ */ React.createElement(React.Fragment, null, variantChecker());
 };
 
 const BarParent = styled.div`
@@ -170,20 +253,20 @@ const WidgetParent = styled.div`
 const Header = styled.div`
   display: flex;
   flex-direction: row;
+  align-items: center;
+  height: 10%;
   gap: 10px;
   background-color: ${(props) => props.theme.main};
   color: ${(props) => props.theme.color};
   padding: 10px;
 `;
-const ContentParent = styled.div`
-  width: 100%;
-  height: 100%;
-  background-color: #dad4bb;
-`;
 const Content = styled.div`
   width: 100%;
-  height: 100%;
-  padding: 10px;
+  height: 90%;
+  background-color: #dad4bb;
+`;
+const ContentWrapper = styled.div`
+padding: 10px
 `;
 Header.defaultProps = {
   theme: {
@@ -197,13 +280,13 @@ const theme$1 = {
 };
 const Widget = ({ dark = false, title, content, ...props }) => {
   const checker = () => {
-    if (dark == false) {
+    if (dark === false) {
       return /* @__PURE__ */ React.createElement(Header, null, /* @__PURE__ */ React.createElement("div", {
         className: "icon"
       }, "wip icon"), /* @__PURE__ */ React.createElement("div", {
         className: "title"
       }, title));
-    } else if (dark == true) {
+    } else if (dark === true) {
       return /* @__PURE__ */ React.createElement(ThemeProvider, {
         theme: theme$1
       }, /* @__PURE__ */ React.createElement(Header, null, /* @__PURE__ */ React.createElement("div", {
@@ -213,9 +296,7 @@ const Widget = ({ dark = false, title, content, ...props }) => {
       }, title)));
     }
   };
-  return /* @__PURE__ */ React.createElement(WidgetParent, null, checker(), /* @__PURE__ */ React.createElement(ContentParent, {
-    ...props
-  }, /* @__PURE__ */ React.createElement(Content, null, content)));
+  return /* @__PURE__ */ React.createElement(WidgetParent, null, checker(), /* @__PURE__ */ React.createElement(Content, null, /* @__PURE__ */ React.createElement(ContentWrapper, null, content)));
 };
 
 const TitleParent = styled.div`
@@ -261,15 +342,17 @@ const Icon = styled.div`
   background-size: 200%;
   transition: .1s linear;
 `;
-const YorhaCustomLink = ({ className, text, to, disabled = false, ...props }) => {
+const YorhaCustomLink = ({ className, text, filter, filterType, to, disabled = false, ...props }) => {
+  let [params] = useSearchParams();
+  let isActive = params.get(filterType) === filter;
   return /* @__PURE__ */ React.createElement("div", {
     className
   }, /* @__PURE__ */ React.createElement(Button, {
     disabled,
     ...props
   }, /* @__PURE__ */ React.createElement(NavLink, {
-    className: ["mainClass", ({ isActive }) => isActive ? "active" : "inactive"].join(" "),
-    to
+    className: ["mainClass", isActive ? "active" : "inactive"].join(" "),
+    to: `${to}` + filter
   }, /* @__PURE__ */ React.createElement("div", {
     className: "wrapper"
   }, /* @__PURE__ */ React.createElement(Icon, null), " ", text))));
@@ -290,6 +373,7 @@ const Button = styled.button`
 `;
 const CustomNavLink = styled(YorhaCustomLink)`
   .mainClass{
+    font-size: 1rem;
     height: 100%;
     width: 100%;
     text-decoration: none;
@@ -297,7 +381,7 @@ const CustomNavLink = styled(YorhaCustomLink)`
     flex-direction: column;
     color: #57544a;
     align-items: flex-start;
-    background-image: linear-gradient(90deg, #b4af9a 50%, #b4af9a 50%, #57544a 50%, #57544a 100%);
+    background-image: ${(props) => props.theme.backgroundImage};
     background-size: 200%;
     transition: .2s linear;
     z-index: 2;
@@ -315,6 +399,7 @@ const CustomNavLink = styled(YorhaCustomLink)`
       content: "";
       transform: translate(0px, 0px);
       transition: 0.2s;
+      pointer-events: none;
     }
     &::after{
       height: 0px;
@@ -324,6 +409,7 @@ const CustomNavLink = styled(YorhaCustomLink)`
       transform: translate(0px, 0px);
       transition: 0.2s;
       z-index: -1;
+      pointer-events: none;
     }
     &:hover{
       &::before{
@@ -331,6 +417,7 @@ const CustomNavLink = styled(YorhaCustomLink)`
         width: 100%;
         content: "";
         transform: translate(0px, -8px);
+        pointer-events: none;
     }
       &::after{
         height: 2px;
@@ -338,6 +425,7 @@ const CustomNavLink = styled(YorhaCustomLink)`
         width: 100%;
         content: "";
         transform: translate(0px, 8px);
+        pointer-events: none;
       }
     }
   }
@@ -362,7 +450,6 @@ const CustomNavLink = styled(YorhaCustomLink)`
     color: #b4af9a;
   }
   .inactive{
-    color: #57544a;
   }
   .wrapper{
     padding: 10px;
@@ -370,25 +457,41 @@ const CustomNavLink = styled(YorhaCustomLink)`
     flex-direction: row;
     gap: 10px;
     align-items: center;
+    color: inherit;
+  }
+  .active > .wrapper{
+    color: #b4af9a;
   }
 `;
 CustomNavLink.defaultProps = {
   theme: {
+    backgroundImage: `linear-gradient(90deg, #b4af9a 50%, #b4af9a 50%, #57544a 50%, #57544a 100%)`,
     padding: `2rem`,
     width: `100%`
   }
 };
 const theme = {
+  backgroundImage: `linear-gradient(90deg, #b4af9a 50%, #b4af9a 50%, #57544a 50%, #57544a 100%)`,
   width: `140%`,
   padding: `0rem`
 };
-const YorhaNavLink = ({ to, variant = "nav", text, ...props }) => {
+const transparent = {
+  backgroundImage: `linear-gradient(90deg, #b4af9a00 50%, #b4af9a00 50%, #57544a 50%, #57544a 100%)`
+};
+const neutral = {
+  backgroundImage: `linear-gradient(90deg, #b4af9a 50%, #b4af9a 50%, #57544a 50%, #57544a 100%)`,
+  width: `100%`,
+  padding: `0rem`
+};
+const YorhaNavLink = ({ to, filter = "", filterType, variant = "nav", text, ...props }) => {
   const checker = () => {
     if (variant === "nav") {
       return /* @__PURE__ */ React.createElement(CustomNavLink, {
         to,
-        variant,
+        filter,
         text,
+        filterType,
+        variant,
         ...props
       });
     } else if (variant === "button") {
@@ -396,6 +499,30 @@ const YorhaNavLink = ({ to, variant = "nav", text, ...props }) => {
         theme
       }, /* @__PURE__ */ React.createElement(CustomNavLink, {
         to,
+        filter,
+        filterType,
+        variant,
+        text,
+        ...props
+      }));
+    } else if (variant === "transparent") {
+      return /* @__PURE__ */ React.createElement(ThemeProvider, {
+        theme: transparent
+      }, /* @__PURE__ */ React.createElement(CustomNavLink, {
+        to,
+        filter,
+        filterType,
+        variant,
+        text,
+        ...props
+      }));
+    } else if (variant === "neutral") {
+      return /* @__PURE__ */ React.createElement(ThemeProvider, {
+        theme: neutral
+      }, /* @__PURE__ */ React.createElement(CustomNavLink, {
+        to,
+        filter,
+        filterType,
         variant,
         text,
         ...props
