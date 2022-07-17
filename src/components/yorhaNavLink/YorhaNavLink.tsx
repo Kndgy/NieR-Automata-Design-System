@@ -9,7 +9,7 @@ type YorhaNavLinkProps = {
   className?: string;
   disabled?: boolean;
   filterType?: string;
-  variant?:  "button" | "nav";
+  variant?:  "button" | "nav" | "transparent" | "neutral";
 }
 
 const Icon = styled.div`
@@ -57,6 +57,7 @@ const Button = styled.button`
 
 const CustomNavLink = styled(YorhaCustomLink)`
   .mainClass{
+    font-size: 1rem;
     height: 100%;
     width: 100%;
     text-decoration: none;
@@ -64,7 +65,7 @@ const CustomNavLink = styled(YorhaCustomLink)`
     flex-direction: column;
     color: #57544a;
     align-items: flex-start;
-    background-image: linear-gradient(90deg, #b4af9a 50%, #b4af9a 50%, #57544a 50%, #57544a 100%);
+    background-image: ${props => props.theme.backgroundImage};
     background-size: 200%;
     transition: .2s linear;
     z-index: 2;
@@ -133,7 +134,6 @@ const CustomNavLink = styled(YorhaCustomLink)`
     color: #b4af9a;
   }
   .inactive{
-    color: inherit;
   }
   .wrapper{
     padding: 10px;
@@ -150,15 +150,27 @@ const CustomNavLink = styled(YorhaCustomLink)`
 
 CustomNavLink.defaultProps = {
   theme:{
+    backgroundImage: `linear-gradient(90deg, #b4af9a 50%, #b4af9a 50%, #57544a 50%, #57544a 100%)`,
     padding: `2rem`,
     width: `100%`
   }
 };
 
 const theme = {
+  backgroundImage: `linear-gradient(90deg, #b4af9a 50%, #b4af9a 50%, #57544a 50%, #57544a 100%)`,
   width: `140%`,
   padding: `0rem`
 };
+
+const transparent = {
+  backgroundImage: `linear-gradient(90deg, #b4af9a00 50%, #b4af9a00 50%, #57544a 50%, #57544a 100%)`,
+};
+
+const neutral ={
+  backgroundImage: `linear-gradient(90deg, #b4af9a 50%, #b4af9a 50%, #57544a 50%, #57544a 100%)`,
+  width: `100%`,
+  padding: `0rem`
+}
 
 export const YorhaNavLink = ({to, filter="", filterType, variant="nav", text, ...props}:YorhaNavLinkProps) =>{
 
@@ -170,6 +182,18 @@ export const YorhaNavLink = ({to, filter="", filterType, variant="nav", text, ..
     } else if(variant === "button"){
       return(
         <ThemeProvider theme={theme}>
+          <CustomNavLink to={to} filter={filter} filterType={filterType} variant={variant} text={text} {...props}/>
+        </ThemeProvider>
+      )
+    } else if(variant === "transparent"){
+      return(
+        <ThemeProvider theme={transparent}>
+          <CustomNavLink to={to} filter={filter} filterType={filterType} variant={variant} text={text} {...props}/>
+        </ThemeProvider>
+      )
+    } else if(variant === "neutral"){
+      return(
+        <ThemeProvider theme={neutral}>
           <CustomNavLink to={to} filter={filter} filterType={filterType} variant={variant} text={text} {...props}/>
         </ThemeProvider>
       )

@@ -11,7 +11,6 @@ interface WidgetProps {
 const WidgetParent = styled.div`
   width: 100%;
   height: 100%;
-  position: relative;
 `
 
 const Header = styled.div`
@@ -28,8 +27,11 @@ const Header = styled.div`
 const Content = styled.div`
   width: 100%;
   height: 90%;
-  padding: 10px;
   background-color: #dad4bb;
+`;
+
+const ContentWrapper = styled.div`
+padding: 10px
 `;
   
 Header.defaultProps = {
@@ -76,7 +78,9 @@ export const Widget = ({dark = false , title, content, ...props}: WidgetProps) =
     <WidgetParent>
       {checker()}
         <Content>
-          {content}
+          <ContentWrapper>
+            {content}
+          </ContentWrapper>
         </Content>
     </WidgetParent>
   )

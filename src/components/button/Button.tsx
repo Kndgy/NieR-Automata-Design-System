@@ -87,12 +87,8 @@ const Switch = styled.label`
 `
 
 const ButtonParent = styled.div`
- pointer-events: auto;
+  pointer-events: auto;
   display: flex;
-  flex-direction: row;
-  align-items: center;
-  gap: 10px;
-  justify-content: left;
   height: 100%;
   padding: 10px;
   color: ${colors.colors[2].hex};
@@ -156,6 +152,15 @@ opacity: 0;
 }
 `
 
+const Wrapper = styled.div`
+  font-size: 1rem;
+  display: flex;
+  flex-direction: row;
+  gap:10px;
+  align-items: center;
+  justify-content: left;
+`
+
 ButtonParent.defaultProps = {
   theme: {
     main: `1`
@@ -191,8 +196,10 @@ export const Button = ({text, variant='button', disabled, ...props}:ButtonProps)
       return(
           <ParentElement>
             <ButtonVariant disabled={disabled} {...props}>
-              {checker()}
-              {text}
+              <Wrapper>
+                {checker()}
+                {text}
+              </Wrapper>
             </ButtonVariant>
           </ParentElement>
       )
@@ -202,8 +209,10 @@ export const Button = ({text, variant='button', disabled, ...props}:ButtonProps)
           <Switch>
             <SwitchInput disabled={disabled} onChange={handleChange}  {...props}/>
             <ButtonParent>
-              {checker()}
-              {text}
+              <Wrapper>
+                {checker()}
+                {text}
+              </Wrapper>
             </ButtonParent>
           </Switch>
         </ParentElement>
