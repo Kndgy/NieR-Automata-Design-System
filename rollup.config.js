@@ -1,6 +1,7 @@
 import json from '@rollup/plugin-json'
 import esbuild from 'rollup-plugin-esbuild'
 import dts from 'rollup-plugin-dts'
+import scss from 'rollup-plugin-scss';
 
 export default [
   {
@@ -17,6 +18,7 @@ export default [
       },
     ],
     plugins: [
+      scss(),
       json(),
       esbuild({
         include: /\.[jt]sx?$/,
@@ -44,6 +46,9 @@ export default [
       file: "dist/index.d.ts",
       format:'es',
     },
-    plugins: [dts()]
+    plugins: [
+      dts(),
+      scss(),
+    ]
   },
 ];
