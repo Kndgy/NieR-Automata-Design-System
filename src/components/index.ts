@@ -4,3 +4,4 @@ export {Widget} from './widget';
 export {Title} from './title';
 export {Footer} from './footer' 
 export {YorhaNavLink} from './yorhaNavLink';
+export {Tab} from './tab';
