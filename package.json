@@ -85,7 +85,6 @@
     "webpack": "^5.73.0"
   },
   "dependencies": {
-    "rollup-plugin-scss": "^3.0.0",
     "styled-components": "^5"
   },
   "peerDependencies": {
