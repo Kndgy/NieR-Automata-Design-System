@@ -1,7 +1,7 @@
 import React from "react";
 import { Bar } from "@kaineee/nier-automata-ui-library";
 import {Outlet,
-  useLocation,
+  // useLocation,
   useSearchParams 
 } from "react-router-dom";
 import { YorhaNavLink } from "../../components";
@@ -13,7 +13,7 @@ const ActiveQuestsModule = () => {
 
   let archive = getArchive();
   // var [searchParams, setSearchParams] = useSearchParams();
-  let location = useLocation();
+  // let location = useLocation();
   return(
     <div className={styles.ActiveQuests}>
       <div className={styles.ActiveQuestsContainer}>
@@ -29,8 +29,8 @@ const ActiveQuestsModule = () => {
               return name.startsWith(filter);
             })
             .map((item)=>(
-                <YorhaNavLink variant="nav"
-                to={`/quest/${item.status}/${item.link}` + location.search}
+                <YorhaNavLink variant="transparent"
+                to={`/quest/${item.status}/${item.link}`} //+ location.search
                 key={item.title} text={item.title}/>
               ))}
         </div>

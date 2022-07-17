@@ -5,6 +5,7 @@ import Map from "../pages/map"
 import Quest from "../pages/quests"
 import ActiveQuestsModule from "../modules/questsModule/ActiveQuestsModule"
 import QuestModule from "../modules/questsModule/QuestModule"
+import Debug from "../pages/debug"
 
 export const RoutesPages = () => {
   return(
@@ -28,7 +29,12 @@ export const RoutesPages = () => {
             )
           })}
         </Route>
-        <Route path="/debug" element={<>debug</>} />
+        <Route path="/debug" element={<Debug/>}>
+          <Route path="/debug/fat" element={<>works fat</>}/>
+          <Route path="/debug/long" element={<>works long</>}/>
+          <Route path="/debug/transparent" element={<>works transparent</>}/>
+          <Route path="/debug/neutral" element={<>works neutral</>}/>
+        </Route>
         <Route
         path="*"
         element={

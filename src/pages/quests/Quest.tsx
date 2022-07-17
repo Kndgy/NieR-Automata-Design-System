@@ -35,6 +35,7 @@ const Quest = () => {
             <div className={styles.QuestContainer}>
               <div className={styles.bar}>
                 <Bar/>
+                
               </div>
               <div className={styles.QuestButton}>
                 {QuestList.map((item)=>(
