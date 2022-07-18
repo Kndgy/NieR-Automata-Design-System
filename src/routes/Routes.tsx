@@ -13,9 +13,9 @@ export const RoutesPages = () => {
         <Route path={`/`} element={<Map/>}>
         </Route>
         <Route path={`/quest`} element={<Quest/>}>
-          {QuestList.map((item)=>{
+          {/* {QuestList.map((item)=>{ */}
             return(
-              <Route path={`/quest/${item.type}/`} element={<ActiveQuestsModule/>}>
+              <Route path={`/quest/:status/`} element={<ActiveQuestsModule/>}>
                 <Route
                   index
                   element={
@@ -27,7 +27,7 @@ export const RoutesPages = () => {
                 <Route path={`:questid`} element={<QuestModule/>}/>
             </Route>
             )
-          })}
+          {/* })} */}
         </Route>
         <Route path="/debug" element={<Debug/>}>
           <Route path="/debug/fat" element={<>works fat</>}/>
@@ -43,22 +43,6 @@ export const RoutesPages = () => {
         />
     </Routes>
   )
-}
-
-let QuestList = [
-  {
-    type:"active"
-  },
-  {
-    type:"all"
-  },
-  {
-    type:"completed"
-  }
-]
-
-export function QuestsRoute() {
-  return QuestList;
 }
 
 export const RoutesConfig = {

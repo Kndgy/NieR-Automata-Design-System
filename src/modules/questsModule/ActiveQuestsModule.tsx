@@ -24,7 +24,7 @@ const ActiveQuestsModule = () => {
         <div className={styles.QuestList}>
           {archive
             .filter((archive) => {
-              let filter = searchParams.get("filter");
+              let filter = searchParams.get("status");
               if (!filter) return true;
               let name = archive.status.toLowerCase();
               return name.startsWith(filter);

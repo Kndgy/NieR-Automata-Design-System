@@ -9,17 +9,17 @@ let QuestList = [
   {
     Link:"active",
     Text:"Active Quests",
-    type:"/quest/active/?filter=",
+    type:"/quest/active/?status=",
   },
   {
     Link:"",
     Text:"All Quests",
-    type:"/quest/all/?filter=",
+    type:"/quest/all/?status=",
   },
   {
     Link:"completed",
     Text:"Cleared Quests",
-    type:"/quest/completed/?filter=",
+    type:"/quest/completed/?status=",
   },
 ]
 
@@ -39,7 +39,7 @@ const Quest = () => {
               </div>
               <div className={styles.QuestButton}>
                 {QuestList.map((item)=>(
-                  <YorhaNavLink key={item.Link} to={item.type} filter={item.Link} filterType={"filter"} text={item.Text}/>
+                  <YorhaNavLink key={item.Link} to={item.type} filter={item.Link} filterType={"status"} text={item.Text}/>
                 ))}
               </div>
             </div>
