@@ -1,6 +1,6 @@
 import React from "react";
 import { Bar} from "@kaineee/nier-automata-ui-library";
-import { Outlet} from "react-router-dom";
+import { Outlet, useParams, useSearchParams} from "react-router-dom";
 import { YorhaNavLink } from "../../components";
 import PagesTemplate from "../pagesTemplate.tsx";
 import styles from './Quest.module.scss';
@@ -23,11 +23,24 @@ let QuestList = [
   },
 ]
 
+
+function capitalizeFirstLetter(string) {
+  return string.charAt(0).toUpperCase() + string.slice(1);
+}
+
 const Quest = () => {
-  
+  const param = useParams();
+
+  let subTitle = (`${param.status} Quests`);
+  let strip = "-";
+  if (param.status === undefined) {
+    subTitle = "";
+    strip =""
+  }
   return(
     <PagesTemplate
-      title="QUEST"
+      title={`QUESTS`}
+      subtitle={strip + capitalizeFirstLetter(subTitle)}
       footer="quests footer."
       chilld={
         <div className={styles.QuestContainer}>
@@ -35,7 +48,6 @@ const Quest = () => {
             <div className={styles.QuestContainer}>
               <div className={styles.bar}>
                 <Bar/>
-                
               </div>
               <div className={styles.QuestButton}>
                 {QuestList.map((item)=>(
@@ -47,6 +59,7 @@ const Quest = () => {
               <Outlet/>
             </div>
           </div>
+          TEST
         </div>
       }
       className={styles.Quest}

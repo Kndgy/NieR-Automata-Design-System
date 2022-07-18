@@ -1,19 +1,20 @@
 import React from "react";
-import {Title, Footer} from '@kaineee/nier-automata-ui-library';
+import {Footer} from '@kaineee/nier-automata-ui-library';
 import styles from './PagesTemplate.module.scss';
+import { Title } from "../../components";
 
 type PagesTemplateProps = {
   title?: string;
   footer?: string;
   chilld?: any;
   className?: string;
-
+  subtitle?: string;
 }
 
-const PagesTemplate = ({title, footer, chilld, className}:  PagesTemplateProps) => {
+const PagesTemplate = ({title, footer, chilld, subtitle, className}:  PagesTemplateProps) => {
   return(
     <div className={styles.PagesTemplate}>
-        <Title text={title} />
+        <Title title={title} subtitle={subtitle} />
         <div className={[styles.LeftPanel, className].join(' ')}>
           <div className={styles.Child}>
             {chilld}

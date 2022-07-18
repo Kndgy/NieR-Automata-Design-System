@@ -269,7 +269,7 @@ const Header = styled__default["default"].div`
   color: ${(props) => props.theme.color};
   padding: 10px;
 `;
-const Content = styled__default["default"].div`
+const Content$1 = styled__default["default"].div`
   width: 100%;
   height: 90%;
   background-color: #dad4bb;
@@ -305,18 +305,32 @@ const Widget = ({ dark = false, title, content, ...props }) => {
       }, title)));
     }
   };
-  return /* @__PURE__ */ React__default["default"].createElement(WidgetParent, null, checker(), /* @__PURE__ */ React__default["default"].createElement(Content, null, /* @__PURE__ */ React__default["default"].createElement(ContentWrapper, null, content)));
+  return /* @__PURE__ */ React__default["default"].createElement(WidgetParent, null, checker(), /* @__PURE__ */ React__default["default"].createElement(Content$1, null, /* @__PURE__ */ React__default["default"].createElement(ContentWrapper, null, content)));
 };
 
 const TitleParent = styled__default["default"].div`
-  text-shadow: 6px 4px rgba(0, 0, 0, 0.3);
+
   color: ${colors$1.colors[2].hex};
   letter-spacing: 2px;
+  display: flex;
+  flex-direction: row;
+  gap: 0.5rem;
+  align-items: baseline;
+  text-shadow: 6px 4px #00000050;
+  h1{
+    margin-block-start: 0em;
+    margin-block-end: 0em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+  }
+  h3{
+    text-shadow: 6px 4px #00000000;
+  }
 `;
-const Title = ({ text, ...props }) => {
+const Title = ({ title, subtitle, ...props }) => {
   return /* @__PURE__ */ React__default["default"].createElement(TitleParent, {
     ...props
-  }, /* @__PURE__ */ React__default["default"].createElement("h1", null, text));
+  }, /* @__PURE__ */ React__default["default"].createElement("h1", null, title), /* @__PURE__ */ React__default["default"].createElement("h3", null, subtitle));
 };
 
 const FooterParent = styled__default["default"].div`
@@ -541,9 +555,65 @@ const YorhaNavLink = ({ to, filter = "", filterType, variant = "nav", text, ...p
   return /* @__PURE__ */ React__default["default"].createElement(React__default["default"].Fragment, null, checker());
 };
 
+const StyledTab = styled__default["default"].div`
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  padding: 0rem 1rem 0rem 1rem;
+  background-color: #dad4bb;
+  justify-content: space-between;
+`;
+const Separator = styled__default["default"].div`
+  width: 100%;
+  height: 2px;
+  margin: 1rem 0rem 1rem 0rem;
+  background-color: #b4af9a;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  &::after{
+    content: ".";
+    opacity: 0;
+    width: 0;
+  }
+`;
+const SeparatorStyle = styled__default["default"].div`
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  gap: 1.2rem;
+  align-items: center;
+
+`;
+const Dot = styled__default["default"].div`
+  height: 0.3rem;
+  width: 0.3rem;
+  background-color: #b4af9a;
+  border-radius: 50%;
+`;
+const Content = styled__default["default"].div`
+  overflow-y: scroll;
+  height: 100%;
+  padding: 0.5rem 1rem 0.5rem 0rem;
+  &::-webkit-scrollbar{
+    width: 0.3rem;
+  }
+  &::-webkit-scrollbar-track {
+}
+  &::-webkit-scrollbar-thumb {
+  background-color: #4e4b42;
+
+}
+`;
+const Tab = ({ content }) => {
+  return /* @__PURE__ */ React__default["default"].createElement(StyledTab, null, /* @__PURE__ */ React__default["default"].createElement(SeparatorStyle, null, /* @__PURE__ */ React__default["default"].createElement(Separator, null), " ", /* @__PURE__ */ React__default["default"].createElement(Dot, null)), /* @__PURE__ */ React__default["default"].createElement(Content, null, content), /* @__PURE__ */ React__default["default"].createElement(SeparatorStyle, null, /* @__PURE__ */ React__default["default"].createElement(Separator, null), " ", /* @__PURE__ */ React__default["default"].createElement(Dot, null)));
+};
+
 exports.Bar = Bar;
 exports.Button = Button$1;
 exports.Footer = Footer;
+exports.Tab = Tab;
 exports.Title = Title;
 exports.Widget = Widget;
 exports.YorhaNavLink = YorhaNavLink;

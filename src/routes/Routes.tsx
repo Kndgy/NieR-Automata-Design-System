@@ -13,21 +13,17 @@ export const RoutesPages = () => {
         <Route path={`/`} element={<Map/>}>
         </Route>
         <Route path={`/quest`} element={<Quest/>}>
-          {/* {QuestList.map((item)=>{ */}
-            return(
-              <Route path={`/quest/:status/`} element={<ActiveQuestsModule/>}>
-                <Route
-                  index
-                  element={
-                    <>
-                    select a data
-                    </>
-                  }
-                />
-                <Route path={`:questid`} element={<QuestModule/>}/>
-            </Route>
-            )
-          {/* })} */}
+          <Route path={`/quest/:status/`} element={<ActiveQuestsModule/>}>
+            <Route
+              index
+              element={
+                <>
+                select a data
+                </>
+              }
+            />
+            <Route path={`:questid`} element={<QuestModule/>}/>
+          </Route>
         </Route>
         <Route path="/debug" element={<Debug/>}>
           <Route path="/debug/fat" element={<>works fat</>}/>

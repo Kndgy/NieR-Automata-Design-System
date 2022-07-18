@@ -1,3 +1,5 @@
+import React from 'react';
+
 declare type ButtonProps = {
     text?: string;
     disabled?: boolean;
@@ -18,9 +20,10 @@ interface WidgetProps {
 declare const Widget: ({ dark, title, content, ...props }: WidgetProps) => JSX.Element;
 
 declare type TitleProps = {
-    text?: string;
+    title?: string;
+    subtitle?: string;
 };
-declare const Title: ({ text, ...props }: TitleProps) => JSX.Element;
+declare const Title: ({ title, subtitle, ...props }: TitleProps) => JSX.Element;
 
 declare type FooterProps = {
     text?: string;
@@ -38,4 +41,9 @@ declare type YorhaNavLinkProps = {
 };
 declare const YorhaNavLink: ({ to, filter, filterType, variant, text, ...props }: YorhaNavLinkProps) => JSX.Element;
 
-export { Bar, Button, Footer, Title, Widget, YorhaNavLink };
+declare type TabProps = {
+    content?: React.ReactNode;
+};
+declare const Tab: ({ content }: TabProps) => JSX.Element;
+
+export { Bar, Button, Footer, Tab, Title, Widget, YorhaNavLink };
