@@ -1,6 +1,6 @@
 import React from "react";
 import { Bar} from "@kaineee/nier-automata-ui-library";
-import { Outlet, useParams, useSearchParams} from "react-router-dom";
+import { Outlet, useParams} from "react-router-dom";
 import { YorhaNavLink } from "../../components";
 import PagesTemplate from "../pagesTemplate.tsx";
 import styles from './Quest.module.scss';
