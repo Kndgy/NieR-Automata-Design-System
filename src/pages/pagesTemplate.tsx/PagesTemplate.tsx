@@ -6,7 +6,7 @@ import { Title } from "../../components";
 type PagesTemplateProps = {
   title?: string;
   footer?: string;
-  chilld?: any;
+  chilld?: React.ReactNode;
   className?: string;
   subtitle?: string;
 }

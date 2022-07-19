@@ -2,7 +2,7 @@
 import React from "react";
 import { useParams} from "react-router-dom";
 import { Widget } from "../../components";
-import { getQuest } from "../../mockData/mockData";
+import { getQuest } from "../../utils/mockData/mockData";
 
 export default function QuestModule() { 
   var params = useParams();

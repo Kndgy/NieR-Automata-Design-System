@@ -5,7 +5,7 @@ import {Outlet,
   useSearchParams 
 } from "react-router-dom";
 import { Tab, YorhaNavLink } from "../../components";
-import { getArchive } from "../../mockData/mockData";
+import { getArchive } from "../../utils/mockData/mockData";
 import styles from './QuestModule.module.scss';
 
 const ActiveQuestsModule = () => {

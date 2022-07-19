@@ -4,43 +4,36 @@ import { Outlet, useParams} from "react-router-dom";
 import { YorhaNavLink } from "../../components";
 import PagesTemplate from "../pagesTemplate.tsx";
 import styles from './Quest.module.scss';
+import { SubTitle } from "../../utils/ParamAsSubTitle";
 
 let QuestList = [
   {
     Link:"active",
     Text:"Active Quests",
-    type:"/quest/active/?status=",
+    type:"/quest/Active/Quest1?status=",
   },
   {
     Link:"",
     Text:"All Quests",
-    type:"/quest/all/?status=",
+    type:"/quest/all/Quest4?status=",
   },
   {
     Link:"completed",
     Text:"Cleared Quests",
-    type:"/quest/completed/?status=",
+    type:"/quest/Completed/Quest5?status=",
   },
+
+  //temporary placeholder for the quest list  
 ]
 
-
-function capitalizeFirstLetter(string) {
-  return string.charAt(0).toUpperCase() + string.slice(1);
-}
-
 const Quest = () => {
+
   const param = useParams();
 
-  let subTitle = (`${param.status} Quests`);
-  let strip = "-";
-  if (param.status === undefined) {
-    subTitle = "";
-    strip =""
-  }
   return(
     <PagesTemplate
       title={`QUESTS`}
-      subtitle={strip + capitalizeFirstLetter(subTitle)}
+      subtitle={SubTitle(param.status)}
       footer="quests footer."
       chilld={
         <div className={styles.QuestContainer}>
