@@ -24,6 +24,10 @@ const TitleParent = styled.div`
   }
   h3{
     text-shadow: 6px 4px #00000000;
+    margin-block-start: 0em;
+    margin-block-end: 0em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
   }
 `
 
