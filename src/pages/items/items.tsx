@@ -1,5 +1,5 @@
 import React from "react";
-import PagesTemplate from "../pagesTemplate.tsx";
+import PagesTemplate from "../../templates/pagesTemplate";
 import styles from './items.module.scss';
 
 const Items = () => {

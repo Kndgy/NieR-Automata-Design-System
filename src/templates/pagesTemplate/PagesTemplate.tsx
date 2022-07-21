@@ -14,12 +14,12 @@ type PagesTemplateProps = {
 const PagesTemplate = ({title, footer, chilld, subtitle, className}:  PagesTemplateProps) => {
   return(
     <div className={styles.PagesTemplate}>
-        <Title title={title} subtitle={subtitle} />
-        <div className={[styles.LeftPanel, className].join(' ')}>
-          <div className={styles.Child}>
-            {chilld}
-          </div>
+      <Title title={title} subtitle={subtitle} />
+      <div className={[styles.LeftPanel, className].join(' ')}>
+        <div className={styles.Child}>
+          {chilld}
         </div>
+      </div>
       <div>
         <Footer text={footer} />
       </div>

@@ -26,7 +26,9 @@ export const RoutesPages = () => {
             <Route path={`:questid`} element={<QuestModule/>}/>
           </Route>
         </Route>
-        <Route path={`/items`} element={<Items/>}></Route>
+        <Route path={`/items`} element={<Items/>}>
+          
+        </Route>
         <Route path="/debug" element={<Debug/>}>
           <Route path="/debug/fat" element={<>works fat</>}/>
           <Route path="/debug/long" element={<>works long</>}/>

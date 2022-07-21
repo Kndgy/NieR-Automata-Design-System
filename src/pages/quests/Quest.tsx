@@ -2,28 +2,27 @@ import React from "react";
 import { Bar} from "@kaineee/nier-automata-ui-library";
 import { Outlet, useParams} from "react-router-dom";
 import { YorhaNavLink } from "../../components";
-import PagesTemplate from "../pagesTemplate.tsx";
+import PagesTemplate from "../../templates/pagesTemplate";
 import styles from './Quest.module.scss';
 import { SubTitle } from "../../utils/ParamAsSubTitle";
+import PagesChildTemplate from "../../templates/pagesChildTemplate";
 
 let QuestList = [
   {
-    Link:"active",
+    Link:"/quest/Active/Quest1?status=",
     Text:"Active Quests",
-    type:"/quest/Active/Quest1?status=",
+    type:"active",
   },
   {
-    Link:"",
+    Link:"/quest/all/Quest4?status=",
     Text:"All Quests",
-    type:"/quest/all/Quest4?status=",
+    type:"",
   },
   {
-    Link:"completed",
+    Link:"/quest/Completed/Quest5?status=",
     Text:"Cleared Quests",
-    type:"/quest/Completed/Quest5?status=",
+    type:"completed",
   },
-
-  //temporary placeholder for the quest list  
 ]
 
 const Quest = () => {
@@ -36,26 +35,18 @@ const Quest = () => {
       subtitle={SubTitle(param.status)}
       footer="quests footer."
       chilld={
-        <div className={styles.QuestContainer}>
-          <div className={styles.QuestsChild}>
-            <div className={styles.QuestContainer}>
-              <div className={styles.bar}>
-                <Bar/>
-              </div>
-              <div className={styles.QuestButton}>
-                {QuestList.map((item)=>(
-                  <YorhaNavLink key={item.Link} to={item.type} filter={item.Link} filterType={"status"} text={item.Text}/>
-                ))}
-              </div>
-            </div>
-            <div className={styles.outletChild}>
-              <Outlet/>
-            </div>
-          </div>
-          TEST
-        </div>
+        <PagesChildTemplate
+          LeftContent={
+            <>
+              {QuestList.map((item)=>(
+                <YorhaNavLink key={item.Link} to={item.Link} filter={item.type} filterType={"status"} text={item.Text}/>
+              ))}
+            </>
+          }
+          Outlet={<Outlet/>}
+          RightContent={<></>}
+        />
       }
-      className={styles.Quest}
     />
   )
 }
