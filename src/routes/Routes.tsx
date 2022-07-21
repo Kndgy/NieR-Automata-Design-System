@@ -6,6 +6,7 @@ import Quest from "../pages/quests"
 import ActiveQuestsModule from "../modules/questsModule/ActiveQuestsModule"
 import QuestModule from "../modules/questsModule/QuestModule"
 import Debug from "../pages/debug"
+import Items from "../pages/items"
 
 export const RoutesPages = () => {
   return(
@@ -25,6 +26,7 @@ export const RoutesPages = () => {
             <Route path={`:questid`} element={<QuestModule/>}/>
           </Route>
         </Route>
+        <Route path={`/items`} element={<Items/>}></Route>
         <Route path="/debug" element={<Debug/>}>
           <Route path="/debug/fat" element={<>works fat</>}/>
           <Route path="/debug/long" element={<>works long</>}/>
