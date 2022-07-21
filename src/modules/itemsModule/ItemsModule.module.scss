@@ -1,0 +1,31 @@
+.ItemsModule{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  gap: 3%;
+  .ItemsModuleContainer{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    gap: 2em;
+    z-index: 2;
+    .ItemTypeList{
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+  }
+  .Outlet{
+    width: 100%;
+    height: 100%;
+    z-index: 2;
+  }
+  .RightEndWidget{
+    width: 100%;
+    height: 100%;
+  }
+}

@@ -1,5 +1,4 @@
 import React from "react";
-import { Bar} from "@kaineee/nier-automata-ui-library";
 import { Outlet, useParams} from "react-router-dom";
 import { YorhaNavLink } from "../../components";
 import PagesTemplate from "../../templates/pagesTemplate";
@@ -34,6 +33,7 @@ const Quest = () => {
       title={`QUESTS`}
       subtitle={SubTitle(param.status)}
       footer="quests footer."
+      className={styles.questParent}
       chilld={
         <PagesChildTemplate
           LeftContent={
