@@ -22,7 +22,6 @@ const ItemsModule = () => {
       <Widget/>
       </div>
       <div className={styles.RightEndWidget}>
-        <Widget/>
       </div>
     </div>
   )

@@ -5,10 +5,11 @@ import styles from './PagesChildTemplate.module.scss';
 interface PagesChildTemplateProps {
   LeftContent?: React.ReactNode;
   RightContent?: React.ReactNode;
+  MiddleContent?: React.ReactNode;
   Outlet?: React.ReactNode;
 }
 
-const PagesChildTemplate = ({LeftContent, RightContent, Outlet}: PagesChildTemplateProps) => {
+const PagesChildTemplate = ({LeftContent, RightContent, MiddleContent, Outlet}: PagesChildTemplateProps) => {
   return(
     <div className={styles.ChildTemplateContainer}>
       <div className={styles.PagesChildTemplate}>
@@ -23,6 +24,9 @@ const PagesChildTemplate = ({LeftContent, RightContent, Outlet}: PagesChildTempl
         <div className={styles.OutletChild}>
           {Outlet}
         </div>
+      </div>
+      <div className={styles.MiddleContent}>
+        {MiddleContent}
       </div>
       <div className={styles.RightContent}>
         {RightContent}

@@ -1,6 +1,6 @@
 import React from "react";
 import { Outlet, useParams} from "react-router-dom";
-import { YorhaNavLink } from "../../components";
+import { Widget, YorhaNavLink } from "../../components";
 import PagesTemplate from "../../templates/pagesTemplate";
 import styles from './Quest.module.scss';
 import { SubTitle } from "../../utils/ParamAsSubTitle";
@@ -44,7 +44,9 @@ const Quest = () => {
             </>
           }
           Outlet={<Outlet/>}
-          RightContent={<></>}
+          RightContent={
+            <Widget/>
+          }
         />
       }
     />

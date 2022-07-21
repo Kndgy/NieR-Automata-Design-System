@@ -1,3 +1,4 @@
+import { Widget } from "@kaineee/nier-automata-ui-library";
 import React from "react";
 import { Outlet } from "react-router-dom";
 import { YorhaNavLink } from "../../components";
@@ -58,6 +59,9 @@ const Items = () => {
             </>
           }
           Outlet={<Outlet/>}
+          RightContent={
+            <Widget/>
+          }
         />
       }
       footer="Items Footer"

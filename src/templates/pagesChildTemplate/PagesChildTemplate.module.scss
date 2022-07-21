@@ -5,12 +5,12 @@
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+  gap: 4%;
   .PagesChildTemplate{
-    width: 45%;
+    width: 100%;
     height: 100%;
     display: flex;
     flex-direction: column;
-    gap: 20px;
     .ChildContainer{
       display: flex;
       flex-direction: row;
@@ -33,7 +33,11 @@
       height: 100%;
     }
   }
-  .RightContent{
+  .MiddleContent{
+    width: 100%;
+    height: 100%;
+  }
+  .RightContent{ 
     width: 100%;
     height: 100%;
   }
