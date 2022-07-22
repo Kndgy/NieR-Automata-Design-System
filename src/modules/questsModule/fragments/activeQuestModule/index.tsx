@@ -1,1 +1,2 @@
-export {default} from "./ActiveQuestModule";
+import QuestModule from "./ActiveQuestModule";
+export default QuestModule;

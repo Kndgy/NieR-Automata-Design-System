@@ -1,1 +1,2 @@
-export {default} from './ItemsModule'
+import ItemsModule from "./ItemsModule";
+export default ItemsModule;
