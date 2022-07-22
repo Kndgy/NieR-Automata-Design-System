@@ -3,12 +3,12 @@ import React from "react"
 import { Routes, Route} from "react-router-dom"
 import Map from "../pages/map"
 import Quest from "../pages/quests"
-import {ActiveQuestsModule} from "../modules/questsModule/ActiveQuestsModule"
-import {QuestModule} from "../modules/questsModule/QuestModule"
 import Debug from "../pages/debug"
 import Items from "../pages/items"
-import {ItemsModule} from "../modules/itemsModule/ItemsModule"
-import {ItemsActiveModule} from "../modules/itemsModule/ItemsActiveModule"
+import ActiveQuestModule from "../modules/questsModule/fragments/activeQuestModule"
+import QuestsModule from "../modules/questsModule"
+import ItemsModule from "../modules/itemsModule"
+import ActiveItemsModule from "../modules/itemsModule/fragments/activeItemsModule"
 
 export const RoutesPages = () => {
   return(
@@ -16,13 +16,13 @@ export const RoutesPages = () => {
         <Route path={`/`} element={<Map/>}>
         </Route>
         <Route path={`/quest`} element={<Quest/>}>
-          <Route path={`/quest/:status/`} element={<ActiveQuestsModule/>}>
-            <Route path={`:questid`} element={<QuestModule/>}/>
+          <Route path={`/quest/:status/`} element={<QuestsModule/>}>
+            <Route path={`:questid`} element={<ActiveQuestModule/>}/>
           </Route>
         </Route>
         <Route path={`/items`} element={<Items/>}>
           <Route path="/items/:type" element={<ItemsModule/>}>
-            <Route path={`:itemid`} element={<ItemsActiveModule/>}/>
+            <Route path={`:itemid`} element={<ActiveItemsModule/>}/>
           </Route>
         </Route>
         <Route path="/debug" element={<Debug/>}>

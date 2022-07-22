@@ -1,9 +1,9 @@
 import React from "react";
 import { useParams } from "react-router-dom";
-import { Widget } from "../../components";
-import { getItemsId } from "../../utils/mockData/ItemsMockData";
+import { Widget } from "../../../../components";
+import { getItemsId } from "../../../../utils/mockData/ItemsMockData";
 
-export const ItemsActiveModule = () => {
+const ActiveItemsModule = () => {
   let params = useParams();
   let items = getItemsId(params.itemid);
   let itemsId = getItemsId(parseInt(params.itemid, 10));
@@ -21,3 +21,5 @@ export const ItemsActiveModule = () => {
     />
   )
 }
+
+export default ActiveItemsModule;

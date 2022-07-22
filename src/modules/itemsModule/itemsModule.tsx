@@ -5,7 +5,7 @@ import { Tab, YorhaNavLink } from "../../components";
 import { getItemsData } from "../../utils/mockData/ItemsMockData";
 import { Outlet, useLocation, useSearchParams } from "react-router-dom";
 
-export const ItemsModule = () => {
+const ItemsModule = () => {
 
   let [searchParams] = useSearchParams();
   let ItemsLists = getItemsData();
@@ -42,3 +42,5 @@ export const ItemsModule = () => {
     </div>
   )
 }
+
+export default ItemsModule;
