@@ -7,7 +7,7 @@ import Debug from "../pages/debug"
 import Items from "../pages/items"
 import ActiveQuestModule from "../modules/questsModule/fragments/activeQuestModule"
 import QuestsModule from "../modules/questsModule"
-import ItemsModule from "../modules/itemsModule"
+import ItemsModule from "../modules/itemsModule/ItemsModule"
 import ActiveItemsModule from "../modules/itemsModule/fragments/activeItemsModule"
 
 export const RoutesPages = () => {
