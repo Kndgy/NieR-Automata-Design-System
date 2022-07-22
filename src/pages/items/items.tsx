@@ -1,9 +1,10 @@
 import { Widget } from "@kaineee/nier-automata-ui-library";
 import React from "react";
-import { Outlet } from "react-router-dom";
+import { Outlet, useParams } from "react-router-dom";
 import { YorhaNavLink } from "../../components";
 import PagesChildTemplate from "../../templates/pagesChildTemplate";
 import PagesTemplate from "../../templates/pagesTemplate";
+import { SubTitle } from "../../utils/ParamAsSubTitle";
 import styles from './items.module.scss';
 
 let ItemsLists = [
@@ -45,10 +46,13 @@ let ItemsLists = [
 ]
 
 const Items = () => {
+
+  const param = useParams();
+
   return(
     <PagesTemplate
       title={`ITEMS`}
-      subtitle={`items subtitle`}
+      subtitle={SubTitle(param.type, "Items")}
       child={
         <PagesChildTemplate
           LeftContent={

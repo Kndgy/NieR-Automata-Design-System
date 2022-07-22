@@ -1,9 +1,9 @@
-export function SubTitle(ParamType){
+export function SubTitle(ParamType, ParamTail){
   function capitalizeFirstLetter(string) {
     return string.charAt(0).toUpperCase() + string.slice(1);
   }
 
-  let subTitle = (`${ParamType} Quests`);
+  let subTitle = (`${ParamType} ${ParamTail}`);
   let strip = "-";
   if (ParamType === undefined) {
     subTitle = "";

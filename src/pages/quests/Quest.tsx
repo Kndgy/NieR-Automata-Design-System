@@ -31,7 +31,7 @@ const Quest = () => {
   return(
     <PagesTemplate
       title={`QUESTS`}
-      subtitle={SubTitle(param.status)}
+      subtitle={SubTitle(param.status, "Quest")}
       footer="quests footer."
       className={styles.questParent}
       child={
