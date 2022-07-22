@@ -1,10 +1,9 @@
-
 import React from "react";
 import { useParams} from "react-router-dom";
 import { Widget } from "../../components";
 import { getQuest } from "../../utils/mockData/mockData";
 
-export default function QuestModule() { 
+export function QuestModule() { 
   var params = useParams();
   var archive = getQuest(params.questid);
   return(

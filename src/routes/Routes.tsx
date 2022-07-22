@@ -3,12 +3,12 @@ import React from "react"
 import { Routes, Route} from "react-router-dom"
 import Map from "../pages/map"
 import Quest from "../pages/quests"
-import ActiveQuestsModule from "../modules/questsModule/ActiveQuestsModule"
-import QuestModule from "../modules/questsModule/QuestModule"
+import {ActiveQuestsModule} from "../modules/questsModule/ActiveQuestsModule"
+import {QuestModule} from "../modules/questsModule/QuestModule"
 import Debug from "../pages/debug"
 import Items from "../pages/items"
-import ItemsModule from "../modules/itemsModule/ItemsModule"
-import ItemsActiveModule from "../modules/itemsModule/ItemsActiveModule"
+import {ItemsModule} from "../modules/itemsModule/ItemsModule"
+import {ItemsActiveModule} from "../modules/itemsModule/ItemsActiveModule"
 
 export const RoutesPages = () => {
   return(
