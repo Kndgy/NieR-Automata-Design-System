@@ -39,8 +39,8 @@ let ItemsLists = [
   },
   {
     Link:"/items/caughtfish/?type=",
-    Text:"Caught Fish Items",
-    type:"caughtfish",
+    Text:"Caught Fish",
+    type:"fish",
   }
 ]
 

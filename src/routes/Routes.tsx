@@ -8,6 +8,7 @@ import QuestModule from "../modules/questsModule/QuestModule"
 import Debug from "../pages/debug"
 import Items from "../pages/items"
 import ItemsModule from "../modules/itemsModule/ItemsModule"
+import ItemsActiveModule from "../modules/itemsModule/ItemsActiveModule"
 
 export const RoutesPages = () => {
   return(
@@ -21,14 +22,14 @@ export const RoutesPages = () => {
         </Route>
         <Route path={`/items`} element={<Items/>}>
           <Route path="/items/:type" element={<ItemsModule/>}>
-            <Route path={`:itemid`} element={<>h</>}/>
+            <Route path={`:itemid`} element={<ItemsActiveModule/>}/>
           </Route>
         </Route>
         <Route path="/debug" element={<Debug/>}>
           <Route path="/debug/fat" element={<>works fat</>}/>
           <Route path="/debug/long" element={<>works long</>}/>
           <Route path="/debug/transparent" element={<>works transparent</>}/>
-          <Route path="/debug/neutral" element={<>works neutral</>}/>
+          <Route path="/debug/neutral" element={<>works neutral</>}/> 
         </Route>
         <Route
         path="*"

@@ -2,8 +2,15 @@ import React from "react";
 import { Bar, Widget } from "@kaineee/nier-automata-ui-library";
 import styles from "./ItemsModule.module.scss";
 import { Tab, YorhaNavLink } from "../../components";
+import { getItemsData } from "../../utils/mockData/ItemsMockData";
+import { Outlet, useLocation, useSearchParams } from "react-router-dom";
 
 const ItemsModule = () => {
+
+  let [searchParams] = useSearchParams();
+  let ItemsLists = getItemsData();
+  let location = useLocation()
+
   return(
     <div className={styles.ItemsModule}>
       <div className={styles.ItemsModuleContainer}>
@@ -13,13 +20,22 @@ const ItemsModule = () => {
         <Tab
           content={
             <div className={styles.ItemTypeList}>
-              h
+              {ItemsLists
+              .filter((ItemsLists)=>{
+                let filter = searchParams.get("type");
+                if(!filter) return true;
+                let type = ItemsLists.type.toLowerCase();
+                return type.startsWith(filter);
+              })
+              .map((item)=>(
+                <YorhaNavLink key={item.id} to={`/items/${item.type}/${item.id}` + location.search} text={item.name}/>
+              ))}
             </div>
           }
         />
       </div>
       <div className={styles.Outlet}>
-      <Widget/>
+        <Outlet/>
       </div>
       <div className={styles.RightEndWidget}>
       </div>
