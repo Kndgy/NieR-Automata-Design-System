@@ -49,7 +49,7 @@ const Items = () => {
     <PagesTemplate
       title={`ITEMS`}
       subtitle={`items subtitle`}
-      chilld={
+      child={
         <PagesChildTemplate
           LeftContent={
             <>

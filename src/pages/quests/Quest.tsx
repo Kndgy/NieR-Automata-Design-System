@@ -34,7 +34,7 @@ const Quest = () => {
       subtitle={SubTitle(param.status)}
       footer="quests footer."
       className={styles.questParent}
-      chilld={
+      child={
         <PagesChildTemplate
           LeftContent={
             <>

@@ -1,12 +1,15 @@
 import React from "react";
 import {Title, Bar, Button, Footer} from '@kaineee/nier-automata-ui-library';
 import styles from './Map.module.scss';
+import PagesTemplate from "../../templates/pagesTemplate";
+import PagesChildTemplate from "../../templates/pagesChildTemplate";
 
 const Map = () => {
   return(
-    <div className={styles.Map}>
-        <Title text="MAP"/>
-      <div className={styles.ContentContainer}>
+    <PagesTemplate
+      title="MAP"
+      child={
+        <div className={styles.ContentContainer}>
         <div className={styles.LeftPanel}>
             <div className={styles.LeftPanelChild}>
               <div className={styles.Bar}>
@@ -30,10 +33,9 @@ const Map = () => {
           </div>
         </div>
       </div>
-      <div>
-        <Footer text="Quests Footer."/>
-      </div>
-    </div>
+      }
+      footer="Map Footer"
+    />
   )
 }
 

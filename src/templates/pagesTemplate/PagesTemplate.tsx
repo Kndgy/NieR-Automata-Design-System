@@ -5,18 +5,18 @@ import { Footer, Title } from "../../components";
 type PagesTemplateProps = {
   title?: string;
   footer?: string;
-  chilld?: React.ReactNode;
+  child?: React.ReactNode;
   className?: string;
   subtitle?: string;
 }
 
-const PagesTemplate = ({title, footer, chilld, subtitle, className}:  PagesTemplateProps) => {
+const PagesTemplate = ({title, footer, child, subtitle, className}:  PagesTemplateProps) => {
   return(
     <div className={styles.PagesTemplate}>
       <Title title={title} subtitle={subtitle} />
       <div className={[styles.LeftPanel, className].join(' ')}>
         <div className={styles.Child}>
-          {chilld}
+          {child}
         </div>
       </div>
       <div>
