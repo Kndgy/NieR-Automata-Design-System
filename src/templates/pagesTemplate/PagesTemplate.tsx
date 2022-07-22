@@ -1,7 +1,6 @@
 import React from "react";
-import {Footer} from '@kaineee/nier-automata-ui-library';
 import styles from './PagesTemplate.module.scss';
-import { Title } from "../../components";
+import { Footer, Title } from "../../components";
 
 type PagesTemplateProps = {
   title?: string;
