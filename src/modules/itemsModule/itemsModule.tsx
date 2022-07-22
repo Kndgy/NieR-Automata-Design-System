@@ -1,5 +1,5 @@
 import React from "react";
-import { Bar, Widget } from "@kaineee/nier-automata-ui-library";
+import { Bar} from "@kaineee/nier-automata-ui-library";
 import styles from "./ItemsModule.module.scss";
 import { Tab, YorhaNavLink } from "../../components";
 import { getItemsData } from "../../utils/mockData/ItemsMockData";
