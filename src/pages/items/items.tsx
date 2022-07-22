@@ -53,6 +53,7 @@ const Items = () => {
     <PagesTemplate
       title={`ITEMS`}
       subtitle={SubTitle(param.type, "Items")}
+      className={styles.itemsParent}
       child={
         <PagesChildTemplate
           LeftContent={

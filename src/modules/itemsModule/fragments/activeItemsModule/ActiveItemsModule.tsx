@@ -5,7 +5,6 @@ import { getItemsId } from "../../../../utils/mockData/ItemsMockData";
 
 const ActiveItemsModule = () => {
   let params = useParams();
-  let items = getItemsId(params.itemid);
   let itemsId = getItemsId(parseInt(params.itemid, 10));
 
   return(

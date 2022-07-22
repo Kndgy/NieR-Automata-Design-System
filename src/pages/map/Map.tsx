@@ -1,8 +1,7 @@
 import React from "react";
-import {Title, Bar, Button, Footer} from '@kaineee/nier-automata-ui-library';
+import {Bar, Button} from '@kaineee/nier-automata-ui-library';
 import styles from './Map.module.scss';
 import PagesTemplate from "../../templates/pagesTemplate";
-import PagesChildTemplate from "../../templates/pagesChildTemplate";
 
 const Map = () => {
   return(
