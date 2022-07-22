@@ -4,7 +4,7 @@ import colors from '../colors/colors.json';
 
 interface WidgetProps {
   dark?: boolean;
-  title?: string;
+  title?: string | number;
   content?: any;
 }
 
