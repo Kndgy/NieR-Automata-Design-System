@@ -12,6 +12,7 @@ import ActiveItemsModule from "../modules/itemsModule/fragments/activeItemsModul
 import Weapons from "../pages/weapons"
 import WeaponsModule from "../modules/weaponsModule"
 import ActiveWeaponsModule from "../modules/weaponsModule/fragments/activeWeaponsModule"
+import Intel from "../pages/intel"
 
 export const RoutesPages = () => {
   return(
@@ -32,6 +33,9 @@ export const RoutesPages = () => {
           <Route path={`/weapons/:type`} element={<WeaponsModule/>}>
             <Route path={`:weaponid`} element={<ActiveWeaponsModule/>}/>
           </Route>
+        </Route>
+        <Route path={'/intel'} element ={<Intel/>}>
+
         </Route>
         {/* components debug pages */}
         <Route path="/debug" element={<Debug/>}>
