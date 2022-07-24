@@ -9,6 +9,7 @@ import ActiveQuestModule from "../modules/questsModule/fragments/activeQuestModu
 import QuestsModule from "../modules/questsModule"
 import ItemsModule from "../modules/itemsModule/ItemModule"
 import ActiveItemsModule from "../modules/itemsModule/fragments/activeItemsModule"
+import Weapons from "../pages/weapons"
 
 export const RoutesPages = () => {
   return(
@@ -25,12 +26,19 @@ export const RoutesPages = () => {
             <Route path={`:itemid`} element={<ActiveItemsModule/>}/>
           </Route>
         </Route>
+        <Route path={`/weapons`} element={<Weapons/>}>
+          <Route path={`/weapons/:type`} element={<Weapons/>}>
+            <Route path={`:weaponid`} element={<Weapons/>}/>
+          </Route>
+        </Route>
+        {/* components debug pages */}
         <Route path="/debug" element={<Debug/>}>
           <Route path="/debug/fat" element={<>works fat</>}/>
           <Route path="/debug/long" element={<>works long</>}/>
           <Route path="/debug/transparent" element={<>works transparent</>}/>
           <Route path="/debug/neutral" element={<>works neutral</>}/> 
         </Route>
+        {/* components debug pages */}
         <Route
         path="*"
         element={
