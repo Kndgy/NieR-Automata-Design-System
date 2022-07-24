@@ -10,6 +10,8 @@ import QuestsModule from "../modules/questsModule"
 import ItemsModule from "../modules/itemsModule/ItemModule"
 import ActiveItemsModule from "../modules/itemsModule/fragments/activeItemsModule"
 import Weapons from "../pages/weapons"
+import WeaponsModule from "../modules/weaponsModule"
+import ActiveWeaponsModule from "../modules/weaponsModule/fragments/activeWeaponsModule"
 
 export const RoutesPages = () => {
   return(
@@ -27,8 +29,8 @@ export const RoutesPages = () => {
           </Route>
         </Route>
         <Route path={`/weapons`} element={<Weapons/>}>
-          <Route path={`/weapons/:type`} element={<Weapons/>}>
-            <Route path={`:weaponid`} element={<Weapons/>}/>
+          <Route path={`/weapons/:type`} element={<WeaponsModule/>}>
+            <Route path={`:weaponid`} element={<ActiveWeaponsModule/>}/>
           </Route>
         </Route>
         {/* components debug pages */}
