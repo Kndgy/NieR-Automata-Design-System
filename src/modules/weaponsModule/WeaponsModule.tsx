@@ -29,11 +29,18 @@ let WeaponsTypeList = [
 
 const WeaponsModule = () => {
   return(
-    <div className={styles.WeaponsListContainer}>
-        {WeaponsTypeList.map((item)=>(
-          <YorhaNavLink key={item.name} to={`/weapons${item.link}`} text={item.name}/>
-        ))}
-    </div>
+    <PagesChildTemplate
+    lessRightSpace={true}
+      LeftContent=
+        {
+          <div className={styles.parent}>
+            {WeaponsTypeList.map((item)=>(
+              <YorhaNavLink variant="neutral" key={item.name} to={`/weapons${item.link}`} text={item.name}/>
+            ))}
+          </div>
+        }
+      Outlet={<Outlet/>}
+    />
   )
 }
 

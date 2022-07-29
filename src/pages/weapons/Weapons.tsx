@@ -4,21 +4,6 @@ import { Outlet } from "react-router-dom";
 import PagesChildTemplate from "../../templates/pagesChildTemplate";
 import PagesTemplate from "../../templates/pagesTemplate";
 
-const WeaponsLList = [
-  {
-    name:"Small Sword"
-  },
-  {
-    name:"Large Sword"
-  },
-  {
-    name:"Spears"
-  },
-  {
-    name:"Combar Bracwers"
-  },
-]
-
 const Weapons = () => {
   return(
     <PagesTemplate

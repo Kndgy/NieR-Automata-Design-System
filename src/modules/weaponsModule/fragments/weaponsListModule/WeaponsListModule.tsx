@@ -1,14 +1,14 @@
 import React from "react";
 import { Tab, Widget } from "../../../../components";
 import PagesChildTemplate from "../../../../templates/pagesChildTemplate";
-import styles from "./ActiveWeaponsModule.module.scss";
+import styles from "./WeaponsListModule.module.scss";
 
-const ActiveWeaponsModule = () => {
+const WeaponsListModule = () => {
   return(
     <div className={styles.ActiveWeaponsContainer}>
-      <Tab/>
+      working
     </div>
   )
 }
 
-export default ActiveWeaponsModule;
+export default WeaponsListModule;
