@@ -28,7 +28,7 @@ const ItemModule = () => {
                 return type.startsWith(filter);
               })
               .map((item)=>(
-                <YorhaNavLink key={item.id} to={`/items/${item.type}/${item.id}` + location.search} text={item.name}/>
+                <YorhaNavLink variant="transparent" key={item.id} to={`/items/${item.type}/${item.id}` + location.search} text={item.name}/>
               ))}
             </div>
           }
