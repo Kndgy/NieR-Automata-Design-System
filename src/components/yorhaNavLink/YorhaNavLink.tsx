@@ -158,7 +158,7 @@ CustomNavLink.defaultProps = {
 
 const theme = {
   backgroundImage: `linear-gradient(90deg, #b4af9a 50%, #b4af9a 50%, #57544a 50%, #57544a 100%)`,
-  width: `120%`,
+  width: `110%`,
   padding: `0rem`
 };
 
