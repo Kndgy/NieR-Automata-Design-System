@@ -7,9 +7,16 @@ interface PagesChildTemplateProps {
   RightContent?: React.ReactNode;
   MiddleContent?: React.ReactNode;
   Outlet?: React.ReactNode;
+  extraMidSpace?: boolean;
+  lessRightSpace?: boolean;
 }
 
-const PagesChildTemplate = ({LeftContent, RightContent, MiddleContent, Outlet}: PagesChildTemplateProps) => {
+const PagesChildTemplate = ({LeftContent, RightContent, MiddleContent, Outlet, 
+  extraMidSpace = false,
+  lessRightSpace = false
+  }: PagesChildTemplateProps) => {
+  const space = extraMidSpace ? styles.extraSpace : "";
+  const rightSpace = lessRightSpace ? styles.lessRightSpace : "";
   return(
     <div className={styles.ChildTemplateContainer}>
       <div className={styles.PagesChildTemplate}>
@@ -25,10 +32,10 @@ const PagesChildTemplate = ({LeftContent, RightContent, MiddleContent, Outlet}: 
           {Outlet}
         </div>
       </div>
-      <div className={styles.MiddleContent}>
+      <div className={[`${styles.MiddleContent}`, space].join(' ')}>
         {MiddleContent}
       </div>
-      <div className={styles.RightContent}>
+      <div className={[`${styles.RightContent}`, rightSpace].join(' ')}>
         {RightContent}
       </div>
     </div>
