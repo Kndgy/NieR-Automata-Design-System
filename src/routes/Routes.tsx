@@ -30,6 +30,10 @@ export const RoutesPages = () => {
           </Route>
         </Route>
         <Route path={`/weapons`} element={<Weapons/>}>
+          <Route
+            index
+            element={<></>}
+          />
           <Route path={`/weapons/:type`} element={<WeaponsModule/>}>
             <Route path={`:weaponid`} element={<ActiveWeaponsModule/>}/>
           </Route>

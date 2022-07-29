@@ -1,10 +1,16 @@
 import React from "react";
+import { Tab, Widget } from "../../../../components";
+import PagesChildTemplate from "../../../../templates/pagesChildTemplate";
 
 const ActiveWeaponsModule = () => {
   return(
-    <>
-    activeWeaponsModule
-    </>
+    <PagesChildTemplate
+      LeftContent={
+        <Tab
+        content={<>test</>}
+        />
+      }
+    />
   )
 }
 

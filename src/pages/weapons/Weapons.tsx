@@ -25,6 +25,8 @@ const Weapons = () => {
       title="WEAPONS"
       child={
         <PagesChildTemplate
+          lessRightSpace={true}
+          extraMidSpace={true}
           LeftContent={
             <>
               <YorhaNavLink variant="button" to={"list"} text="Weapons"/>
@@ -33,12 +35,10 @@ const Weapons = () => {
             </>
           }
           MiddleContent={
-            <>
             <Outlet/>
-            </>
           }
           RightContent={
-            <>right</>
+            <></>
           }
         />
       }
