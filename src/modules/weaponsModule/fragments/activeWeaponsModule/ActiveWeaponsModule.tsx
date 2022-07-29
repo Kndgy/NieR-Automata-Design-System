@@ -1,6 +1,5 @@
 import React from "react";
-import { Tab, Widget } from "../../../../components";
-import PagesChildTemplate from "../../../../templates/pagesChildTemplate";
+import {Tab} from "../../../../components";
 import styles from "./ActiveWeaponsModule.module.scss";
 
 const ActiveWeaponsModule = () => {
