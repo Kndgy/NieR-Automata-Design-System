@@ -1,6 +1,6 @@
 import React from "react";
 import { ComponentStory, ComponentMeta } from "@storybook/react";
-import {Bar} from "../components/bar";
+import {Bar} from "../components/Bar";
 
 export default {
   title: 'Library/Bar',

@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components"
-import colors from '../colors/colors.json'
+import colors from './colors.json'
 
 type TitleProps = {
   title?: string;

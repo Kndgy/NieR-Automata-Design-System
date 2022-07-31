@@ -1,6 +1,6 @@
 import React from "react";
 import styled, { ThemeProvider } from 'styled-components';
-import colors from '../colors/colors.json';
+import colors from './colors.json';
 
 interface BarProps {
   dark?: boolean;

@@ -2,7 +2,7 @@ import React from "react";
 import { Bar} from "@kaineee/nier-automata-ui-library";
 import styles from './Navbar.module.scss';
 import {RoutesConfig } from "../../routes/Routes";
-import { YorhaNavLink } from "../../components/yorhaNavLink";
+import { YorhaNavLink } from "../../components/YorhaNavLink";
 import { Outlet } from "react-router-dom";
 
 const NavbarModule = () =>{

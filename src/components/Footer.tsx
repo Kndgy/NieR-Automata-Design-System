@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
-import { Bar } from "../bar"
-import colors from '../colors/colors.json'
+import { Bar } from "./Bar"
+import colors from './colors.json'
 
 type FooterProps = {
   text?: string;

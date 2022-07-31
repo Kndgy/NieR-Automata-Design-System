@@ -1,6 +1,6 @@
 import React from "react";
 import { ComponentStory, ComponentMeta } from "@storybook/react";
-import {Widget} from "../components/widget";
+import {Widget} from "../components/Widget";
 
 export default {
   title: 'Library/Widget',

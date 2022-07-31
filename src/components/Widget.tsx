@@ -1,6 +1,6 @@
 import React from "react";
 import styled, { ThemeProvider } from 'styled-components';
-import colors from '../colors/colors.json';
+import colors from './colors.json';
 
 interface WidgetProps {
   dark?: boolean;
@@ -31,7 +31,9 @@ const Content = styled.div`
 `;
 
 const ContentWrapper = styled.div`
-padding: 10px
+  width: 100%;
+  height: 100%;
+  padding: 10px
 `;
   
 Header.defaultProps = {

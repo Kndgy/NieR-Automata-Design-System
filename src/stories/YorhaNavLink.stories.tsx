@@ -1,6 +1,6 @@
 import React from "react";
 import { ComponentMeta } from "@storybook/react";
-import {YorhaNavLink} from "../components/yorhaNavLink";
+import {YorhaNavLink} from "../components/YorhaNavLink";
 import { withRouter } from 'storybook-addon-react-router-v6';
 
 export default {
