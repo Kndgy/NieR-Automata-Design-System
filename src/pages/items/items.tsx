@@ -5,7 +5,6 @@ import { YorhaNavLink } from "../../components";
 import PagesChildTemplate from "../../templates/pagesChildTemplate";
 import PagesTemplate from "../../templates/pagesTemplate";
 import { SubTitle } from "../../utils/ParamAsSubTitle";
-import styles from './items.module.scss';
 
 let ItemsLists = [
   {
@@ -53,7 +52,6 @@ const Items = () => {
     <PagesTemplate
       title={`ITEMS`}
       subtitle={SubTitle(param.type, "Items")}
-      className={styles.itemsParent}
       child={
         <PagesChildTemplate
           LeftContent={

@@ -2,7 +2,6 @@ import React from "react";
 import { Outlet, useParams} from "react-router-dom";
 import { Widget, YorhaNavLink } from "../../components";
 import PagesTemplate from "../../templates/pagesTemplate";
-import styles from './Quest.module.scss';
 import { SubTitle } from "../../utils/ParamAsSubTitle";
 import PagesChildTemplate from "../../templates/pagesChildTemplate";
 
@@ -33,7 +32,6 @@ const Quest = () => {
       title={`QUESTS`}
       subtitle={SubTitle(param.status, "Quest")}
       footer="quests footer."
-      className={styles.questParent}
       child={
         <PagesChildTemplate
           LeftContent={
