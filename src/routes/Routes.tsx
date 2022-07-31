@@ -1,6 +1,6 @@
 import { Title } from "@kaineee/nier-automata-ui-library"
 import React from "react"
-import { Routes, Route} from "react-router-dom"
+import { Routes, Route, Navigate} from "react-router-dom"
 import Map from "../pages/map"
 import Quest from "../pages/quests"
 import Debug from "../pages/debug"
@@ -14,12 +14,14 @@ import WeaponsModule from "../modules/weaponsModule"
 import ActiveWeaponsModule from "../modules/weaponsModule/fragments/activeWeaponsModule"
 import Intel from "../pages/intel"
 import WeaponsListModule from "../modules/weaponsModule/fragments/weaponsListModule"
+import NavbarModule from "../modules/NavBarModule"
 
 export const RoutesPages = () => {
   return(
     <Routes>
-        <Route path={`/`} element={<Map/>}>
-        </Route>
+      <Route path={`/`} element={<NavbarModule/>}>
+        <Route path="/" element={<Navigate to="/map"/>}/>
+        <Route path={'/map'} element={<Map/>}/>
         <Route path={`/quest`} element={<Quest/>}>
           <Route path={`/quest/:status/`} element={<QuestsModule/>}>
             <Route path={`:questid`} element={<ActiveQuestModule/>}/>
@@ -42,7 +44,6 @@ export const RoutesPages = () => {
           </Route>
         </Route>
         <Route path={'/intel'} element ={<Intel/>}>
-
         </Route>
         {/* components debug pages */}
         <Route path="/debug" element={<Debug/>}>
@@ -53,11 +54,12 @@ export const RoutesPages = () => {
         </Route>
         {/* components debug pages */}
         <Route
-        path="*"
-        element={
-          <Title text="CLASSIFIED" />
-        }
-        />
+          path="*"
+          element={
+            <Title text="CLASSIFIED" />
+          }
+          />
+      </Route>
     </Routes>
   )
 }
@@ -66,7 +68,7 @@ export const RoutesConfig = {
  RoutesConfigs: [
   {
       Text:`MAP`,
-      Link:``,
+      Link:`map`,
     },
     {
       Text:"QUESTS",
