@@ -9,6 +9,7 @@ let WeaponsMockData = [
     type: "small",
     typeName: "small swords",
     image: "",
+    id:1
   },
   {
     name: "large swords",
@@ -20,6 +21,7 @@ let WeaponsMockData = [
     type: "large",
     typeName: "large swords",
     image: "",
+    id:2
   },
   {
     name: "spears",
@@ -31,6 +33,7 @@ let WeaponsMockData = [
     type: "spear",
     typeName: "spears",
     image: "",
+    id:3
   },
   {
     name: "Combat Bracers",
@@ -42,9 +45,14 @@ let WeaponsMockData = [
     type: "bracer",
     typeName: "combat bracers",
     image: "",
+    id:4
   }
 ]
 
 export function getWeaponsArchive(){
   return WeaponsMockData;
+}
+
+export function getWeaponsArchiveid(id){
+  return WeaponsMockData.find(weapon => weapon.id === id);
 }

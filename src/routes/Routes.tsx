@@ -60,6 +60,7 @@ export const RoutesPages = () => {
           }
           />
       </Route>
+      {/* <Route path={'/test'} element={<>test</>}/> */}
     </Routes>
   )
 }
