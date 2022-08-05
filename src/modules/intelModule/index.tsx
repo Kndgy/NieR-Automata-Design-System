@@ -1,2 +1,1 @@
-import IntelModule from "./IntelModule";
-export default IntelModule;
+export {IntelModule} from "./IntelModule";

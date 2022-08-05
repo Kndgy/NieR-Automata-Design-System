@@ -1,9 +1,9 @@
 import React from "react";
 import { Outlet } from "react-router-dom";
-import { Tab, Widget } from "../../../../components";
+import { Tab, Widget } from "../../components";
 import styles from "./WeaponsListModule.module.scss";
 
-const WeaponsListModule = () => {
+export const WeaponsListModule = () => {
   return(
     <div className={styles.WeaponsListContainer}>
       <Widget title={"Weapon Type"}
@@ -24,5 +24,3 @@ const WeaponsListModule = () => {
     </div>
   )
 }
-
-export default WeaponsListModule;

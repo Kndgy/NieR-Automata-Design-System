@@ -1,7 +1,5 @@
 import React from "react";
 
-const IntelModule = () => {
+export const IntelModule = () => {
   return <div>IntelModule</div>;
 }
-
-export default IntelModule;

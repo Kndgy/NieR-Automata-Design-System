@@ -1,20 +1,16 @@
-import { Title } from "@kaineee/nier-automata-ui-library"
 import React from "react"
+import { Title } from "@kaineee/nier-automata-ui-library"
 import { Routes, Route, Navigate} from "react-router-dom"
 import Map from "../pages/map"
 import Quest from "../pages/quests"
 import Debug from "../pages/debug"
 import Items from "../pages/items"
-import ActiveQuestModule from "../modules/questsModule/fragments/activeQuestModule"
-import QuestsModule from "../modules/questsModule"
-import ItemsModule from "../modules/itemsModule/ItemModule"
-import ActiveItemsModule from "../modules/itemsModule/fragments/activeItemsModule"
 import Weapons from "../pages/weapons"
-import WeaponsModule from "../modules/weaponsModule"
-import ActiveWeaponsModule from "../modules/weaponsModule/fragments/activeWeaponsModule"
 import Intel from "../pages/intel"
-import WeaponsListModule from "../modules/weaponsModule/fragments/weaponsListModule"
-import NavbarModule from "../modules/NavBarModule"
+import {ItemsModule, ActiveItemsModule} from "../modules/itemsModule"
+import {WeaponsModule, ActiveWeaponsModule, WeaponsListModule} from "../modules/weaponsModule"
+import {NavbarModule} from "../modules/NavBarModule"
+import { QuestsModule, ActiveQuestsModule } from "../modules/questsModule"
 
 export const RoutesPages = () => {
   return(
@@ -24,7 +20,7 @@ export const RoutesPages = () => {
         <Route path={'/map'} element={<Map/>}/>
         <Route path={`/quest`} element={<Quest/>}>
           <Route path={`/quest/:status/`} element={<QuestsModule/>}>
-            <Route path={`:questid`} element={<ActiveQuestModule/>}/>
+            <Route path={`:questid`} element={<ActiveQuestsModule/>}/>
           </Route>
         </Route>
         <Route path={`/items`} element={<Items/>}>

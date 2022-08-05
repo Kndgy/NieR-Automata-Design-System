@@ -1,9 +1,9 @@
 import React from "react";
 import { useParams} from "react-router-dom";
-import { Widget } from "../../../../components";
-import { getQuest } from "../../../../utils/mockData/mockData";
+import { Widget } from "../../components";
+import { getQuest } from "../../utils/mockData/mockData";
 
-const QuestModule = () => { 
+export const ActiveQuestsModule = () => { 
   var params = useParams();
   var archive = getQuest(params.questid);
   return(
@@ -23,5 +23,3 @@ const QuestModule = () => {
     />
   );
 }
-
-export default QuestModule;

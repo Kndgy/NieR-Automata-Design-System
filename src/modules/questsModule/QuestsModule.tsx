@@ -8,7 +8,7 @@ import { Tab, YorhaNavLink } from "../../components";
 import { getArchive } from "../../utils/mockData/mockData";
 import styles from './QuestModule.module.scss';
 
-const ActiveQuestsModule = () => {
+export const QuestsModule = () => {
   let [searchParams] = useSearchParams();
 
   let archive = getArchive();
@@ -43,5 +43,3 @@ const ActiveQuestsModule = () => {
     </div>
   )
 }
-
-export default ActiveQuestsModule;

@@ -27,7 +27,7 @@ let WeaponsTypeList = [
   }
 ]
 
-const WeaponsModule = () => {
+export const WeaponsModule = () => {
   return(
     <PagesChildTemplate
     lessRightSpace={true}
@@ -43,5 +43,3 @@ const WeaponsModule = () => {
     />
   )
 }
-
-export default WeaponsModule;

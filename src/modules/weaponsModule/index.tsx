@@ -1,2 +1,3 @@
-import WeaponsModule from "./WeaponsModule";
-export default WeaponsModule;
+export {WeaponsModule} from "./WeaponsModule";
+export {ActiveWeaponsModule} from "./ActiveWeaponsModule";
+export {WeaponsListModule} from "./WeaponsListModule";

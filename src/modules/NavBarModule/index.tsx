@@ -1,2 +1,1 @@
-import NavbarModule from "./NavbarModule";
-export default NavbarModule;
+export {NavbarModule} from "./NavbarModule";

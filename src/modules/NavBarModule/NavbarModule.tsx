@@ -5,7 +5,7 @@ import {RoutesConfig } from "../../routes/Routes";
 import { YorhaNavLink } from "../../components/YorhaNavLink";
 import { Outlet } from "react-router-dom";
 
-const NavbarModule = () =>{
+export const NavbarModule = () =>{
   return(
     <div className={styles.NavBarModule}>
       <div className={styles.navContainer}>
@@ -28,5 +28,3 @@ const NavbarModule = () =>{
     </div>
   )
 }
-
-export default NavbarModule;
