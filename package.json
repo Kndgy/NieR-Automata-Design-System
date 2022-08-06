@@ -1,6 +1,6 @@
 {
   "name": "@kaineee/nier-automata-ui-library",
-  "version": "0.2.8",
+  "version": "0.2.9",
   "description": "react ui library component based of nier automata settings ui",
   "private": false,
   "scripts": {

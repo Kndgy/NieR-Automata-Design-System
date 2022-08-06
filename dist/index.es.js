@@ -266,7 +266,9 @@ const Content$1 = styled.div`
   background-color: #dad4bb;
 `;
 const ContentWrapper = styled.div`
-padding: 10px
+  width: 100%;
+  height: 100%;
+  padding: 10px
 `;
 Header.defaultProps = {
   theme: {
@@ -316,6 +318,10 @@ const TitleParent = styled.div`
   }
   h3{
     text-shadow: 6px 4px #00000000;
+    margin-block-start: 0em;
+    margin-block-end: 0em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
   }
 `;
 const Title = ({ title, subtitle, ...props }) => {
@@ -335,7 +341,7 @@ const FooterParent = styled.div`
 `;
 const TextContainer = styled.div`
 font-size: 24px;
-  padding: 0.5rem;
+  padding: 1rem;
   color: ${colors$1.colors[2].hex};
   align-items: center;
 `;
@@ -486,7 +492,7 @@ CustomNavLink.defaultProps = {
 };
 const theme = {
   backgroundImage: `linear-gradient(90deg, #b4af9a 50%, #b4af9a 50%, #57544a 50%, #57544a 100%)`,
-  width: `140%`,
+  width: `110%`,
   padding: `0rem`
 };
 const transparent = {

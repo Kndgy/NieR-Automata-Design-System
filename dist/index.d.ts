@@ -14,7 +14,7 @@ declare const Bar: ({ dark, ...props }: BarProps) => JSX.Element;
 
 interface WidgetProps {
     dark?: boolean;
-    title?: string;
+    title?: string | number;
     content?: any;
 }
 declare const Widget: ({ dark, title, content, ...props }: WidgetProps) => JSX.Element;
