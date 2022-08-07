@@ -2,7 +2,7 @@ import { YorhaNavLink } from "@kaineee/nier-automata-ui-library";
 import React from "react";
 import { Outlet, useLocation, useParams, useSearchParams } from "react-router-dom";
 import { Tab, Widget } from "../../components";
-import { getWeaponsArchive, getWeaponType } from "../../utils/mockData/WeaponsMockData";
+import { getWeaponsArchive} from "../../utils/mockData/WeaponsMockData";
 import styles from "./WeaponsListModule.module.scss";
 
 export const WeaponsListModule = () => {
