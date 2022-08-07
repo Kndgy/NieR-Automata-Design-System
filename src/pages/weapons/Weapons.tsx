@@ -14,7 +14,7 @@ const Weapons = () => {
           extraMidSpace={true}
           LeftContent={
             <>
-              <YorhaNavLink variant="button" to={"list"} text="Weapons"/>
+              <YorhaNavLink variant="button" to={"type"} text="Weapons"/>
               <YorhaNavLink disabled={true} text="Weapons Set 1"/>
               <YorhaNavLink disabled={true} text="Weapons Set 2"/>
             </>
