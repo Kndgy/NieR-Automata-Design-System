@@ -13,8 +13,8 @@ export const ActiveItemsModule = () => {
       content={
         <div style={{display:"flex", flexDirection:"column"}}>
           <p>{itemsId.image}</p>
-          <p>{itemsId.name}</p>
-          <p>{itemsId.quantity}</p>
+          <p>{itemsId.description}</p>
+          <p>Number Held: {itemsId.quantity}</p>
         </div>
       }
     />

@@ -17,9 +17,9 @@ let QuestList = [
     type:"",
   },
   {
-    Link:"/quest/Completed/Quest5?status=",
+    Link:"/quest/Cleared/Quest5?status=",
     Text:"Cleared Quests",
-    type:"completed",
+    type:"Cleared",
   },
 ]
 

@@ -19,6 +19,9 @@ export const ActiveWeaponsModule = () => {
             </div>
             <div className={styles.descriptionContainer}>
               {weaponsData.description}
+              <p/>{weaponsData.attack}
+              <p>{weaponsData.combo}</p>
+              <p>{weaponsData.skill}</p>
               <p>lvl {weaponsData.lvl}</p>
             </div>
           </div>
