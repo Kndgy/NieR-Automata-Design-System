@@ -8,6 +8,7 @@ interface WidgetProps {
   title?: string | number;
   content?: React.ReactNode;
   icon?: boolean;
+  lvl?: string | number;
 }
 
 const WidgetParent = styled.div`
@@ -44,6 +45,13 @@ const Header = styled.div`
   font-size: 1.2rem;
 `;
 
+const Title = styled.div`
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+`
+
 const Content = styled.div`
   width: 100%;
   height: 100%;
@@ -63,7 +71,7 @@ const theme = {
   color:`${colors.colors[0].hex}`
 };
 
-export const Widget = ({dark = false , title, content, icon=true, ...props}: WidgetProps) => {
+export const Widget = ({dark = false , title, content, lvl, icon=true, ...props}: WidgetProps) => {
   const iconChecker = () =>{
     if(icon === true){
       return(
@@ -80,9 +88,9 @@ export const Widget = ({dark = false , title, content, icon=true, ...props}: Wid
           <div className={'icon'}>
             {iconChecker()}
           </div>
-          <div className={'title'}>
-            {title}
-          </div>
+          <Title>
+            <span>{title}</span> <span>{lvl}</span>
+          </Title>
         </Header>
       )
     }else if(dark === true){
@@ -92,9 +100,9 @@ export const Widget = ({dark = false , title, content, icon=true, ...props}: Wid
             <div className={'icon'}>
               {iconChecker()}
             </div>
-            <div className={'title'}>
-              {title}
-            </div>
+            <Title>
+              <span>{title}</span> <span>{lvl}</span>
+            </Title>
           </Header>
         </ThemeProvider>
       )
