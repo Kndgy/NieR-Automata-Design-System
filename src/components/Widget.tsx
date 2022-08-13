@@ -7,6 +7,7 @@ interface WidgetProps {
   dark?: boolean;
   title?: string | number;
   content?: React.ReactNode;
+  icon?: boolean;
 }
 
 const WidgetParent = styled.div`
@@ -62,13 +63,22 @@ const theme = {
   color:`${colors.colors[0].hex}`
 };
 
-export const Widget = ({dark = false , title, content, ...props}: WidgetProps) => {
+export const Widget = ({dark = false , title, content, icon=true, ...props}: WidgetProps) => {
+  const iconChecker = () =>{
+    if(icon === true){
+      return(
+        <Icon />
+      )
+    } else if(icon === false){
+      return <></>;
+    }
+  }
   const checker = () => {
     if(dark === false){
       return(
         <Header>
           <div className={'icon'}>
-            <Icon/>
+            {iconChecker()}
           </div>
           <div className={'title'}>
             {title}
@@ -80,7 +90,7 @@ export const Widget = ({dark = false , title, content, ...props}: WidgetProps) =
         <ThemeProvider theme={theme}>
           <Header>
             <div className={'icon'}>
-              <Icon />
+              {iconChecker()}
             </div>
             <div className={'title'}>
               {title}
