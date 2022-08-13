@@ -45,7 +45,7 @@ const Header = styled.div`
 
 const Content = styled.div`
   width: 100%;
-  height: 120%;
+  height: 100%;
   font-size: 1.2rem;
   color: #3F3D36;
 `;

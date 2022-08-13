@@ -10,17 +10,18 @@ type TitleProps = {
 const TitleParent = styled.div`
 
   color: ${colors.colors[2].hex};
-  letter-spacing: 2px;
+  letter-spacing: 8px;
   display: flex;
   flex-direction: row;
   gap: 0.5rem;
   align-items: baseline;
-  text-shadow: 6px 4px #00000050;
+  text-shadow: 7px 5px #00000030;
   h1{
     margin-block-start: 0em;
     margin-block-end: 0em;
     margin-inline-start: 0px;
     margin-inline-end: 0px;
+    font-size: 48px;
   }
   h3{
     text-shadow: 6px 4px #00000000;

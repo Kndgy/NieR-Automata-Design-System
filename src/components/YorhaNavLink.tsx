@@ -142,6 +142,9 @@ const CustomNavLink = styled(YorhaCustomLink)`
     gap: 10px;
     align-items: center;
     color: inherit;
+    font-family: 'Manrope', sans-serif;
+    font-weight: 500;
+    font-size: 18px;
   }
   .active > .wrapper{
     color: #b4af9a;

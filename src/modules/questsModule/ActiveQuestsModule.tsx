@@ -1,6 +1,6 @@
 import React from "react";
 import { useParams} from "react-router-dom";
-import { Button, ScrollElement, Strip, Tab, Widget } from "../../components";
+import { ScrollElement, Strip, Widget } from "../../components";
 import { getQuest } from "../../utils/mockData/mockData";
 import styles from './QuestModule.module.scss';
 
@@ -15,7 +15,6 @@ export const ActiveQuestsModule = () => {
           content={
             <div className={styles.ActiveQuestModule}>
               <div className={styles.client}>Client: {archive.client}</div>
-              {/* <div className={styles.header}><Button text="Back" /></div> */}
                 <div className={styles.content}>
                   <ScrollElement
                     content={<div className={styles.questDescription}>
