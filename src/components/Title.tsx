@@ -13,7 +13,6 @@ const TitleParent = styled.div`
   letter-spacing: 8px;
   display: flex;
   flex-direction: row;
-  gap: 0.5rem;
   align-items: baseline;
   text-shadow: 7px 5px #00000030;
   h1{
@@ -29,6 +28,8 @@ const TitleParent = styled.div`
     margin-block-end: 0em;
     margin-inline-start: 0px;
     margin-inline-end: 0px;
+    letter-spacing: 0px;
+    font-size: 24px;
   }
 `
 
