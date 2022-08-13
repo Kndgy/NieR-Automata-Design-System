@@ -17,7 +17,7 @@ const Icon = styled.div`
   height: 5%;
   min-width: 20px;
   min-height: 20px;
-  background-image: linear-gradient(90deg, #57544a 50%, #57544a 50%, #b4af9a 50%, #b4af9a 100%);
+  background-image: linear-gradient(90deg, #57544a 50%, #57544a 50%, #dad4bb 50%, #dad4bb 100%);
   background-size: 200%;
   transition: .1s linear;
 `;
