@@ -1,7 +1,8 @@
 import React from "react";
 import { useParams } from "react-router-dom";
-import { Widget } from "../../components";
+import { Strip, Widget } from "../../components";
 import { getItemsId } from "../../utils/mockData/ItemsMockData";
+import styles from './ItemsModule.module.scss';
 
 export const ActiveItemsModule = () => {
   let params = useParams();
@@ -9,12 +10,23 @@ export const ActiveItemsModule = () => {
 
   return(
     <Widget
+      dark
+      icon={false}
       title={itemsId.name}
       content={
-        <div style={{display:"flex", flexDirection:"column"}}>
-          <p>{itemsId.image}</p>
-          <p>{itemsId.description}</p>
-          <p>Number Held: {itemsId.quantity}</p>
+        <div className={styles.activeItemsModule} >
+          <div className={styles.image}>
+            <img src={itemsId.image} alt={`${itemsId.name} alt text`} />
+          </div>
+          <Strip/>
+          <div className={styles.content}>
+            <div className={styles.desc}>
+              {itemsId.description}
+            </div>
+            <div className={styles.quantity}>
+              Number Held: {itemsId.quantity}
+            </div>
+          </div>
         </div>
       }
     />
