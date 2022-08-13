@@ -3,7 +3,7 @@ import React from "react";
 import { Outlet, useLocation, useParams, useSearchParams } from "react-router-dom";
 import { Tab, Widget } from "../../components";
 import { getWeaponsArchive} from "../../utils/mockData/WeaponsMockData";
-import styles from "./WeaponsListModule.module.scss";
+import styles from "./WeaponsModule.module.scss";
 
 export const WeaponsListModule = () => {
   let [searchParams] = useSearchParams();
@@ -21,7 +21,7 @@ export const WeaponsListModule = () => {
           <div className={styles.WeaponsTypeContainer}>
             <Tab
               content={
-                <>
+                <div className={styles.weaponList}>
                   {weaponsData
                     .filter((weaponsData)=>{
                       let filter = searchParams.get("type");
@@ -30,9 +30,11 @@ export const WeaponsListModule = () => {
                       return name.startsWith(filter);
                     })
                     .map((item) => (
+                     <>
                       <YorhaNavLink key={item.id} variant="transparent" to={`/weapons/type/${item.typeName}/${item.id}` + location.search} text={item.name} />
-                  ))}
-                </>
+                    </> 
+                    ))}
+                </div>
               }
             />
           </div>

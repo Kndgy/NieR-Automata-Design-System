@@ -8,6 +8,7 @@ const Weapons = () => {
   return(
     <PagesTemplate
       title="WEAPONS"
+      subtitle="- Weapons"
       child={
         <PagesChildTemplate
           lessRightSpace={true}

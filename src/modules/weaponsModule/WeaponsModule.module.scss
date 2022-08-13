@@ -7,3 +7,65 @@
   z-index: 1;
   position: relative;
 }
+
+.WeaponsListContainer{
+  position: relative;
+  z-index: 10;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  gap: 4rem;
+  .WeaponsTypeContainer{
+    width: 100%;
+    height: 100%;
+    .weaponList{
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+  }
+  .RightContainer{
+    width: 100%;
+    height: 100%;
+  }
+}
+
+.ActiveWeaponsContainer{
+  position: relative;
+  z-index: 10;
+  width: 100%;
+  height: 100%;
+  .WeaponContainer{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 100%;
+    height: 100%;
+    padding: 1.5rem;
+    gap: 14px;
+    .image{
+      width: 100%;
+      height: 55%;
+      background-color: #b4af9a;
+      text-align: center;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: center;
+    }
+    .descriptionContainer{
+      width:100%;
+      height: 50%;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      .skill{
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+      }
+    }
+  }
+  }

@@ -1,8 +1,8 @@
 import React from "react";
 import { useParams } from "react-router-dom";
-import {Widget} from "../../components";
+import {Strip, Widget} from "../../components";
 import {getWeaponsArchiveid } from "../../utils/mockData/WeaponsMockData";
-import styles from "./ActiveWeaponsModule.module.scss";
+import styles from "./WeaponsModule.module.scss";
 
 export const ActiveWeaponsModule = () => {
   const params = useParams();
@@ -11,18 +11,24 @@ export const ActiveWeaponsModule = () => {
   return(
     <div className={styles.ActiveWeaponsContainer}>
       <Widget 
+        icon={false}
         title={weaponsData.name}
+        lvl={`Lv: ${weaponsData.lvl}`}
         content={
           <div className={styles.WeaponContainer}>
             <div className={styles.image}>
               <img src={""} alt={`${weaponsData.name} placeholder`}/>
             </div>
             <div className={styles.descriptionContainer}>
-              {weaponsData.description}
-              <p/>{weaponsData.attack}
-              <p>{weaponsData.combo}</p>
-              <p>{weaponsData.skill}</p>
-              <p>lvl {weaponsData.lvl}</p>
+              <span>{weaponsData.description}</span>
+              <Strip/>
+              <span>Attack: {weaponsData.attack}</span>
+              <span>Combo: {weaponsData.combo}</span>
+              <div className={styles.skill}>
+                {weaponsData.skill.map((item) => (
+                  <span key={item}>• {item}<br/></span>
+                ))}
+              </div>
             </div>
           </div>
         }
