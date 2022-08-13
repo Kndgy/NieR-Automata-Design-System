@@ -2,40 +2,54 @@ import React from "react";
 import styled, { ThemeProvider } from 'styled-components';
 import colors from './colors.json';
 
+
 interface WidgetProps {
   dark?: boolean;
   title?: string | number;
-  content?: any;
+  content?: React.ReactNode;
 }
 
 const WidgetParent = styled.div`
   width: 100%;
   height: 100%;
+  background-color: #dad4bb;
+  display: flex;
+  flex-direction: column;
 `
+
+const Icon = styled.div`
+  z-index: 10;
+  width: 5%;
+  height: 5%;
+  min-width: 20px;
+  min-height: 20px;
+  background-image: linear-gradient(90deg, #57544a 50%, #57544a 50%, #b4af9a 50%, #b4af9a 100%);
+  background-size: 200%;
+  transition: .1s linear;
+`;
+
 
 const Header = styled.div`
   display: flex;
   flex-direction: row;
   align-items: center;
-  height: 10%;
+  /* height: 5%; */
   gap: 10px;
   background-color: ${props => props.theme.main};
   color: ${props => props.theme.color};
-  padding: 10px;
+  padding: 1rem;
+  height: max-content;
+  width: 100%;
+  font-size: 1.2rem;
 `;
 
 const Content = styled.div`
   width: 100%;
-  height: 90%;
-  background-color: #dad4bb;
+  height: 120%;
+  font-size: 1.2rem;
+  color: #3F3D36;
 `;
 
-const ContentWrapper = styled.div`
-  width: 100%;
-  height: 100%;
-  padding: 10px
-`;
-  
 Header.defaultProps = {
   theme: {
     main: `${colors.colors[1].hex}`,
@@ -54,7 +68,7 @@ export const Widget = ({dark = false , title, content, ...props}: WidgetProps) =
       return(
         <Header>
           <div className={'icon'}>
-            wip icon
+            <Icon/>
           </div>
           <div className={'title'}>
             {title}
@@ -66,7 +80,7 @@ export const Widget = ({dark = false , title, content, ...props}: WidgetProps) =
         <ThemeProvider theme={theme}>
           <Header>
             <div className={'icon'}>
-              wip icon
+              <Icon />
             </div>
             <div className={'title'}>
               {title}
@@ -80,9 +94,7 @@ export const Widget = ({dark = false , title, content, ...props}: WidgetProps) =
     <WidgetParent>
       {checker()}
         <Content>
-          <ContentWrapper>
-            {content}
-          </ContentWrapper>
+          {content}
         </Content>
     </WidgetParent>
   )

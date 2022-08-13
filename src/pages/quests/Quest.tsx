@@ -7,19 +7,19 @@ import PagesChildTemplate from "../../templates/pagesChildTemplate";
 
 let QuestList = [
   {
-    Link:"/quest/Active/Quest1?status=",
+    Link:"/quest/Active/Quest5?status=",
     Text:"Active Quests",
     type:"active",
   },
   {
-    Link:"/quest/all/Quest4?status=",
+    Link:"/quest/all/Quest1?status=",
     Text:"All Quests",
     type:"",
   },
   {
-    Link:"/quest/Cleared/Quest5?status=",
+    Link:"/quest/Cleared/Quest1?status=",
     Text:"Cleared Quests",
-    type:"Cleared",
+    type:"cleared",
   },
 ]
 

@@ -19,6 +19,10 @@
     {
       "name":"red-alert",
       "hex":"#cd664d"
+    },
+    {
+      "name":"dark-text",
+      "hex":"#3F3D36"
     }
   ]
 }

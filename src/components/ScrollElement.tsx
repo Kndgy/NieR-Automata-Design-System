@@ -10,7 +10,6 @@ const StyledTab = styled.div`
   height: 100%;
   display: flex;
   flex-direction: column;
-  padding: 0rem 1rem 0rem 1rem;
   background-color: #dad4bb;
   justify-content: space-between;
 `
@@ -47,22 +46,27 @@ const Dot = styled.div`
 `
 
 const Content = styled.div`
-  overflow-y: scroll;
+  overflow-y: auto;
+  overflow-y: visible;
   height: 100%;
   padding: 0.5rem 1rem 0.5rem 0rem;
   &::-webkit-scrollbar{
     width: 0.3rem;
   }
   &::-webkit-scrollbar-track {
-    
+    border-top: 8px solid #000000;
+    border-right: 6px solid #000000;
+    border-bottom: 8px solid #000000;
+    border-left: 6px solid #000000;
+    background-color: #e1214d;
 }
   &::-webkit-scrollbar-thumb {
   background-color: #4e4b42;
-
 }
+
 `
 
-export const Tab = ({content}:TabProps) =>{
+export const ScrollElement = ({content}:TabProps) =>{
   return(
     <StyledTab>
       <SeparatorStyle><Separator/> <Dot/></SeparatorStyle>

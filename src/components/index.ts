@@ -5,3 +5,5 @@ export {Title} from './Title';
 export {Footer} from './Footer' 
 export {YorhaNavLink} from './YorhaNavLink';
 export {Tab} from './Tab';
+export {Strip} from './Strip';
+export {ScrollElement} from './ScrollElement';
