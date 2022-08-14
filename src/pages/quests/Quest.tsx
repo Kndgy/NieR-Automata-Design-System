@@ -1,5 +1,5 @@
 import React from "react";
-import { Outlet, useParams} from "react-router-dom";
+import { Outlet, useParams, useSearchParams} from "react-router-dom";
 import { Widget, YorhaNavLink } from "../../components";
 import PagesTemplate from "../../templates/pagesTemplate";
 import { SubTitle } from "../../utils/ParamAsSubTitle";
@@ -17,7 +17,7 @@ let QuestList = [
     type:"",
   },
   {
-    Link:"/quest/Cleared/Quest1?status=",
+    Link:"/quest/cleared/Quest1?status=",
     Text:"Cleared Quests",
     type:"cleared",
   },
@@ -26,12 +26,31 @@ let QuestList = [
 const Quest = () => {
 
   const param = useParams();
+  let [searchParams] = useSearchParams();
+  let status = (searchParams.get("status"));
+
+  const ParamCheck = () => {
+    if(status === "active"){
+      return "quests currently in progress";
+    }
+    else if(status === "cleared"){
+      return "completed quests";
+    }else if(status === "")
+      return "all accepted quests";
+  } 
+
+  const TypeCheck = () => {
+    if(status === ""){
+      return "all"
+    }else
+      return param.statusType
+  }
 
   return(
     <PagesTemplate
       title={`QUESTS`}
-      subtitle={SubTitle(param.status, "Quest")}
-      footer="quests footer."
+      subtitle={SubTitle(TypeCheck(), "Quest")}
+      footer={`View ${ParamCheck()}.`}
       child={
         <PagesChildTemplate
           LeftContent={

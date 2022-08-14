@@ -19,7 +19,7 @@ export const RoutesPages = () => {
         <Route path="/" element={<Navigate to="/map"/>}/>
         <Route path={'/map'} element={<Map/>}/>
         <Route path={`/quest`} element={<Quest/>}>
-          <Route path={`/quest/:status/`} element={<QuestsModule/>}>
+          <Route path={`/quest/:statusType/`} element={<QuestsModule/>}>
             <Route path={`:questid`} element={<ActiveQuestsModule/>}/>
           </Route>
         </Route>
@@ -40,6 +40,9 @@ export const RoutesPages = () => {
           </Route>
         </Route>
         <Route path={'/intel'} element ={<Intel/>}>
+          <Route path={'/intel/:data'} element={<Intel/>}>
+            
+          </Route>
         </Route>
         {/* components debug pages */}
         <Route path="/debug" element={<Debug/>}>

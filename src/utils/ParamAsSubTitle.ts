@@ -4,7 +4,7 @@ export function SubTitle(ParamType, ParamTail){
   }
 
   let subTitle = (`${ParamType} ${ParamTail}`);
-  let strip = "-";
+  let strip = "- ";
   if (ParamType === undefined) {
     subTitle = "";
     strip =""
