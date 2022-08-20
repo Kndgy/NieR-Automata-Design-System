@@ -1,12 +1,11 @@
 import { YorhaNavLink } from "../../components";
 import React from "react";
-import { Outlet, useParams, useSearchParams } from "react-router-dom";
+import { Outlet, useParams } from "react-router-dom";
 import PagesChildTemplate from "../../templates/pagesChildTemplate";
 import PagesTemplate from "../../templates/pagesTemplate";
 
 const Weapons = () => {
   const param = useParams();
-  let [searchParams] = useSearchParams();
 
   const TypeChecker = () => {
     if(!param.list){
