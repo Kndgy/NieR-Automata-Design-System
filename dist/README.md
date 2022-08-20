@@ -11,6 +11,3 @@ ui library
 [Github](https://github.com/Kndgy/NieR-Automata-Design-System)
 
 #### to do : 
-- routing
-- templates page
-- font style

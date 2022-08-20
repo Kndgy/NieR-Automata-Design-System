@@ -26,7 +26,7 @@ export const ActiveWeaponsModule = () => {
               <span>Combo: {weaponsData.combo}</span>
               <div className={styles.skill}>
                 {weaponsData.skill.map((item) => (
-                  <span key={item}>• {item}<br/></span>
+                  <span key={Math.random()}>• {item}<br/></span>
                 ))}
               </div>
             </div>

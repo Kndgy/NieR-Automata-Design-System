@@ -6,17 +6,24 @@ import { getWeaponsArchive} from "../../utils/mockData/WeaponsMockData";
 import styles from "./WeaponsModule.module.scss";
 
 export const WeaponsListModule = () => {
-  let [searchParams] = useSearchParams();
-  let location = useLocation();
-
-  let weaponsData = getWeaponsArchive();
 
   const param = useParams();
+  let [searchParams] = useSearchParams();
+  let type = (searchParams.get("type"));
 
-  // console.log(param.type);
+  let location = useLocation();
+  let weaponsData = getWeaponsArchive();
+
+  const TitleChecker = () => {
+    if(!type){
+      return "All Weapons"
+    }else
+      return param.type
+  }
+  console.log(type);
   return(
     <div className={styles.WeaponsListContainer}>
-      <Widget title={param.type}
+      <Widget title={TitleChecker()}
         content={
           <div className={styles.WeaponsTypeContainer}>
             <Tab
@@ -30,9 +37,7 @@ export const WeaponsListModule = () => {
                       return name.startsWith(filter);
                     })
                     .map((item) => (
-                     <>
                       <YorhaNavLink key={item.id} variant="transparent" to={`/weapons/type/${item.typeName}/${item.id}` + location.search} text={item.name} />
-                    </> 
                     ))}
                 </div>
               }

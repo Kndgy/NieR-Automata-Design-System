@@ -1,6 +1,6 @@
 import { Widget } from "@kaineee/nier-automata-ui-library";
 import React from "react";
-import { Outlet, useParams } from "react-router-dom";
+import { Outlet, useParams, useSearchParams } from "react-router-dom";
 import { YorhaNavLink } from "../../components";
 import PagesChildTemplate from "../../templates/pagesChildTemplate";
 import PagesTemplate from "../../templates/pagesTemplate";
@@ -29,7 +29,7 @@ let ItemsLists = [
   },
   {
     Link:"/items/materials/?type=",
-    Text:"Materials Items",
+    Text:"Materials",
     type:"materials",
   },
   {
@@ -38,7 +38,7 @@ let ItemsLists = [
     type:"key",
   },
   {
-    Link:"/items/caughtfish/?type=",
+    Link:"/items/caught fish/?type=",
     Text:"Caught Fish",
     type:"fish",
   }
@@ -47,11 +47,34 @@ let ItemsLists = [
 const Items = () => {
 
   const param = useParams();
+  let [searchParams] = useSearchParams();
+  let type = (searchParams.get("type"));
+
+  const Footer = () => {
+    if(type === ""){
+      return "all items";
+    }else if(!type){
+      return "items in your inventory"
+    }else if(param.type === 'materials' ){
+      return param.type
+    }else if(param.type === 'caught fish' ){
+      return param.type
+    }else{
+      return `${param.type} items`
+    }
+  }
+
+  const TypeCheck = () => {
+    if(type === ""){
+      return "all"
+    }else
+      return param.type
+  }
 
   return(
     <PagesTemplate
       title={`ITEMS`}
-      subtitle={SubTitle(param.type, "Items")}
+      subtitle={SubTitle(TypeCheck(), "Items")}
       child={
         <PagesChildTemplate
           LeftContent={
@@ -67,7 +90,7 @@ const Items = () => {
           }
         />
       }
-      footer="Items Footer"
+      footer={ `View all ${Footer()}.` }
     />
   )
 }

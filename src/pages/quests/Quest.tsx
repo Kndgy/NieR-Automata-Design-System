@@ -35,6 +35,8 @@ const Quest = () => {
     }
     else if(status === "cleared"){
       return "completed quests";
+    }else if(!status){
+      return "ll quests";
     }else if(status === "")
       return "all accepted quests";
   } 
