@@ -3,10 +3,10 @@ Rebuilding and translating Nier Automata Design System into React components
 
 # Table of Contents
 - [General Information](#general-information)
-- [Links](#Links)
-- [Components / UI LIbrary](#components-ui-library)
-- [Props Explanation](#props-explanation)
-- [Stacks](#Stacks)
+- [Links](#links)
+- [Components](#components)
+- [Variants and Props Explanation](#variants-and-props-explanations)
+- [Stacks](#stacks)
 - [To do](#to-do)
 
 # General Information
@@ -41,7 +41,7 @@ To do
 - Sass
 - Rollup
 
-#### to do : 
+# to do : 
 - font size on atom level component
 - Animations Transitions
 - loading splash screen
