@@ -1,5 +1,6 @@
-# Nier Automata Design System
-Rebuilding and translating Nier Automata Design System into React components
+# Nier Automata Design System (WIP)
+
+a Wiki site with in-game native User Interface Design. and React component UI libary based on Nier Automata User Interface.
 
 # Table of Contents
 - [General Information](#general-information)
@@ -10,7 +11,11 @@ Rebuilding and translating Nier Automata Design System into React components
 - [To do](#to-do)
 
 # General Information
-Nier Automata UI as React UI Library, Translating designs from the game into React component, Aiming to look and feels as close as possible to the native experience on the game. There are also some several others project im developing in this repository such as the mini game, and some basic chat app with Yorha Signature Interface in this project.
+Yorha Archive - website to see all about in game resources and informations such as quest, weapons, items, novel, etc, that you would normally see in wiki, but with the native game user interface design. 
+giving the feelings as if yo are viewing them from the game itself.
+<br><br>
+Ui Library - React component library based on Nier Automata User Interface, translating them from in game into web components.
+<br> <br> There are also several others project im developing in this repository such as the mini game, and some basic chat app with Yorha Signature Interface in this project.
 
 # Links
 ### [YoRha Archive Website](https://yorha-archive.netlify.app/) - Informations, journal, and codex from Nier Automata with its signature settings design i built in this project.
