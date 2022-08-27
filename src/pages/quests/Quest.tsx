@@ -4,6 +4,7 @@ import { Widget, YorhaNavLink } from "../../components";
 import PagesTemplate from "../../templates/pagesTemplate";
 import { SubTitle } from "../../utils/ParamAsSubTitle";
 import PagesChildTemplate from "../../templates/pagesChildTemplate";
+import StatusModule from "../../modules/statusModule";
 
 let QuestList = [
   {
@@ -64,7 +65,7 @@ const Quest = () => {
           }
           Outlet={<Outlet/>}
           RightContent={
-            <Widget/>
+            <StatusModule/>
           }
         />
       }
