@@ -1,5 +1,6 @@
 import React from "react";
 import { Outlet, useParams, useSearchParams} from "react-router-dom";
+import {YorhaNavLink } from "../../components";
 import PagesTemplate from "../../templates/pagesTemplate";
 import { SubTitle } from "../../utils/ParamAsSubTitle";
 import PagesChildTemplate from "../../templates/pagesChildTemplate";
