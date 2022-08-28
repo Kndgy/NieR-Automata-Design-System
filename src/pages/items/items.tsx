@@ -1,4 +1,3 @@
-import { Widget } from "@kaineee/nier-automata-ui-library";
 import React from "react";
 import { Outlet, useParams, useSearchParams } from "react-router-dom";
 import { YorhaNavLink } from "../../components";

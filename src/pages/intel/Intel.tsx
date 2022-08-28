@@ -1,4 +1,3 @@
-import { Widget } from "../../components/Widget";
 import React from "react";
 import PagesChildTemplate from "../../templates/pagesChildTemplate";
 import PagesTemplate from "../../templates/pagesTemplate";
