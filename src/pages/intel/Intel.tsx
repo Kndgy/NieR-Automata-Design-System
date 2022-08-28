@@ -3,6 +3,7 @@ import React from "react";
 import PagesChildTemplate from "../../templates/pagesChildTemplate";
 import PagesTemplate from "../../templates/pagesTemplate";
 import { YorhaNavLink } from "../../components";
+import StatusModule from "../../modules/statusModule";
 
 const IntelList = [
   {
@@ -52,7 +53,7 @@ const Intel = () => {
             </>
           }
           RightContent={
-            <Widget/>
+            <StatusModule/>
           }
         />
       }
