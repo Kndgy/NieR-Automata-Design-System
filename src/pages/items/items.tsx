@@ -2,6 +2,7 @@ import { Widget } from "@kaineee/nier-automata-ui-library";
 import React from "react";
 import { Outlet, useParams, useSearchParams } from "react-router-dom";
 import { YorhaNavLink } from "../../components";
+import StatusModule from "../../modules/statusModule";
 import PagesChildTemplate from "../../templates/pagesChildTemplate";
 import PagesTemplate from "../../templates/pagesTemplate";
 import { SubTitle } from "../../utils/ParamAsSubTitle";
@@ -86,7 +87,7 @@ const Items = () => {
           }
           Outlet={<Outlet/>}
           RightContent={
-            <Widget/>
+            <StatusModule/>
           }
         />
       }
