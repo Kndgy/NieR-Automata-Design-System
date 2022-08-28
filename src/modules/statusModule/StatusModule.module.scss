@@ -1,4 +1,34 @@
 .StatusModule{
   padding: 1rem;
-  
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  height: 100%;
+  .StatusContainer{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 4px;
+  }
+  .statusData{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    &:nth-child(2){
+      text-align: end;
+    }
+    &:nth-child(3){
+      text-align: end;
+      width: 30%;
+    }
+  }
+  .footer{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    letter-spacing: 1px;
+  }
 }
