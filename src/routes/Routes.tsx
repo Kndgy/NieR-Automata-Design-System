@@ -11,6 +11,7 @@ import {ItemsModule, ActiveItemsModule} from "../modules/itemsModule"
 import {WeaponsModule, ActiveWeaponsModule, WeaponsListModule} from "../modules/weaponsModule"
 import {NavbarModule} from "../modules/NavBarModule"
 import { QuestsModule, ActiveQuestsModule } from "../modules/questsModule"
+import { IntelModule } from "../modules/intelModule"
 
 export const RoutesPages = () => {
   return(
@@ -36,7 +37,7 @@ export const RoutesPages = () => {
           </Route>
         </Route>
         <Route path={'/intel'} element ={<Intel/>}>
-          <Route path={'/intel/:data'} element={<Intel/>}>
+          <Route path={'/intel/:type'} element={<IntelModule/>}>
             
           </Route>
         </Route>

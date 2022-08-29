@@ -3,29 +3,32 @@ import PagesChildTemplate from "../../templates/pagesChildTemplate";
 import PagesTemplate from "../../templates/pagesTemplate";
 import { YorhaNavLink } from "../../components";
 import StatusModule from "../../modules/statusModule";
+import { Outlet } from "react-router-dom";
 
 const IntelList = [
   {
     name: "Archives",
+    link:"/intel/archives/?type=",
+    type:"archives",
   },
   {
     name:"Unit Data",
-    link:"/item/unit/?type=",
+    link:"/intel/unit/?type=",
     type:"unit",
   },
   {
     name:"Tutorials",
-    link:"/item/tutorials/?type=",
+    link:"/intel/tutorials/?type=",
     type:"tutorials",
   },
   {
     name:"Weapon Stories",
-    link:"/item/weaponstories/?type=",
+    link:"/intel/weaponstories/?type=",
     type:"weaponstories",
   },
   {
     name:"Picture Books",
-    link:"/item/picturebooks/?type=",
+    link:"/intel/picturebooks/?type=",
     type:"picturebooks",
   },
   {
@@ -33,7 +36,7 @@ const IntelList = [
   },
   {
     name:"Novel",
-    link:"/item/novel/?type=",
+    link:"/intel/novel/?type=",
     type:"novel",
   }
 ]
@@ -50,6 +53,9 @@ const Intel = () => {
                 <YorhaNavLink key={item.link} text={item.name} to={item.link} filter={item.type} filterType={"type"}/>
               ))}
             </>
+          }
+          Outlet={
+            <Outlet/>
           }
           RightContent={
             <StatusModule/>
