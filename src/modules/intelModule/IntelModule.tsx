@@ -1,5 +1,5 @@
 import React from "react";
-import { Bar, Tab } from "../../components";
+import { Bar, Tab, YorhaNavLink } from "../../components";
 import { getArchivesMockData } from "../../utils/mockData/archivesMockData";
 import styles from './IntelModule.module.scss'
 
@@ -12,7 +12,19 @@ export const IntelModule = () => {
         <div>
           <Bar/>
         </div>
-        <Tab/>
+        <Tab
+          content={
+            <>
+              <YorhaNavLink variant="transparent" text="test item"/>
+              <details>
+                <summary>test item dropdown</summary>
+                <YorhaNavLink variant="transparent" text="test item"/>
+                <YorhaNavLink variant="transparent" text="test item"/>
+                <YorhaNavLink variant="transparent" text="test item"/>
+              </details>
+            </>
+          }
+        />
       </div>
       <div className={styles.outlet}>
         
