@@ -18,7 +18,7 @@ let archivesMockData = [
       },
       {
         dataType:"dropdown",
-        id:1,
+        id:2,
         nestedData:[
           {
             title:"YoRHa: Gunner 16",
@@ -40,7 +40,9 @@ let archivesMockData = [
     IntelType : "Unit Data",
     data : [
       {
+        title:"11B's Escape Plan",
         id:1,
+        descriptions:null
       }
     ]
   },
@@ -48,7 +50,9 @@ let archivesMockData = [
     IntelType : "Tutorials",
     data : [
       {
+        title:"11B's Escape Plan",
         id:1,
+        descriptions:null
       }
     ]
   },
@@ -56,7 +60,9 @@ let archivesMockData = [
     IntelType : "Weapon Stories",
     data : [
       {
+        title:"11B's Escape Plan",
         id:1,
+        descriptions:null
       }
     ]
   },
@@ -64,7 +70,9 @@ let archivesMockData = [
     IntelType : "Picture Books",
     data : [
       {
+        title:"11B's Escape Plan",
         id:1,
+        descriptions:null
       }
     ]
   },
@@ -72,7 +80,9 @@ let archivesMockData = [
     IntelType : "Novel",
     data : [
       {
+        title:null,
         id:1,
+        descriptions:null
       }
     ]
   }
