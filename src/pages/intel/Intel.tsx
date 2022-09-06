@@ -50,7 +50,7 @@ const Intel = () => {
           LeftContent={
             <>
               {IntelList.map((item)=>(
-                <YorhaNavLink key={item.link} text={item.name} to={item.link} filter={item.type} filterType={"type"}/>
+                <YorhaNavLink key={Math.random()} text={item.name} to={item.link} filter={item.type} filterType={"type"}/>
               ))}
             </>
           }
