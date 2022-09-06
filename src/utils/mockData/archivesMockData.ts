@@ -3,36 +3,25 @@ let archivesMockData = [
     IntelType : "Archives",
     data : [
       {
-        title:"11B's Escape Plan",
-        id:1,
+        title:"String",
+        id:2,
+        descriptions:["test", 'more test'
+        ],
+        time:["1st", "2nd"]
+      }
+    ],
+    nestedData:[
+      {
+        title:"YoRHa: Gunner 16",
         descriptions:[
           {
-            time:"00:02:13",
-            description:"Re-activation complete. A check of my ody reveals various failures.\nCommunication functions have been destrioyed. I cannot contact my team or the bunker. I leave a draft of this message here as a log."
-          },
-          {
-            time:"00:10:13",
-            description:"I verify the plan once more. Using my supposed destruction in this sortle as a gulse, i sever all communication. I then pass beneath the abandoned factory and escape. Further analysis reveals that I took anti-air fire while in the flight unitm resulting in damage to my body. No matter-it can be repaired."
-          },
+            description:" A unit from the experimental YoRHa squadron that was utilized during the 14th Machine War."
+          }
         ]
       },
       {
-        dataType:"dropdown",
-        id:2,
-        nestedData:[
-          {
-            title:"YoRHa: Gunner 16",
-            descriptions:[
-              {
-                description:" A unit from the experimental YoRHa squadron that was utilized during the 14th Machine War."
-              }
-            ]
-          },
-          {
-            title:"YoRHa: Scanner 21",
-            description:"A unit from the experimental YoRHa squadron that wasuti;ized during the 14th Machine War, Number 21 possessed a cool and analytical personality that perfectky fit her role as a Scanner."
-          }
-        ]
+        title:"YoRHa: Scanner 21",
+        description:"A unit from the experimental YoRHa squadron that wasuti;ized during the 14th Machine War, Number 21 possessed a cool and analytical personality that perfectky fit her role as a Scanner."
       }
     ]
   },
@@ -42,9 +31,10 @@ let archivesMockData = [
       {
         title:"11B's Escape Plan",
         id:1,
-        descriptions:null
-      }
-    ]
+        descriptions:null,
+      },
+    ],
+    nestedData:null
   },
   {
     IntelType : "Tutorials",
@@ -52,9 +42,10 @@ let archivesMockData = [
       {
         title:"11B's Escape Plan",
         id:1,
-        descriptions:null
-      }
-    ]
+        descriptions:null,
+      },
+    ],
+    nestedData:null
   },
   {
     IntelType : "Weapon Stories",
@@ -62,9 +53,10 @@ let archivesMockData = [
       {
         title:"11B's Escape Plan",
         id:1,
-        descriptions:null
-      }
-    ]
+        descriptions:null,
+      },
+    ],
+    nestedData:null
   },
   {
     IntelType : "Picture Books",
@@ -72,9 +64,10 @@ let archivesMockData = [
       {
         title:"11B's Escape Plan",
         id:1,
-        descriptions:null
-      }
-    ]
+        descriptions:null,
+      },
+    ],
+    nestedData:null
   },
   {
     IntelType : "Novel",
@@ -82,9 +75,10 @@ let archivesMockData = [
       {
         title:null,
         id:1,
-        descriptions:null
-      }
-    ]
+        descriptions:null,
+      },
+    ],
+    nestedData:null
   }
 ];
 
@@ -95,3 +89,115 @@ export function getArchivesMockData(){
 export function getArchivesMockID(id){
   return archivesMockData.find((data)=>data.data[0].id===id)
 }
+
+const allFooterList = [
+  {
+    data: [
+      {
+        title: "Product",
+        id: "001",
+        url: [
+          {
+            id: "012",
+            linkName: "How it Works",
+            linkUrl: "how-it-works"
+          },
+          {
+            id: "013",
+            linkName: "Enterprise",
+            linkUrl: "enterprise"
+          },
+          {
+            id: "014",
+            linkName: "Pricing",
+            linkUrl: "pricing"
+          }
+        ]
+      },
+      {
+        title: "Features",
+        id: "002",
+        url: [
+          {
+            id: "022",
+            linkName: "Version Control",
+            linkUrl: "version-control"
+          },
+          {
+            id: "023",
+            linkName: "Design Collaboration",
+            linkUrl: "design-collaboration"
+          },
+          {
+            id: "024",
+            linkName: "Developer Handoff",
+            linkUrl: "developer-handoff"
+          }
+        ]
+      },
+      {
+        title: "Resources",
+        id: "003",
+        url: [
+          {
+            id: "032",
+            linkName: "Getting Started",
+            linkUrl: "getting-started"
+          },
+          {
+            id: "033",
+            linkName: "Blog",
+            linkUrl: "blog"
+          },
+          {
+            id: "034",
+            linkName: "Books",
+            linkUrl: "books"
+          }
+        ]
+      },
+      {
+        title: "Community",
+        id: "004",
+        url: [
+          {
+            id: "042",
+            linkName: "Twitter",
+            linkUrl: "twitter"
+          },
+          {
+            id: "043",
+            linkName: "LinkedIn",
+            linkUrl: "linkedin"
+          },
+          {
+            id: "044",
+            linkName: "Facebook",
+            linkUrl: "facebook"
+          }
+        ]
+      },
+      {
+        title: "Company",
+        id: "005",
+        url: [
+          {
+            id: "052",
+            linkName: "About us",
+            linkUrl: "about-us"
+          },
+          {
+            id: "053",
+            linkName: "Careers",
+            linkUrl: "careers"
+          },
+          {
+            id: "054",
+            linkName: "Legal",
+            linkUrl: "legal"
+          }
+        ]
+      }
+    ]
+  }
+];

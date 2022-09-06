@@ -4,11 +4,56 @@ import { getArchivesMockData } from "../../utils/mockData/archivesMockData";
 import { getItemsData } from "../../utils/mockData/ItemsMockData";
 import styles from './IntelModule.module.scss'
 
+const archivesMockData = [
+  {
+    aah:[
+      {
+        IntelType : "Archives",
+    data : [
+      {
+        title:"String",
+        id:1,
+        descriptions:[
+          {
+            time:"00:02:13",
+            description:"Re-activation complete. A check of my ody reveals various failures.\nCommunication functions have been destrioyed. I cannot contact my team or the bunker. I leave a draft of this message here as a log."
+          },
+          {
+            time:"00:10:13",
+            description:"I verify the plan once more. Using my supposed destruction in this sortle as a gulse, i sever all communication. I then pass beneath the abandoned factory and escape. Further analysis reveals that I took anti-air fire while in the flight unitm resulting in damage to my body. No matter-it can be repaired."
+          },
+        ],
+      }
+    ]
+      },
+      {
+        IntelType : "Archives",
+    data : [
+      {
+        title:"String",
+        id:1,
+        descriptions:[
+          {
+            time:"00:02:13",
+            description:"Re-activation complete. A check of my ody reveals various failures.\nCommunication functions have been destrioyed. I cannot contact my team or the bunker. I leave a draft of this message here as a log."
+          },
+          {
+            time:"00:10:13",
+            description:"I verify the plan once more. Using my supposed destruction in this sortle as a gulse, i sever all communication. I then pass beneath the abandoned factory and escape. Further analysis reveals that I took anti-air fire while in the flight unitm resulting in damage to my body. No matter-it can be repaired."
+          },
+        ],
+      }
+    ]
+      }
+    ]
+  },
+]
+
 export const IntelModule = () => {
   let intellist = getArchivesMockData();
-  let itemlist = getItemsData();
-  // console.log(itemlist)
-  console.log(intellist.map((data)=>data.data[0].dataType));
+
+  console.log(archivesMockData.map((node)=>node.aah.map((node)=>node.data.map((data)=>data.descriptions.map((url)=>url.description)))));
+
   return (
     <div className={styles.IntelModule}>
       <div className={styles.IntelModuleContainer}>
@@ -26,13 +71,8 @@ export const IntelModule = () => {
                       <div key={Math.random()}>
                       {nestedItem.title}
                       <p></p>
-                      {/* {nestedItem.id.map((nestedNestedItem)=>{
-                        return(
-                          <>
-                            {nestedNestedItem}
-                          </>
-                        )
-                      })} */}
+                      {nestedItem.descriptions}
+                      {nestedItem.time}
                       </div>
                     )
                   })} 
