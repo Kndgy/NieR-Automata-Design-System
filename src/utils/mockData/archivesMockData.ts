@@ -5,7 +5,7 @@ let archivesMockData = [
         IntelType : "Archives",
         data : [
           {
-            title:"String",
+            title:"first title",
             id:2,
             descriptions:["test", 'more test'
             ],
@@ -15,11 +15,7 @@ let archivesMockData = [
         nestedData:[
           {
             title:"YoRHa: Gunner 16",
-            descriptions:[
-              {
-                description:" A unit from the experimental YoRHa squadron that was utilized during the 14th Machine War."
-              }
-            ]
+            description:" A unit from the experimental YoRHa squadron that was utilized during the 14th Machine War."
           },
           {
             title:"YoRHa: Scanner 21",
@@ -36,7 +32,7 @@ let archivesMockData = [
             descriptions:null,
           },
         ],
-        nestedData:null
+        nestedData:[]
       },
       {
         IntelType : "Tutorials",
@@ -47,7 +43,7 @@ let archivesMockData = [
             descriptions:null,
           },
         ],
-        nestedData:null
+        nestedData:[]
       },
       {
         IntelType : "Weapon Stories",
@@ -58,7 +54,7 @@ let archivesMockData = [
             descriptions:null,
           },
         ],
-        nestedData:null
+        nestedData:[]
       },
       {
         IntelType : "Picture Books",
@@ -69,7 +65,7 @@ let archivesMockData = [
             descriptions:null,
           },
         ],
-        nestedData:null
+        nestedData:[]
       },
       {
         IntelType : "Novel",
@@ -80,7 +76,7 @@ let archivesMockData = [
             descriptions:null,
           },
         ],
-        nestedData:null
+        nestedData:[]
       }
     ]
   }
