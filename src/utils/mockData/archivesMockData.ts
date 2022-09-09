@@ -1,93 +1,97 @@
 let archivesMockData = [
   {
-    IntelType : "Archives",
-    data : [
+    archivesData:[
       {
-        title:"String",
-        id:2,
-        descriptions:["test", 'more test'
-        ],
-        time:["1st", "2nd"]
-      }
-    ],
-    nestedData:[
-      {
-        title:"YoRHa: Gunner 16",
-        descriptions:[
+        IntelType : "Archives",
+        data : [
           {
-            description:" A unit from the experimental YoRHa squadron that was utilized during the 14th Machine War."
+            title:"String",
+            id:2,
+            descriptions:["test", 'more test'
+            ],
+            time:["1st", "2nd"]
+          }
+        ],
+        nestedData:[
+          {
+            title:"YoRHa: Gunner 16",
+            descriptions:[
+              {
+                description:" A unit from the experimental YoRHa squadron that was utilized during the 14th Machine War."
+              }
+            ]
+          },
+          {
+            title:"YoRHa: Scanner 21",
+            description:"A unit from the experimental YoRHa squadron that wasuti;ized during the 14th Machine War, Number 21 possessed a cool and analytical personality that perfectky fit her role as a Scanner."
           }
         ]
       },
       {
-        title:"YoRHa: Scanner 21",
-        description:"A unit from the experimental YoRHa squadron that wasuti;ized during the 14th Machine War, Number 21 possessed a cool and analytical personality that perfectky fit her role as a Scanner."
+        IntelType : "Unit Data",
+        data : [
+          {
+            title:"11B's Escape Plan",
+            id:1,
+            descriptions:null,
+          },
+        ],
+        nestedData:null
+      },
+      {
+        IntelType : "Tutorials",
+        data : [
+          {
+            title:"11B's Escape Plan",
+            id:1,
+            descriptions:null,
+          },
+        ],
+        nestedData:null
+      },
+      {
+        IntelType : "Weapon Stories",
+        data : [
+          {
+            title:"11B's Escape Plan",
+            id:1,
+            descriptions:null,
+          },
+        ],
+        nestedData:null
+      },
+      {
+        IntelType : "Picture Books",
+        data : [
+          {
+            title:"11B's Escape Plan",
+            id:1,
+            descriptions:null,
+          },
+        ],
+        nestedData:null
+      },
+      {
+        IntelType : "Novel",
+        data : [
+          {
+            title:null,
+            id:1,
+            descriptions:null,
+          },
+        ],
+        nestedData:null
       }
     ]
-  },
-  {
-    IntelType : "Unit Data",
-    data : [
-      {
-        title:"11B's Escape Plan",
-        id:1,
-        descriptions:null,
-      },
-    ],
-    nestedData:null
-  },
-  {
-    IntelType : "Tutorials",
-    data : [
-      {
-        title:"11B's Escape Plan",
-        id:1,
-        descriptions:null,
-      },
-    ],
-    nestedData:null
-  },
-  {
-    IntelType : "Weapon Stories",
-    data : [
-      {
-        title:"11B's Escape Plan",
-        id:1,
-        descriptions:null,
-      },
-    ],
-    nestedData:null
-  },
-  {
-    IntelType : "Picture Books",
-    data : [
-      {
-        title:"11B's Escape Plan",
-        id:1,
-        descriptions:null,
-      },
-    ],
-    nestedData:null
-  },
-  {
-    IntelType : "Novel",
-    data : [
-      {
-        title:null,
-        id:1,
-        descriptions:null,
-      },
-    ],
-    nestedData:null
   }
 ];
 
 export function getArchivesMockData(){
-  return archivesMockData;
+  return archivesMockData.map((item)=>item.archivesData);
 }
 
 export function getArchivesMockID(id){
-  return archivesMockData.find((data)=>data.data[0].id===id)
+  return archivesMockData.find((data)=>data.archivesData[0].data[0].id)
 }
 
 const allFooterList = [
