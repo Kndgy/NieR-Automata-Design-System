@@ -8,17 +8,19 @@ export const IntelModule = () => {
 
   const first = intellist.map((node)=>
                   node.map((item)=>
-                    item.data.map((test)=>test.title)))
+                    item.data.map((test)=>{
+                      return(<YorhaNavLink text={test.title}/>)
+                    })))
   
-  const second = intellist.map((node)=>
-                  node.map((item)=>
-                    item.nestedData.map((test)=>test.title)))
+  // const second = intellist.map((node)=>
+  //                 node.map((item)=>
+  //                   item.nestedData.map((test)=>test.title)))
 
-  const third = first.concat(second)
+  // const third = first.concat(second)
+  // const titleLink = Array.from(third);
+  // const four = third.map((item)=>item)
+  console.log(first);
 
-  console.log(third);
-
-  const test = true;
   return (
     <div className={styles.IntelModule}>
       <div className={styles.IntelModuleContainer}>
@@ -27,66 +29,11 @@ export const IntelModule = () => {
         </div>
         <Tab
           content={
-            <>
-            {
-              // intellist.map((item)=>
-              //   item.map((nestedItem)=>{
-              //     if(nestedItem.data){
-              //       return(
-              //         nestedItem.data.map((secondNested)=>{
-              //           return(
-              //             <div key={Math.random()} style={{display:'flex',flexDirection:'column',gap:'20px'}}>
-              //               {secondNested.title}
-              //               <div>
-              //                 {secondNested.descriptions}
-              //               </div>
-              //             </div>
-              //           )
-              //         })
-              //       )
-              //     }
-              //     // if(true){
-              //     //   return(  
-              //     //     nestedItem.nestedData.map((nestedtest)=>{
-              //     //       return(
-              //     //         <>
-              //     //           {nestedtest.title}
-              //     //         </>
-              //     //       )
-              //     //     })
-              //     //   )
-              //     // }
-              //   }
-              //   )
-              // )
-              third
-            }
-            {/* {
-              intellist.map((item)=>
-                item.map((nestedItem)=>{
-                  if(true){
-                    return(  
-                      nestedItem.nestedData.map((nestedtest)=>{
-                        return(
-                          <>
-                            {nestedtest.title}
-                          </>
-                        )
-                      })
-                    )
-                  }
-                }
-                )
-              )
-            } */}
-              {/* <YorhaNavLink variant="transparent" text="test item"/>
-              <details>
-                <summary>test item dropdown</summary>
-                <YorhaNavLink variant="transparent" text="test item"/>
-                <YorhaNavLink variant="transparent" text="test item"/>
-                <YorhaNavLink variant="transparent" text="test item"/>
-              </details> */}
-            </>
+            // intellist.map((test)=>test.map((node)=>node.data.map((item)=>{
+              
+            // })))
+            first
+            
           }
         />
       </div>

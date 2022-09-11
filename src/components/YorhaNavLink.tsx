@@ -3,7 +3,7 @@ import styled, { ThemeProvider } from "styled-components";
 import {NavLink, useSearchParams} from "react-router-dom"
 
 type YorhaNavLinkProps = {
-  text?: string;
+  text?: string | any;
   to?: string;
   filter?: string;
   className?: string;
