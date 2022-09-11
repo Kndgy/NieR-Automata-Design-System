@@ -12,14 +12,14 @@ export const IntelModule = () => {
                       return(<YorhaNavLink text={test.title}/>)
                     })))
   
-  // const second = intellist.map((node)=>
-  //                 node.map((item)=>
-  //                   item.nestedData.map((test)=>test.title)))
+  const second = intellist.map((node)=>
+                  node.map((item)=>
+                    item.nestedData.map((test)=>{return(<YorhaNavLink text={test.title}/>)})))
 
-  // const third = first.concat(second)
+  const third = first.concat(second)
   // const titleLink = Array.from(third);
   // const four = third.map((item)=>item)
-  console.log(first);
+  console.log(third);
 
   return (
     <div className={styles.IntelModule}>
@@ -32,8 +32,8 @@ export const IntelModule = () => {
             // intellist.map((test)=>test.map((node)=>node.data.map((item)=>{
               
             // })))
-            first
-            
+            // <>{first}{second}</>
+            third
           }
         />
       </div>
