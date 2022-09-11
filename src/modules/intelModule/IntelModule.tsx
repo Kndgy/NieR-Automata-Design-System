@@ -6,7 +6,17 @@ import styles from './IntelModule.module.scss'
 export const IntelModule = () => {
   let intellist = getArchivesMockData();
 
-  console.log(intellist.map((node)=>node.map((item)=>item.nestedData.map((another)=>another.title))));
+  const first = intellist.map((node)=>
+                  node.map((item)=>
+                    item.data))
+  
+  const second = intellist.map((node)=>
+                  node.map((item)=>
+                    item.nestedData))
+
+  const third = first.concat(second)
+
+  console.log(third);
 
   const test = true;
   return (
@@ -25,7 +35,7 @@ export const IntelModule = () => {
                     return(
                       nestedItem.data.map((secondNested)=>{
                         return(
-                          <div style={{display:'flex',flexDirection:'column',gap:'20px'}}>
+                          <div key={Math.random()} style={{display:'flex',flexDirection:'column',gap:'20px'}}>
                             {secondNested.title}
                             <div>
                               {secondNested.descriptions}
@@ -35,22 +45,22 @@ export const IntelModule = () => {
                       })
                     )
                   }
-                  if(true){
-                    return(  
-                      nestedItem.nestedData.map((nestedtest)=>{
-                        return(
-                          <>
-                            {nestedtest.title}
-                          </>
-                        )
-                      })
-                    )
-                  }
+                  // if(true){
+                  //   return(  
+                  //     nestedItem.nestedData.map((nestedtest)=>{
+                  //       return(
+                  //         <>
+                  //           {nestedtest.title}
+                  //         </>
+                  //       )
+                  //     })
+                  //   )
+                  // }
                 }
                 )
               )
             }
-            {
+            {/* {
               intellist.map((item)=>
                 item.map((nestedItem)=>{
                   if(true){
@@ -67,7 +77,7 @@ export const IntelModule = () => {
                 }
                 )
               )
-            }
+            } */}
               {/* <YorhaNavLink variant="transparent" text="test item"/>
               <details>
                 <summary>test item dropdown</summary>

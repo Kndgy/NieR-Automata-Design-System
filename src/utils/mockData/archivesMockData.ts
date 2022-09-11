@@ -13,26 +13,37 @@ let archivesMockData = [
           }
         ],
         nestedData:[
-          // {
-          //   title:"",
-          //   evenMoreData:[
-          //     {
-          //       title:"",
-          //       description:""
-          //     },
-          //     {
-
-          //     }
-          //   ]
-          // },
           {
-            title:"YoRHa: Gunner 16",
-            description:" A unit from the experimental YoRHa squadron that was utilized during the 14th Machine War."
+            title:"",
+            id:2,
+            descriptions:["test", 'more test'
+            ],
+            time:["1st", "2nd"],
+            dropDownData:[
+              {
+                title:"first title",
+                id:2,
+                descriptions:["test", 'more test'
+                ],
+                time:["1st", "2nd"]
+              },
+              {
+                title:"first title",
+                id:2,
+                descriptions:["test", 'more test'
+                ],
+                time:["1st", "2nd"]
+              }
+            ]
           },
-          {
-            title:"YoRHa: Scanner 21",
-            description:"A unit from the experimental YoRHa squadron that wasuti;ized during the 14th Machine War, Number 21 possessed a cool and analytical personality that perfectky fit her role as a Scanner."
-          }
+          // {
+          //   title:"YoRHa: Gunner 16",
+          //   description:" A unit from the experimental YoRHa squadron that was utilized during the 14th Machine War."
+          // },
+          // {
+          //   title:"YoRHa: Scanner 21",
+          //   description:"A unit from the experimental YoRHa squadron that wasuti;ized during the 14th Machine War, Number 21 possessed a cool and analytical personality that perfectky fit her role as a Scanner."
+          // }
         ]
       },
       {
