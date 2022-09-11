@@ -8,11 +8,11 @@ export const IntelModule = () => {
 
   const first = intellist.map((node)=>
                   node.map((item)=>
-                    item.data))
+                    item.data.map((test)=>test.title)))
   
   const second = intellist.map((node)=>
                   node.map((item)=>
-                    item.nestedData))
+                    item.nestedData.map((test)=>test.title)))
 
   const third = first.concat(second)
 
@@ -29,36 +29,37 @@ export const IntelModule = () => {
           content={
             <>
             {
-              intellist.map((item)=>
-                item.map((nestedItem)=>{
-                  if(nestedItem.data){
-                    return(
-                      nestedItem.data.map((secondNested)=>{
-                        return(
-                          <div key={Math.random()} style={{display:'flex',flexDirection:'column',gap:'20px'}}>
-                            {secondNested.title}
-                            <div>
-                              {secondNested.descriptions}
-                            </div>
-                          </div>
-                        )
-                      })
-                    )
-                  }
-                  // if(true){
-                  //   return(  
-                  //     nestedItem.nestedData.map((nestedtest)=>{
-                  //       return(
-                  //         <>
-                  //           {nestedtest.title}
-                  //         </>
-                  //       )
-                  //     })
-                  //   )
-                  // }
-                }
-                )
-              )
+              // intellist.map((item)=>
+              //   item.map((nestedItem)=>{
+              //     if(nestedItem.data){
+              //       return(
+              //         nestedItem.data.map((secondNested)=>{
+              //           return(
+              //             <div key={Math.random()} style={{display:'flex',flexDirection:'column',gap:'20px'}}>
+              //               {secondNested.title}
+              //               <div>
+              //                 {secondNested.descriptions}
+              //               </div>
+              //             </div>
+              //           )
+              //         })
+              //       )
+              //     }
+              //     // if(true){
+              //     //   return(  
+              //     //     nestedItem.nestedData.map((nestedtest)=>{
+              //     //       return(
+              //     //         <>
+              //     //           {nestedtest.title}
+              //     //         </>
+              //     //       )
+              //     //     })
+              //     //   )
+              //     // }
+              //   }
+              //   )
+              // )
+              third
             }
             {/* {
               intellist.map((item)=>
