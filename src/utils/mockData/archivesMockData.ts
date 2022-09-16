@@ -37,7 +37,7 @@ let archivesMockData = [
             ]
           },
           {
-            title:"",
+            title:"even more test",
             id:2,
             descriptions:["test", 'more test'
             ],
@@ -58,15 +58,7 @@ let archivesMockData = [
                 time:["1st", "2nd"]
               }
             ]
-          },
-          // {
-          //   title:"YoRHa: Gunner 16",
-          //   description:" A unit from the experimental YoRHa squadron that was utilized during the 14th Machine War."
-          // },
-          // {
-          //   title:"YoRHa: Scanner 21",
-          //   description:"A unit from the experimental YoRHa squadron that wasuti;ized during the 14th Machine War, Number 21 possessed a cool and analytical personality that perfectky fit her role as a Scanner."
-          // }
+          }
         ]
       },
       {
@@ -117,7 +109,7 @@ let archivesMockData = [
         IntelType : "Novel",
         data : [
           {
-            title:null,
+            title:"test",
             id:1,
             descriptions:null,
           },
