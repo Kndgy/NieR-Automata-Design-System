@@ -1,5 +1,6 @@
 import React from "react";
-import { Bar, Button, Tab, YorhaNavLink } from "../../components";
+import { Outlet } from "react-router-dom";
+import { Bar, Tab, YorhaNavLink } from "../../components";
 import { getArchivesMockData } from "../../utils/mockData/archivesMockData";
 import styles from './IntelModule.module.scss'
 
@@ -44,7 +45,7 @@ export const IntelModule = () => {
         />
       </div>
       <div className={styles.outlet}>
-        
+        <Outlet/>
       </div>
       <div className={styles.right}></div>
     </div>
