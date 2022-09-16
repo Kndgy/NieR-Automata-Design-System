@@ -4,7 +4,7 @@ import colors from './colors.json'
 
 type ButtonProps = {
   // icon?: any;
-  text?: string | any;
+  text?: string;
   disabled?: boolean;
   variant?: 'checkbox' | 'button';
 }
