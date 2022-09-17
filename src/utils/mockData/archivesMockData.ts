@@ -6,7 +6,7 @@ let archivesMockData = [
         data : [
           {
             title:"first title",
-            id:2,
+            id:1,
             descriptions:["test", 'more test'
             ],
             time:["1st", "2nd"]
@@ -22,14 +22,14 @@ let archivesMockData = [
             dropDownData:[
               {
                 title:"first title",
-                id:2,
+                id:3,
                 descriptions:["test", 'more test'
                 ],
                 time:["1st", "2nd"]
               },
               {
                 title:"first title",
-                id:2,
+                id:4,
                 descriptions:["test", 'more test'
                 ],
                 time:["1st", "2nd"]
@@ -38,21 +38,21 @@ let archivesMockData = [
           },
           {
             title:"even more test",
-            id:2,
+            id:5,
             descriptions:["test", 'more test'
             ],
             time:["1st", "2nd"],
             dropDownData:[
               {
                 title:"first title",
-                id:2,
+                id:6,
                 descriptions:["test", 'more test'
                 ],
                 time:["1st", "2nd"]
               },
               {
                 title:"first title",
-                id:2,
+                id:7,
                 descriptions:["test", 'more test'
                 ],
                 time:["1st", "2nd"]
@@ -66,7 +66,7 @@ let archivesMockData = [
         data : [
           {
             title:"11B's Escape Plan",
-            id:1,
+            id:8,
             descriptions:null,
           },
         ],
@@ -77,7 +77,7 @@ let archivesMockData = [
         data : [
           {
             title:"11B's Escape Plan",
-            id:1,
+            id:9,
             descriptions:null,
           },
         ],
@@ -88,7 +88,7 @@ let archivesMockData = [
         data : [
           {
             title:"11B's Escape Plan",
-            id:1,
+            id:10,
             descriptions:null,
           },
         ],
@@ -99,7 +99,7 @@ let archivesMockData = [
         data : [
           {
             title:"11B's Escape Plan",
-            id:1,
+            id:11,
             descriptions:null,
           },
         ],
@@ -110,7 +110,7 @@ let archivesMockData = [
         data : [
           {
             title:"test",
-            id:1,
+            id:12,
             descriptions:null,
           },
         ],
@@ -121,9 +121,9 @@ let archivesMockData = [
 ];
 
 export function getArchivesMockData(){
-  return archivesMockData.map((item)=>item.archivesData);
+  return archivesMockData[0].archivesData;
 }
 
 export function getArchivesMockID(id){
-  return archivesMockData.find((data)=>data.archivesData[0].data[0].id)
+  return archivesMockData.map((item)=>item.archivesData.map((node)=>node.data.find((items)=>items.id === id)));
 }
