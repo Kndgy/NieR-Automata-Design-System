@@ -39,15 +39,28 @@ export const IntelModule = () => {
     )
   }))
 
-  const third = first.concat(second)
-  
+  function shuffle(array) {
+    let currentIndex = array.length,  randomIndex;
 
+    while (currentIndex != 0) {
+  
+      randomIndex = Math.floor(Math.random() * currentIndex);
+      currentIndex--;
+
+      [array[currentIndex], array[randomIndex]] = [
+        array[randomIndex], array[currentIndex]];
+    }
+    return array;
+  }
+
+  const third = shuffle(first[0].concat(second[0]));
+  
   const yeah = intellistId[0].filter(e => e!==undefined)
   const yeaha = secondId[0].filter(e => e!==undefined)
   const yeahaa = yeaha[0].filter(e=>e!==undefined)
   const x = yeah.concat(yeahaa)
   // console.log(x[0])
-  console.log(first)
+  console.log(third)
 
   return (
     <div className={styles.IntelModule}>
