@@ -1,36 +1,40 @@
 import React from "react";
 import { Outlet } from "react-router-dom";
 import { Bar, Tab, YorhaNavLink } from "../../components";
-import { getArchivesMockData } from "../../utils/mockData/archivesMockData";
+import { getArchivesMockData, getArchivesMockID } from "../../utils/mockData/archivesMockData";
+import { getItemsData } from "../../utils/mockData/ItemsMockData";
 import styles from './IntelModule.module.scss'
 
 export const IntelModule = () => {
   let intellist = getArchivesMockData();
+  let intellistId = getArchivesMockID(parseInt("12",10));
 
-  const first = intellist.map((node)=>
-                  node.map((item)=>
+  const first = intellist.map((item)=>
                     item.data.map((test)=>{
                       return(<YorhaNavLink text={test.title} key={test.title}/>)
-                    })))
+                    }))
   
-  const second = intellist.map((node)=>node.map((item)=>item.nestedData.map((evenmore)=>{
+  const second = intellist.map((item)=>item.nestedData.map((evenmore)=>{
     return(
       <details key={evenmore.title}>
-      <summary>{evenmore.title}</summary>
-      {
-        evenmore.dropDownData.map((yeah)=>{
-          return(
-            
-            <YorhaNavLink key={Math.random()} text={yeah.title}/>
-            
-          )
-        })
-      }
+        <summary>{evenmore.title}</summary>
+        {
+          evenmore.dropDownData.map((yeah)=>{
+            return(
+              <YorhaNavLink key={Math.random()} text={yeah.title}/>
+            )
+          })
+        }
       </details>
     )
-  })))
+  }))
 
+  const itemid = getItemsData();
   const third = first.concat(second)
+  const yeah = intellistId[0].map((items)=>items).filter(function(e){
+    return e !== undefined
+  })
+  console.log(yeah[0])
 
   return (
     <div className={styles.IntelModule}>

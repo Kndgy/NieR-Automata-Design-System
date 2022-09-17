@@ -125,5 +125,5 @@ export function getArchivesMockData(){
 }
 
 export function getArchivesMockID(id){
-  return archivesMockData.map((item)=>item.archivesData.map((node)=>node.data.find((items)=>items.id === id)));
+  return archivesMockData.map((item)=>item.archivesData.map((item)=>item.data.find((product)=>product.id === id)));
 }
