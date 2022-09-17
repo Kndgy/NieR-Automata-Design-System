@@ -1,13 +1,14 @@
 import React from "react";
 import { Outlet } from "react-router-dom";
 import { Bar, Tab, YorhaNavLink } from "../../components";
-import { getArchivesMockData, getArchivesMockID } from "../../utils/mockData/archivesMockData";
+import { getArchivesMockData, getArchivesMockID, getNestedArchivesMockID } from "../../utils/mockData/archivesMockData";
 import { getItemsData } from "../../utils/mockData/ItemsMockData";
 import styles from './IntelModule.module.scss'
 
 export const IntelModule = () => {
   let intellist = getArchivesMockData();
-  let intellistId = getArchivesMockID(parseInt("12",10));
+  let intellistId = getArchivesMockID(parseInt("1",10));
+  let secondId = getNestedArchivesMockID(parseInt("3", 10))
 
   const first = intellist.map((item)=>
                     item.data.map((test)=>{
@@ -30,8 +31,12 @@ export const IntelModule = () => {
   }))
 
   const third = first.concat(second)
+
   const yeah = intellistId[0].filter(e => e!==undefined)
-  console.log(yeah[0])
+  const yeaha = secondId[0].filter(e => e!==undefined)
+  const yeahaa = yeaha[0].filter(e=>e!==undefined)
+  const x = yeah.concat(yeahaa)
+  console.log(x[0])
 
   return (
     <div className={styles.IntelModule}>

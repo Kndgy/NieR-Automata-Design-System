@@ -21,7 +21,7 @@ let archivesMockData = [
             time:["1st", "2nd"],
             dropDownData:[
               {
-                title:"first title",
+                title:"dropdown data",
                 id:3,
                 descriptions:["test", 'more test'
                 ],
@@ -126,4 +126,8 @@ export function getArchivesMockData(){
 
 export function getArchivesMockID(id){
   return archivesMockData.map((item)=>item.archivesData.map((item)=>item.data.find((product)=>product.id === id)));
+}
+
+export function getNestedArchivesMockID(id){
+  return archivesMockData.map((item)=>item.archivesData.map((item)=>item.nestedData.map((items)=>items.dropDownData.find((product)=>product.id === id))));
 }
