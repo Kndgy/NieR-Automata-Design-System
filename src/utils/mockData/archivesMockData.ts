@@ -10,6 +10,13 @@ let archivesMockData = [
             descriptions:["test", 'more test'
             ],
             time:["1st", "2nd"]
+          },
+          {
+            title:"first title",
+            id:14,
+            descriptions:["test", 'more test'
+            ],
+            time:["1st", "2nd"]
           }
         ],
         nestedData:[
@@ -70,7 +77,31 @@ let archivesMockData = [
             descriptions:null,
           },
         ],
-        nestedData:[]
+        nestedData:[
+          {
+            title:"first nest",
+            id:2,
+            descriptions:["test", 'more test'
+            ],
+            time:["1st", "2nd"],
+            dropDownData:[
+              {
+                title:"dropdown data",
+                id:3,
+                descriptions:["test", 'more test'
+                ],
+                time:["1st", "2nd"]
+              },
+              {
+                title:"first title",
+                id:4,
+                descriptions:["test", 'more test'
+                ],
+                time:["1st", "2nd"]
+              }
+            ]
+          },
+        ]
       },
       {
         IntelType : "Tutorials",
@@ -121,11 +152,11 @@ let archivesMockData = [
 ];
 
 export function getArchivesMockData(){
-  return archivesMockData[0].archivesData;
+  return archivesMockData[0].archivesData.map((items)=>items);
 }
 
 export function getArchivesMockID(id){
-  return archivesMockData.map((item)=>item.archivesData.map((item)=>item.data.find((product)=>product.id === id)));
+  return archivesMockData.map((item)=>item.archivesData.map((item)=>item.data.find((items)=>items.id === id)));
 }
 
 export function getNestedArchivesMockID(id){
