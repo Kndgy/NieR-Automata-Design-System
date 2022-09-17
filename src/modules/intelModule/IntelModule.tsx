@@ -29,11 +29,8 @@ export const IntelModule = () => {
     )
   }))
 
-  const itemid = getItemsData();
   const third = first.concat(second)
-  const yeah = intellistId[0].map((items)=>items).filter(function(e){
-    return e !== undefined
-  })
+  const yeah = intellistId[0].filter(e => e!==undefined)
   console.log(yeah[0])
 
   return (
