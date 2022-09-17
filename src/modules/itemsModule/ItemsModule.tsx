@@ -10,9 +10,7 @@ export const ItemsModule = () => {
   let [searchParams] = useSearchParams();
   let ItemsLists = getItemsData();
   let location = useLocation()
-  let itemid = getItemsId(parseInt("2",10))
 
-  console.log(itemid)
   return(
     <div className={styles.ItemsModule}>
       <div className={styles.ItemsModuleContainer}>

@@ -7,7 +7,7 @@ import styles from './ItemsModule.module.scss';
 export const ActiveItemsModule = () => {
   let params = useParams();
   let itemsId = getItemsId(parseInt(params.itemid, 10));
-  console.log(itemsId)
+
   return(
     <Widget
       dark
