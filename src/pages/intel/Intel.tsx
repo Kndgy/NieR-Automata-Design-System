@@ -47,13 +47,10 @@ const Intel = () => {
       title="Intel"
       child={
         <PagesChildTemplate
-          LeftContent={
-            <>
+          LeftContent=
               {IntelList.map((item)=>(
                 <YorhaNavLink key={Math.random()} text={item.name} to={item.link} filter={item.type} filterType={"type"}/>
               ))}
-            </>
-          }
           Outlet={
             <Outlet/>
           }
