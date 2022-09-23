@@ -43,7 +43,7 @@ export const IntelModule = () => {
     )
   }))
 
-  // const third = first[0].concat(second[0]);
+  const third = second[0].concat(first[0]);
 
   return (
     <div className={styles.IntelModule}>
@@ -53,7 +53,7 @@ export const IntelModule = () => {
         </div>
         <Tab
           content={
-            first
+            third
           }
         />
       </div>
