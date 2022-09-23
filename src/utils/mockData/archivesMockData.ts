@@ -137,6 +137,17 @@ let archivesMockData = [
         nestedData:[]
       },
       {
+        IntelType : "Fishing Encyclopedia",
+        data : [
+          {
+            title:"11B's Escape Plan",
+            id:11,
+            descriptions:null,
+          },
+        ],
+        nestedData:[]
+      },
+      {
         IntelType : "Novel",
         data : [
           {

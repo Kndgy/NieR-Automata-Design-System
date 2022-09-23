@@ -1,24 +1,30 @@
 import React from "react";
-import { Outlet } from "react-router-dom";
+import { Outlet, useLocation, useSearchParams } from "react-router-dom";
 import { Bar, Tab, YorhaNavLink } from "../../components";
 import { getArchivesMockData } from "../../utils/mockData/archivesMockData";
 import styles from './IntelModule.module.scss'
 
 export const IntelModule = () => {
+
+  let [searchParams] = useSearchParams();
+  let location = useLocation();
+
   let intellist = getArchivesMockData();
 
+  console.log(searchParams.get("type"))
+
   const first = intellist.filter((intellist)=>{
-    let filter = "Archives"
+    let filter = searchParams.get("type")
     if(!filter) return true;
     let type = intellist.IntelType;
     return type.startsWith(filter);
   }).map((item)=>
   item.data.map((test)=>{
-    return(<YorhaNavLink text={test.title} key={test.id}/>)
+    return(<YorhaNavLink to={test.id + location.search} text={test.title} key={test.id}/>)
   }))
   
   const second = intellist.filter((intellist)=>{
-    let filter = "Archives"
+    let filter = searchParams.get("type")
     if(!filter) return true;
     let type = intellist.IntelType;
     return type.startsWith(filter);
@@ -29,7 +35,7 @@ export const IntelModule = () => {
         {
           evenmore.dropDownData.map((yeah)=>{
             return(
-              <YorhaNavLink key={Math.random()} text={yeah.title}/>
+              <YorhaNavLink to={yeah.id + location.search} key={Math.random()} text={yeah.title}/>
             )
           })
         }
@@ -37,21 +43,7 @@ export const IntelModule = () => {
     )
   }))
 
-  function shuffle(array) {
-    let currentIndex = array.length,  randomIndex;
-
-    while (currentIndex != 0) {
-  
-      randomIndex = Math.floor(Math.random() * currentIndex);
-      currentIndex--;
-
-      [array[currentIndex], array[randomIndex]] = [
-        array[randomIndex], array[currentIndex]];
-    }
-    return array;
-  }
-
-  const third = shuffle(first[0].concat(second[0]));
+  // const third = first[0].concat(second[0]);
 
   return (
     <div className={styles.IntelModule}>
@@ -61,7 +53,7 @@ export const IntelModule = () => {
         </div>
         <Tab
           content={
-            third
+            first
           }
         />
       </div>
