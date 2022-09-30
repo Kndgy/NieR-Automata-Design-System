@@ -7,3 +7,4 @@ export {YorhaNavLink} from './YorhaNavLink';
 export {Tab} from './Tab';
 export {Strip} from './Strip';
 export {ScrollElement} from './ScrollElement';
+export {DropDown} from './DropDown'

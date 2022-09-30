@@ -1,6 +1,6 @@
 import React from "react";
 import { useParams } from "react-router-dom";
-import { Tab, Widget } from "../../components";
+import { Widget } from "../../components";
 import {getArchivesMockID, getNestedArchivesMockID } from "../../utils/mockData/archivesMockData";
 
 
