@@ -1,6 +1,6 @@
 import React from "react";
 import { Outlet, useLocation, useSearchParams } from "react-router-dom";
-import { Bar, Tab, YorhaNavLink } from "../../components";
+import { Bar, DropDown, Tab, YorhaNavLink } from "../../components";
 import { getArchivesMockData } from "../../utils/mockData/archivesMockData";
 import styles from './IntelModule.module.scss'
 
@@ -58,7 +58,8 @@ export const IntelModule = () => {
         />
       </div>
       <div className={styles.outlet}>
-        <Outlet/>
+        {/* <Outlet/> */}
+        <><DropDown Title={"test"} Content={"test content"} /></>
       </div>
     </div>
   )

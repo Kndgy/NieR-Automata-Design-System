@@ -1,14 +1,21 @@
 import React from "react";
+import styled from 'styled-components';
 
 type DropDownTypes = {
-  Title?: string | React.ReactNode;
+  Title?: string;
   Content?: React.ReactNode;
 }
+
+const StyledSummary = styled.summary`
+  background-color: white;
+  display: flex;
+  flex-direction: row;
+`
 
 export const DropDown = ({Title, Content}: DropDownTypes) => {
   return(
     <details>
-      <summary> {Title} </summary>
+      <StyledSummary> {Title} </StyledSummary>
       {Content}
     </details>
   )
