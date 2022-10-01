@@ -1,7 +1,15 @@
 import React from "react";
 
-export const DropDown = () => {
+type DropDownTypes = {
+  Title?: string | React.ReactNode;
+  Content?: React.ReactNode;
+}
+
+export const DropDown = ({Title, Content}: DropDownTypes) => {
   return(
-    <>dropdown</>
+    <details>
+      <summary> {Title} </summary>
+      {Content}
+    </details>
   )
 }
