@@ -85,6 +85,7 @@
     "webpack": "^5.73.0"
   },
   "dependencies": {
+    "framer": "^2.2.0",
     "styled-components": "^5"
   },
   "peerDependencies": {
