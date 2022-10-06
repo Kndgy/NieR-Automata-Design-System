@@ -11,7 +11,7 @@ export const IntelModule = () => {
 
   let intellist = getArchivesMockData();
 
-  console.log(searchParams.get("type"))
+  // console.log(searchParams.get("type"))
 
   const first = intellist.filter((intellist)=>{
     let filter = searchParams.get("type")
