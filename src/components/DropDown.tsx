@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import styled from 'styled-components';
 
 type DropDownTypes = {
@@ -7,9 +7,17 @@ type DropDownTypes = {
 }
 
 const StyledSummary = styled.summary`
-  background-color: white;
+  width: 100%;
+  background-image: linear-gradient(90deg, #b4af9a 50%, #b4af9a 50%, #57544a 50%, #57544a 100%);
+  background-size: 200%;
+  color:#57544a;
+  transition: .2s linear;
   display: flex;
   flex-direction: row;
+  &:hover{
+    background-position: -100%;
+    color:#b4af9a;
+  }
 `
 
 
