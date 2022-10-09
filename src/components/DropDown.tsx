@@ -27,24 +27,60 @@ font-size: 18px;
 }
 `
 
+const Switch = styled.label`
+  pointer-events: auto;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+  z-index: 10;
+`
+
+const SwitchInput = styled.input.attrs({
+  type: 'checkbox',
+})`
+  pointer-events: auto;
+width: 0;
+height: 0;
+opacity: 0;
+&:checked + ${StyledSummary}{
+  background-position: -100%;
+  color:#b4af9a;
+}
+`
+
 export const DropDown = ({Title, Content}: DropDownTypes) => {
-  const [isActive, setIsActive] = React.useState(true);
-  const handler = ()=>{
-    setIsActive(current => !current)
-    console.log(isActive)
-    if(isActive){
-      bg = "-100%"
-      color="#b4af9a"
-    }else{
-      bg = ""
-      color= ""
-    }
-  }
+  // var testBool = true;
+  // const [isActive, setIsActive] = React.useState(testBool);
+
+  // const handler = ()=>{
+  //   setIsActive(current => !current)
+  //   console.log(isActive)
+  //   if(isActive){
+  //     bg = "-100%"
+  //     color="#b4af9a"
+  //   }else{
+  //     bg = ""
+  //     color= ""
+  //   }
+  // }
+
+  // const [isChecked, setIsChecked] = React.useState(false);
+
+  // const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+  //   console.log(isChecked)
+  //   if(event.target.checked === true){
+  //     return setIsChecked(true);
+  //   } else{
+  //     return setIsChecked(false);
+  //   }
+  // };
   
 
   return(
     <details>
-      <StyledSummary style={{backgroundPosition:`${bg}`, color:`${color}`}} onClick={handler}> {Title} </StyledSummary>
+      <StyledSummary> {Title} </StyledSummary>
       {Content}
     </details>
   )
