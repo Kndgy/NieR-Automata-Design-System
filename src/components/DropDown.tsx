@@ -18,6 +18,9 @@ transition: .2s linear;
 display: flex;
 flex-direction: row;
 padding: 10px;
+font-family: 'Manrope', sans-serif;
+font-weight: 500;
+font-size: 18px;
 &:hover{
   background-position: -100%;
   color:#b4af9a;
