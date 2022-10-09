@@ -12,6 +12,11 @@
     flex-direction: row;
     z-index: 2;
     gap: 2em;
+    .TabContent{
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
   }
   .outlet{
     width: 200%;

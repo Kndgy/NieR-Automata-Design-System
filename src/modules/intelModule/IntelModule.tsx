@@ -1,5 +1,5 @@
 import React from "react";
-import { Outlet, useLocation, useSearchParams } from "react-router-dom";
+import {useLocation, useSearchParams } from "react-router-dom";
 import { Bar, DropDown, Tab, YorhaNavLink } from "../../components";
 import { getArchivesMockData } from "../../utils/mockData/archivesMockData";
 import styles from './IntelModule.module.scss'
@@ -30,16 +30,17 @@ export const IntelModule = () => {
     return type.startsWith(filter);
   }).map((item)=>item.nestedData.map((evenmore)=>{
     return(
-      <details key={evenmore.id}>
-        <summary>{evenmore.title}</summary>
-        {
+      <DropDown 
+        key={evenmore.id}
+        Title={evenmore.title} 
+        Content={
           evenmore.dropDownData.map((yeah)=>{
             return(
               <YorhaNavLink to={yeah.id + location.search} key={Math.random()} text={yeah.title}/>
             )
           })
         }
-      </details>
+      />
     )
   }))
 
@@ -52,6 +53,7 @@ export const IntelModule = () => {
           <Bar/>
         </div>
         <Tab
+          className={styles.TabContent}
           content={
             third
           }
