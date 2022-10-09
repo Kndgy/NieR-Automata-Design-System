@@ -3,6 +3,7 @@ import styled from "styled-components";
 
 type TabProps = {
   content?: React.ReactNode;
+  className?: string;
 }
 
 const StyledTab = styled.div`
@@ -62,11 +63,11 @@ const Content = styled.div`
 }
 `
 
-export const Tab = ({content}:TabProps) =>{
+export const Tab = ({content, className}:TabProps) =>{
   return(
     <StyledTab>
       <SeparatorStyle><Separator/> <Dot/></SeparatorStyle>
-        <Content>
+        <Content className={className}>
           {content}
         </Content>
         <SeparatorStyle><Separator/> <Dot/></SeparatorStyle>
