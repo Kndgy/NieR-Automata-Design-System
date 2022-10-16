@@ -11,16 +11,14 @@ export const IntelModule = () => {
 
   let intellist = getArchivesMockData();
 
-  // console.log(searchParams.get("type"))
-
   const first = intellist.filter((intellist)=>{
     let filter = searchParams.get("type")
     if(!filter) return true;
     let type = intellist.IntelType;
     return type.startsWith(filter);
-  }).map((item)=>
-  item.data.map((test)=>{
-    return(<YorhaNavLink to={test.id + location.search} text={test.title} key={test.id}/>)
+    }).map((item)=>
+    item.data.map((test)=>{
+      return(<YorhaNavLink to={test.id + location.search} text={test.title} key={test.id}/>)
   }))
   
   const second = intellist.filter((intellist)=>{
@@ -28,7 +26,7 @@ export const IntelModule = () => {
     if(!filter) return true;
     let type = intellist.IntelType;
     return type.startsWith(filter);
-  }).map((item)=>item.nestedData.map((evenmore)=>{
+    }).map((item)=>item.nestedData.map((evenmore)=>{
     return(
       <DropDown 
         key={evenmore.id}
