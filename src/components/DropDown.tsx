@@ -77,6 +77,12 @@ export const DropDown = ({Title, Content}: DropDownTypes) => {
   //   }
   // };
 
+  const [isActive, setIsActive] = React.useState(false);
+
+  const handleClick = () => {
+    setIsActive(current => !current);
+  };
+
 
   const log =()=>{
     test = "-100%"
@@ -84,7 +90,7 @@ export const DropDown = ({Title, Content}: DropDownTypes) => {
   }
   return(
     <details>
-      <StyledSummary style={{backgroundPosition:`${test}`}} > <div  >{Title}</div> </StyledSummary>
+      <StyledSummary onClick={handleClick} style={{backgroundPosition: isActive ? '-100%' : '',}} > <div >{Title}</div> </StyledSummary>
       {Content}
     </details>
   )
