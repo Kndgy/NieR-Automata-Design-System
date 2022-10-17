@@ -34,7 +34,7 @@ export const IntelModule = () => {
         Content={
           evenmore.dropDownData.map((yeah)=>{
             return(
-              <YorhaNavLink to={yeah.id + location.search} key={Math.random()} text={yeah.title}/>
+              <div key={Math.random()} className={styles.dropdownChild}><YorhaNavLink variant="transparent" to={yeah.id + location.search} text={yeah.title}/></div>
             )
           })
         }

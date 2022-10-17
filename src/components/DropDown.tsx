@@ -8,7 +8,7 @@ type DropDownTypes = {
 
 var bg = "";
 var color = ""
-
+var test = ""
 const StyledSummary = styled.summary`
 width: 100%;
 background-image: linear-gradient(90deg, #b4af9a 50%, #b4af9a 50%, #57544a 50%, #57544a 100%);
@@ -76,11 +76,15 @@ export const DropDown = ({Title, Content}: DropDownTypes) => {
   //     return setIsChecked(false);
   //   }
   // };
-  
 
+
+  const log =()=>{
+    test = "-100%"
+    console.log(test)  
+  }
   return(
     <details>
-      <StyledSummary> {Title} </StyledSummary>
+      <StyledSummary style={{backgroundPosition:`${test}`}} > <div  >{Title}</div> </StyledSummary>
       {Content}
     </details>
   )

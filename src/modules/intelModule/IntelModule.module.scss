@@ -16,6 +16,12 @@
       display: flex;
       flex-direction: column;
       gap: 20px;
+      .dropdownChild{
+        display: flex;
+        flex-direction: column;
+        padding-top: 16px;
+        padding-left: 8px;
+      }
     }
   }
   .outlet{
