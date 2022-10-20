@@ -177,6 +177,7 @@ const neutral ={
 
 export const YorhaNavLink = ({to, filter="", filterType, variant="nav", text, ...props}:YorhaNavLinkProps) =>{
 
+  //TODO refactor for more variants using key value, add pointer events to be used as child, or put it on button, future problems
   const checker = () =>{
     if(variant === "nav"){
       return(

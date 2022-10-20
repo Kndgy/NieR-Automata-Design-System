@@ -18,7 +18,7 @@ export const IntelModule = () => {
     return type.startsWith(filter);
     }).map((item)=>
     item.data.map((test)=>{
-      return(<YorhaNavLink to={test.id + location.search} text={test.title} key={test.id}/>)
+      return(<YorhaNavLink variant="transparent" to={test.id + location.search} text={test.title} key={test.id}/>)
   }))
   
   const second = intellist.filter((intellist)=>{
