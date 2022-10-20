@@ -9,7 +9,7 @@ export const ActiveIntelModule = () => {
   
   let intellistId = getArchivesMockID(parseInt(params.intelid,10));
   let secondId = getNestedArchivesMockID(parseInt(params.intelid, 10))
-  console.log(params);
+  // console.log(params);
   
   const yeah = intellistId[0].filter(e => e!==undefined)
   const yeaha = secondId[0].filter(e => e!==undefined)
@@ -21,7 +21,13 @@ export const ActiveIntelModule = () => {
   return(
     <Widget
       title={data.title}
-      content={data.descriptions}
+      content={
+        <div>
+          <img src={data.image} alt={"image placeholder"}/>
+          <p/>
+          {data.descriptions}
+        </div>
+      }
     />
   )
 }
