@@ -37,7 +37,7 @@ export const DropDown = ({Title, Content}: DropDownTypes) => {
 
   return(
     <details>
-      <StyledSummary onClick={handleClick} style={{backgroundPosition: isActive ? '-100%' : '', color: isActive ? '#b4af9a' :''}} > <img src="" alt={isActive? "active" : "inactive" } /> <div >{Title}</div> </StyledSummary>
+      <StyledSummary onClick={handleClick} style={{backgroundPosition: isActive ? '-100%' : '', color: isActive ? '#b4af9a' :''}} > <span> {isActive ? "-" : "+"} </span> <div >{Title}</div> </StyledSummary>
       {Content}
     </details>
   )
