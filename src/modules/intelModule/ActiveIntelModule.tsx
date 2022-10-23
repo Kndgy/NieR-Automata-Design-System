@@ -1,6 +1,6 @@
 import React from "react";
 import { useParams } from "react-router-dom";
-import { Widget } from "../../components";
+import { Tab, Widget } from "../../components";
 import {getArchivesMockID, getNestedArchivesMockID } from "../../utils/mockData/archivesMockData";
 
 
@@ -18,15 +18,28 @@ export const ActiveIntelModule = () => {
   const data = x[0]
   // console.log(x[0])
 
+  const imageCheck = () => {
+    if(data.image){
+      return(
+        <>
+          <img src={data.image} alt={"image placeholder"}/>
+          <p/>
+        </>
+      )
+    } else {
+      return("")
+    }
+  }
   return(
     <Widget
       title={data.title}
       content={
-        <div>
-          <img src={data.image} alt={"image placeholder"}/>
-          <p/>
+        <Tab content={
+          <div>
+          {imageCheck()}
           {data.descriptions}
         </div>
+        }/>
       }
     />
   )
