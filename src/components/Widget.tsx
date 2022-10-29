@@ -25,11 +25,20 @@ const Icon = styled.div`
   height: 5%;
   min-width: 20px;
   min-height: 20px;
-  background-image: linear-gradient(90deg, #57544a 50%, #57544a 50%, #b4af9a 50%, #b4af9a 100%);
+  background-color: ${props => props.theme.bg};
   background-size: 200%;
   transition: .1s linear;
 `;
 
+Icon.defaultProps = {
+  theme: {
+    bg: `${colors.colors[2].hex}`
+  }
+}
+
+const darkIcon = {
+  bg: `${colors.colors[0].hex}`
+}
 
 const Header = styled.div`
   display: flex;
@@ -74,10 +83,18 @@ const theme = {
 export const Widget = ({dark = false , title, content, lvl, icon=true, ...props}: WidgetProps) => {
   const iconChecker = () =>{
     if(icon === true){
-      return(
-        <Icon />
-      )
-    } else if(icon === false){
+      if(dark){
+        return(
+          <ThemeProvider theme={darkIcon}>
+            <Icon/>
+          </ThemeProvider>
+        )
+      } else {
+        return(
+          <Icon/>
+        )
+      }
+    } else {
       return <></>;
     }
   }
@@ -93,7 +110,7 @@ export const Widget = ({dark = false , title, content, lvl, icon=true, ...props}
           </Title>
         </Header>
       )
-    }else if(dark === true){
+    }else{
       return(
         <ThemeProvider theme={theme}>
           <Header>
