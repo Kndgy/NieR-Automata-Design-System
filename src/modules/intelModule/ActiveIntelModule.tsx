@@ -16,7 +16,6 @@ export const ActiveIntelModule = () => {
   const yeahaa = yeaha[0].filter(e=>e!==undefined)
   const x = yeah.concat(yeahaa)
   const data = x[0]
-  // console.log(x[0])
 
   const imageCheck = () => {
     if(data.image){
@@ -37,9 +36,10 @@ export const ActiveIntelModule = () => {
       content={
         <Tab content={
           <div>
-          {imageCheck()}
-          {data.descriptions}
-        </div>
+            {imageCheck()}
+            {data.time}
+            {data.descriptions}
+          </div>
         }/>
       }
     />

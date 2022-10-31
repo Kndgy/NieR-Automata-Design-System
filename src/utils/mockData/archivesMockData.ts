@@ -23,7 +23,7 @@ let archivesMockData = [
         ],
         nestedData:[
           {
-            title:"first nest",
+            title:"Pearl Harbor Descent Records",
             id:2,
             image:"",
             descriptions:["test", 'more test'
@@ -31,12 +31,11 @@ let archivesMockData = [
             time:["1st", "2nd"],
             dropDownData:[
               {
-                title:"dropdown data",
+                title:"11B's Escape Plan",
                 id:3,
                 image:"",
-                descriptions:["test", 'more test'
-                ],
-                time:["1st", "2nd"]
+                descriptions:["Re-Activation complete. A check of my body reveals various failures.", 'more test'],
+                time:["00:02:13", "00:10:13", "00:15:21"]
               },
               {
                 title:"first title",
@@ -84,6 +83,7 @@ let archivesMockData = [
             id:8,
             image:"",
             descriptions:null,
+            time:["1st", "2nd"]
           },
         ],
         nestedData:[
@@ -123,6 +123,7 @@ let archivesMockData = [
             id:9,
             image:"",
             descriptions:null,
+            time:["1st", "2nd"]
           },
         ],
         nestedData:[]
@@ -135,6 +136,7 @@ let archivesMockData = [
             id:10,
             image:"",
             descriptions:null,
+            time:["1st", "2nd"]
           },
         ],
         nestedData:[]
@@ -147,6 +149,8 @@ let archivesMockData = [
             id:11,
             image:"",
             descriptions:null,
+            time:["1st", "2nd"]
+
           },
         ],
         nestedData:[]
@@ -159,6 +163,8 @@ let archivesMockData = [
             id:11,
             image:"",
             descriptions:null,
+            time:["1st", "2nd"]
+
           },
         ],
         nestedData:[]
@@ -171,6 +177,7 @@ let archivesMockData = [
             id:12,
             image:"",
             descriptions:null,
+            time:["1st", "2nd"]
           },
         ],
         nestedData:[]
