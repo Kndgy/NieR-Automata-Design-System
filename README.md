@@ -35,6 +35,7 @@ ScrollElement Tab | - | Content = ReactNode | - |
 Strip | - | - | - |
 Widget | Light, Dark | Dark = boolean <br> title = string <br> content = ReactNode <br> icon (wip) <br> lvl = string / number | Light |
 Yorha NavLink | button <br> nav <br> transparent <br> neutral | text = string <br> to = string <br> filter = string <br>className = string <br> disabled = boolean <br> filterType = string <br> variant = button / nav / transparent / netural| nav |
+DropDown | - | title = string <br> content = react.node | - 
 
 # Variants and Props Explanations
 To do

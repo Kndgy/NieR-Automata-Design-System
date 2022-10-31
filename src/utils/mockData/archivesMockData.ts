@@ -10,7 +10,7 @@ let archivesMockData = [
             image:"",
             descriptions:["test", 'more test'
             ],
-            time:["1st", "2nd"]
+            time:null
           },
           {
             title:"second title",
