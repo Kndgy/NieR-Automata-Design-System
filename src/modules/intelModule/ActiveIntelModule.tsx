@@ -21,7 +21,7 @@ export const ActiveIntelModule = () => {
     if(data.image){
       return(
         <>
-          <img src={data.image} alt={"image placeholder"}/>
+          <img src={data.image} alt={"placeholder"}/>
           <p/>
         </>
       )

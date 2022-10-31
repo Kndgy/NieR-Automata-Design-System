@@ -2,7 +2,7 @@ import React from "react";
 import { Bar} from "@kaineee/nier-automata-ui-library";
 import styles from "./ItemsModule.module.scss";
 import { Tab, YorhaNavLink } from "../../components";
-import { getItemsData, getItemsId } from "../../utils/mockData/ItemsMockData";
+import { getItemsData } from "../../utils/mockData/ItemsMockData";
 import { Outlet, useLocation, useSearchParams } from "react-router-dom";
 
 export const ItemsModule = () => {
