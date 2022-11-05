@@ -8,17 +8,13 @@ let archivesMockData = [
             title:"first title",
             id:1,
             image:"",
-            descriptions:["test", 'more test'
-            ],
-            time:null
+            content:[],
           },
           {
             title:"second title",
             id:14,
             image:"",
-            descriptions:["test", 'more test'
-            ],
-            time:["1st", "2nd"]
+            content:[],
           }
         ],
         nestedData:[
@@ -26,24 +22,33 @@ let archivesMockData = [
             title:"Pearl Harbor Descent Records",
             id:2,
             image:"",
-            descriptions:["test", 'more test'
-            ],
-            time:["1st", "2nd"],
+            content:[],
             dropDownData:[
               {
                 title:"11B's Escape Plan",
                 id:3,
                 image:"",
-                descriptions:["Re-Activation complete. A check of my body reveals various failures.", 'more test'],
-                time:["00:02:13", "00:10:13", "00:15:21"]
+                content:[
+                  {
+                    time:"00:02:13 ",
+                    descriptions:"Re-Activation complete. A check of my body reveals various failures."
+                  },
+                  {
+                    time:"00:10:13",
+                    descriptions:"desc 2"
+                  },
+                  {
+                    time:"00:15:21",
+                    descriptions:"desc 3"  
+                  }
+                ]
               },
               {
                 title:"first title",
                 id:4,
                 image:"",
-                descriptions:["test", 'more test'
-                ],
-                time:["1st", "2nd"]
+                content:[],
+  
               }
             ]
           },
@@ -51,25 +56,21 @@ let archivesMockData = [
             title:"even more test",
             id:5,
             image:"",
-            descriptions:["test", 'more test'
-            ],
-            time:["1st", "2nd"],
+            content:[],
             dropDownData:[
               {
                 title:"first title",
                 id:6,
                 image:"",
-                descriptions:["test", 'more test'
-                ],
-                time:["1st", "2nd"]
+                content:[],
+  
               },
               {
                 title:"first title",
                 id:7,
                 image:"",
-                descriptions:["test", 'more test'
-                ],
-                time:["1st", "2nd"]
+                content:[],
+  
               }
             ]
           }
@@ -82,8 +83,8 @@ let archivesMockData = [
             title:"11B's Escape Plan",
             id:8,
             image:"",
+            content:[],
             descriptions:null,
-            time:["1st", "2nd"]
           },
         ],
         nestedData:[
@@ -91,25 +92,21 @@ let archivesMockData = [
             title:"first nest",
             id:2,
             image:"",
-            descriptions:["test", 'more test'
-            ],
-            time:["1st", "2nd"],
+            content:[],
             dropDownData:[
               {
                 title:"dropdown data",
                 id:3,
                 image:"",
-                descriptions:["test", 'more test'
-                ],
-                time:["1st", "2nd"]
+                content:[],
+  
               },
               {
                 title:"first title",
                 id:4,
                 image:"",
-                descriptions:["test", 'more test'
-                ],
-                time:["1st", "2nd"]
+                content:[],
+  
               }
             ]
           },
@@ -122,8 +119,8 @@ let archivesMockData = [
             title:"11B's Escape Plan",
             id:9,
             image:"",
+            content:[],
             descriptions:null,
-            time:["1st", "2nd"]
           },
         ],
         nestedData:[]
@@ -135,8 +132,8 @@ let archivesMockData = [
             title:"11B's Escape Plan",
             id:10,
             image:"",
+            content:[],
             descriptions:null,
-            time:["1st", "2nd"]
           },
         ],
         nestedData:[]
@@ -148,8 +145,8 @@ let archivesMockData = [
             title:"11B's Escape Plan",
             id:11,
             image:"",
+            content:[],
             descriptions:null,
-            time:["1st", "2nd"]
 
           },
         ],
@@ -162,8 +159,8 @@ let archivesMockData = [
             title:"11B's Escape Plan",
             id:11,
             image:"",
+            content:[],
             descriptions:null,
-            time:["1st", "2nd"]
 
           },
         ],
@@ -176,8 +173,8 @@ let archivesMockData = [
             title:"test",
             id:12,
             image:"",
+            content:[],
             descriptions:null,
-            time:["1st", "2nd"]
           },
         ],
         nestedData:[]
