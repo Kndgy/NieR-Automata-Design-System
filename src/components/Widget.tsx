@@ -2,6 +2,7 @@ import React from "react";
 import styled, { ThemeProvider } from 'styled-components';
 import colors from './colors.json';
 
+//TODO might want to refactor the parent element style/size to fix being pushed by font size
 
 interface WidgetProps {
   dark?: boolean;
@@ -9,6 +10,21 @@ interface WidgetProps {
   content?: React.ReactNode;
   icon?: boolean;
   lvl?: string | number;
+}
+
+// const Icon = styled.div`
+//   z-index: 10;
+//   width: 10%;
+//   height: 10%;
+//   min-width: 20px;
+//   min-height: 20px;
+//   background-color: ${props => props.theme.bg};
+//   background-size: 200%;
+//   transition: .1s linear;
+// `;
+
+const darkIcon = {
+  bg: `${colors.colors[0].hex}`
 }
 
 const WidgetParent = styled.div`
@@ -19,32 +35,32 @@ const WidgetParent = styled.div`
   flex-direction: column;
 `
 
-const Icon = styled.div`
-  z-index: 10;
-  width: 5%;
-  height: 5%;
-  min-width: 20px;
-  min-height: 20px;
-  background-color: ${props => props.theme.bg};
-  background-size: 200%;
-  transition: .1s linear;
-`;
+const Title = styled.div`
+  width: 100%;
+  display: flex;
+  gap: 10px;
+  flex-direction: row;
+  align-items: center;
+  /* justify-content: space-between; */
+  &::before{
+    align-items: center;
+    height: 20px;
+    width: 20px;
+    background-color: ${props => props.theme.bg};;
+    content: "";
+  }
+`
 
-Icon.defaultProps = {
+Title.defaultProps = {
   theme: {
     bg: `${colors.colors[2].hex}`
   }
-}
-
-const darkIcon = {
-  bg: `${colors.colors[0].hex}`
 }
 
 const Header = styled.div`
   display: flex;
   flex-direction: row;
   align-items: center;
-  /* height: 5%; */
   gap: 10px;
   background-color: ${props => props.theme.main};
   color: ${props => props.theme.color};
@@ -52,18 +68,12 @@ const Header = styled.div`
   height: max-content;
   width: 100%;
   font-size: 1.2rem;
+  height: 7%;
 `;
-
-const Title = styled.div`
-  width: 100%;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-`
 
 const Content = styled.div`
   width: 100%;
-  height: 100%;
+  height: 90%;
   font-size: 1.2rem;
   color: #3F3D36;
 `;
@@ -86,12 +96,16 @@ export const Widget = ({dark = false , title, content, lvl, icon=true, ...props}
       if(dark){
         return(
           <ThemeProvider theme={darkIcon}>
-            <Icon/>
+            <Title>
+              <span>{title}</span> <span>{lvl}</span>
+            </Title>
           </ThemeProvider>
         )
       } else {
         return(
-          <Icon/>
+          <Title>
+            <span>{title}</span> <span>{lvl}</span>
+          </Title>
         )
       }
     } else {
@@ -102,24 +116,14 @@ export const Widget = ({dark = false , title, content, lvl, icon=true, ...props}
     if(dark === false){
       return(
         <Header>
-          <div className={'icon'}>
             {iconChecker()}
-          </div>
-          <Title>
-            <span>{title}</span> <span>{lvl}</span>
-          </Title>
         </Header>
       )
     }else{
       return(
         <ThemeProvider theme={theme}>
           <Header>
-            <div className={'icon'}>
               {iconChecker()}
-            </div>
-            <Title>
-              <span>{title}</span> <span>{lvl}</span>
-            </Title>
           </Header>
         </ThemeProvider>
       )
