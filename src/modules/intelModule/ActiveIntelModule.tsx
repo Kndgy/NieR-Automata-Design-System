@@ -39,9 +39,8 @@ export const ActiveIntelModule = () => {
           <div>
             {imageCheck()}
             {data.content.map((item)=>(
-              <><p>{item.time}</p> {item.descriptions}</>
+              <>{item.time}<br/>{item.descriptions} <p/></>
             ))}
-            <br/>
           </div>
         }/>
       }
