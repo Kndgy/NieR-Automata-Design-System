@@ -18,6 +18,7 @@ export const ActiveIntelModule = () => {
   const data = x[0]
   console.log(data.content)
 
+  //might want to write better function to check content type
   const imageCheck = () => {
     if(data.image){
       return(
@@ -30,6 +31,19 @@ export const ActiveIntelModule = () => {
       return("")
     }
   }
+  const contentCheck = () => {
+    if(data.content){
+      return(
+        <>
+          {data.content.map((item)=>(
+              <>{item.time}<br/>{item.descriptions} <p/></>
+            ))}
+        </>
+      )
+    }else{
+      return("")
+    }
+  }
   return(
     <Widget
       dark={true}
@@ -38,9 +52,7 @@ export const ActiveIntelModule = () => {
         <Tab content={
           <div>
             {imageCheck()}
-            {data.content.map((item)=>(
-              <>{item.time}<br/>{item.descriptions} <p/></>
-            ))}
+            {contentCheck()}
           </div>
         }/>
       }
