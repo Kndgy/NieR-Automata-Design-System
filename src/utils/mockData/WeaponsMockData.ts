@@ -7,7 +7,7 @@ let WeaponsMockData = [
     combo: "Lt 7  Hv 3",
     skill: ["Stun", "Energy Charge"],
     type: "small",
-    typeName: "small swords",
+    typeName: "small-swords",
     image: "",
     id:1
   },
@@ -19,7 +19,7 @@ let WeaponsMockData = [
     combo: "Lt 3  Hv 3",
     skill: ["ATK Speed Up", "-"],
     type: "large",
-    typeName: "large swords",
+    typeName: "large-swords",
     image: "",
     id:2
   },
@@ -56,11 +56,11 @@ let WeaponsTypeList = [
   },
   {
     name:"Small Sword",
-    link:"/type/small swords?type=small",
+    link:"/type/small-swords?type=small",
   },
   {
     name:"Large Sword",
-    link:"/type/large swords?type=large",
+    link:"/type/large-swords?type=large",
   },
   {
     name:"Spears",

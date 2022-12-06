@@ -4,7 +4,7 @@ import { Outlet, useLocation, useParams, useSearchParams } from "react-router-do
 import { Tab, Widget } from "../../components";
 import { getWeaponsArchive} from "../../utils/mockData/WeaponsMockData";
 import styles from "./WeaponsModule.module.scss";
-
+//todo broken navlink on certain url
 export const WeaponsListModule = () => {
 
   const param = useParams();
