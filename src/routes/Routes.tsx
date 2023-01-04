@@ -1,5 +1,5 @@
 import React from "react"
-import { Title } from "@kaineee/nier-automata-ui-library"
+import { Title } from "../components"
 import { Routes, Route, Navigate} from "react-router-dom"
 import Map from "../pages/map"
 import Quest from "../pages/quests"
@@ -53,7 +53,7 @@ export const RoutesPages = () => {
         <Route
           path="*"
           element={
-            <Title text="CLASSIFIED" />
+            <Title title="CLASSIFIED" />
           }
           />
       </Route>
