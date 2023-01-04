@@ -42,6 +42,15 @@ export const IntelModule = () => {
     )
   }))
 
+  const testEmit = () => {
+    return (
+      <>
+      test
+      </>
+    )
+  }
+  console.log(testEmit())
+
   const third = second[0].concat(first[0]);
 
   return (

@@ -2,11 +2,12 @@ import {Title } from "@kaineee/nier-automata-ui-library";
 import React from "react";
 import { Outlet } from "react-router-dom";
 import { Button, Footer, Tab, YorhaNavLink } from "../../components";
+import { TestComp } from "../../components/test";
 
 const Debug = () => {
   return(
     <div style={{display:'flex', flexDirection:"column", gap:"40px", justifyContent:"space-between"}}>
-    <Title text="DEBUG"/>
+    {/* <Title text="DEBUG"/>
       <div style={{display:'flex', flexDirection:"row", gap:"10%"}}>
         <div style={{display:'flex', flexDirection:"column", gap:"40px" ,width:"50%"}}>
           <YorhaNavLink to="fat" text="navlink fat | nav | normal variant"/>
@@ -40,12 +41,13 @@ const Debug = () => {
           <YorhaNavLink variant="transparent" to="transparent" text="navlink transparent | transparent variant"/>
           <YorhaNavLink variant="neutral" to="neutral" text="navlink neutral | neutral variant"/>
 
-            
+           
           </div>
         }/>
         </div>
       </div>
-      test
+      test */}
+      <TestComp/>
     </div>
   )
 }

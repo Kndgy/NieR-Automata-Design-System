@@ -86,10 +86,12 @@
   },
   "dependencies": {
     "framer": "^2.2.0",
+    "react-shuffle-text": "^1.0.6",
     "styled-components": "^5"
   },
   "peerDependencies": {
-    "styled-components": "^5"
+    "styled-components": "^5",
+    "react-shuffle-text": "^1.0.6"
   },
   "resolutions": {
     "styled-components": "^5"
