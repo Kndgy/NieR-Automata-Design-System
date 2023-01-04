@@ -21,7 +21,7 @@ const Map = () => {
               </div>
             </div>
             <div className={styles.LeftPanelFooter}>
-              footer panel
+              {/* footer panel  */}
             </div>
         </div>
         <div className={styles.RightPanel}>
