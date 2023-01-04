@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components"
+import ShuffleText from 'react-shuffle-text';
 import colors from './colors.json'
 
 type TitleProps = {
@@ -36,8 +37,8 @@ const TitleParent = styled.div`
 export const Title = ({title, subtitle, ...props}: TitleProps) => {
   return(
     <TitleParent {...props}>
-        <h1>{title}</h1>
-        <h3>{subtitle}</h3>
+        <h1><ShuffleText charIncIntervale={10} charFrames={20} charFrameTime={10} content={title}/></h1>
+        <h3><ShuffleText charIncIntervale={10} charFrames={20} charFrameTime={10} content={subtitle}/></h3>
     </TitleParent>
   )
 }
