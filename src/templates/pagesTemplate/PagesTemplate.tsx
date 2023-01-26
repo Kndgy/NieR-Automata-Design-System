@@ -1,7 +1,7 @@
 import React from "react";
 import styles from './PagesTemplate.module.scss';
 import { Footer, Title } from "../../components";
-import { MotionConfig, motion } from "framer-motion";
+import { motion } from "framer-motion";
 
 type PagesTemplateProps = {
   title?: string;
