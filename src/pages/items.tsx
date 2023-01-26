@@ -1,10 +1,10 @@
 import React from "react";
 import { Outlet, useParams, useSearchParams } from "react-router-dom";
-import { YorhaNavLink } from "../../components";
-import StatusModule from "../../modules/statusModule";
-import PagesChildTemplate from "../../templates/pagesChildTemplate";
-import PagesTemplate from "../../templates/pagesTemplate";
-import { SubTitle } from "../../utils/ParamAsSubTitle";
+import { YorhaNavLink } from "../components";
+import StatusModule from "../modules/statusModule";
+import PagesChildTemplate from "../templates/pagesChildTemplate";
+import PagesTemplate from "../templates/pagesTemplate";
+import { SubTitle } from "../utils/ParamAsSubTitle";
 
 let ItemsLists = [
   {
@@ -44,7 +44,7 @@ let ItemsLists = [
   }
 ]
 
-const Items = () => {
+export const Items = () => {
 
   const param = useParams();
   let [searchParams] = useSearchParams();
@@ -94,5 +94,3 @@ const Items = () => {
     />
   )
 }
-
-export default Items;

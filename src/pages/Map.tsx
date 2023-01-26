@@ -1,9 +1,9 @@
 import React from "react";
 import {Bar, Button} from '@kaineee/nier-automata-ui-library';
 import styles from './Map.module.scss';
-import PagesTemplate from "../../templates/pagesTemplate";
+import PagesTemplate from "../templates/pagesTemplate";
 
-const Map = () => {
+export const Map = () => {
   return(
     <PagesTemplate
       title="MAP"
@@ -37,5 +37,3 @@ const Map = () => {
     />
   )
 }
-
-export default Map;

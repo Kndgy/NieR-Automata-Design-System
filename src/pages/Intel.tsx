@@ -1,8 +1,8 @@
 import React from "react";
-import PagesChildTemplate from "../../templates/pagesChildTemplate";
-import PagesTemplate from "../../templates/pagesTemplate";
-import { YorhaNavLink } from "../../components";
-import StatusModule from "../../modules/statusModule";
+import PagesChildTemplate from "../templates/pagesChildTemplate";
+import PagesTemplate from "../templates/pagesTemplate";
+import { YorhaNavLink } from "../components";
+import StatusModule from "../modules/statusModule";
 import { Outlet } from "react-router-dom";
 
 const IntelList = [
@@ -43,7 +43,7 @@ const IntelList = [
   }
 ]
 
-const Intel = () => {
+export const Intel = () => {
   return(
     <PagesTemplate
       title="Intel"
@@ -65,5 +65,3 @@ const Intel = () => {
     />
   )
 }
-
-export default Intel;

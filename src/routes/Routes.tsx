@@ -1,18 +1,13 @@
 import React from "react"
 import { Title } from "../components"
 import { Routes, Route, Navigate} from "react-router-dom"
-import Map from "../pages/map"
-import Quest from "../pages/quests"
-import Debug from "../pages/debug"
-import Items from "../pages/items"
-import Weapons from "../pages/weapons"
-import Intel from "../pages/intel"
 import {ItemsModule, ActiveItemsModule} from "../modules/itemsModule"
 import {WeaponsModule, ActiveWeaponsModule, WeaponsListModule} from "../modules/weaponsModule"
 import {NavbarModule} from "../modules/NavBarModule"
 import { QuestsModule, ActiveQuestsModule } from "../modules/questsModule"
 import { IntelModule } from "../modules/intelModule"
 import { ActiveIntelModule } from "../modules/intelModule/ActiveIntelModule"
+import { Quest, Items, Weapons, Intel, Debug, Map } from "../pages"
 
 export const RoutesPages = () => {
   return(

@@ -1,10 +1,10 @@
 import {Title } from "@kaineee/nier-automata-ui-library";
 import React from "react";
 import { Outlet } from "react-router-dom";
-import { Button, Footer, Tab, YorhaNavLink } from "../../components";
-import { TestComp } from "../../components/test";
+import { Button, Footer, Tab, YorhaNavLink } from "../components";
+import { TestComp } from "../components/test";
 
-const Debug = () => {
+export const Debug = () => {
   return(
     <div style={{display:'flex', flexDirection:"column", gap:"40px", justifyContent:"space-between"}}>
     {/* <Title text="DEBUG"/>
@@ -51,5 +51,3 @@ const Debug = () => {
     </div>
   )
 }
-
-export default Debug;

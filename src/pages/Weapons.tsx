@@ -1,10 +1,10 @@
-import { YorhaNavLink } from "../../components";
+import { YorhaNavLink } from "../components";
 import React from "react";
 import { Outlet, useParams } from "react-router-dom";
-import PagesChildTemplate from "../../templates/pagesChildTemplate";
-import PagesTemplate from "../../templates/pagesTemplate";
+import PagesChildTemplate from "../templates/pagesChildTemplate";
+import PagesTemplate from "../templates/pagesTemplate";
 
-const Weapons = () => {
+export const Weapons = () => {
   const param = useParams();
 
   const TypeChecker = () => {
@@ -41,5 +41,3 @@ const Weapons = () => {
     />
   )
 }
-
-export default Weapons;
