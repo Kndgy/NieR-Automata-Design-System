@@ -4,18 +4,6 @@ let archivesMockData = [
       {
         IntelType : "Archives",
         data : [
-          {
-            title:"first title",
-            id:1,
-            image:"",
-            content:[],
-          },
-          {
-            title:"second title",
-            id:14,
-            image:"",
-            content:[],
-          }
         ],
         nestedData:[
           {
@@ -67,28 +55,7 @@ let archivesMockData = [
                 title:"first title",
                 id:4,
                 image:"",
-                content:[],
-  
-              },
-              {
-                title:"first title",
-                id:4,
-                image:"",
-                content:[],
-  
-              },
-              {
-                title:"first title",
-                id:4,
-                image:"",
-                content:[],
-  
-              },
-              {
-                title:"first title",
-                id:4,
-                image:"",
-                content:[],
+                content:["test"],
   
               }
             ]
@@ -119,35 +86,26 @@ let archivesMockData = [
       },
       {
         IntelType : "Unit Data",
-        data : [
-          {
-            title:"11B's Escape Plan",
-            id:8,
-            image:"",
-            content:[],
-            descriptions:null,
-          },
-        ],
+        data : [],
         nestedData:[
           {
-            title:"first nest",
+            title:"Standard Machines",
             id:2,
             image:"",
             content:[],
             dropDownData:[
               {
-                title:"dropdown data",
-                id:3,
+                title:"first title",
+                id:10,
                 image:"",
-                content:[],
+                content:["test"],
   
               },
               {
-                title:"first title",
-                id:4,
+                title:"Small Biped",
+                id:11,
                 image:"",
-                content:[],
-  
+                content:["test"],
               }
             ]
           },
@@ -212,7 +170,7 @@ let archivesMockData = [
         data : [
           {
             title:"test",
-            id:12,
+            id:99,
             image:"",
             content:[],
             descriptions:null,
