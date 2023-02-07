@@ -7,25 +7,41 @@ import {getArchivesMockID, getNestedArchivesMockID, getArchivesMockData } from "
 export const ActiveIntelModule = () => {
   const params = useParams();
   
+  let intellist = getArchivesMockData();
   let intellistId = getArchivesMockID(parseInt(params.intelid));
   let secondId = getNestedArchivesMockID(parseInt(params.intelid))
-  let intellist = getArchivesMockData();
-  // console.log(params);
   
   const yeah = intellistId[0].filter(e => e!==undefined)
   const yeaha = secondId[0].filter(e => e!==undefined)
   const yeahaa = yeaha[0].filter(e=>e!==undefined)
   const x = yeah.concat(yeahaa)
   const data = x[0]
-  console.log(data.content)
+  
+  console.log(params.type)
+
   const ArchivesTypeCheck = () => {
-    if(intellist.map((type)=>type.IntelType == "Archives")){
-      return "yeah it is archives"
+    //handle things here
+    if(params.type === "archives") {
+      if(data.content){
+        return(
+          <>
+            {data.content.map((item)=>(
+                <div key={item.id}>{item.time}<br/>{item.descriptions} <p/></div>
+              ))}
+          </>
+        )
+      }else{
+        return "weird, it seems the data is empty"
+      }
+    }else if(params.type === "unit"){
+      return(
+        <> its a unit </>
+      )
+    }else{
+      return<>"archives yet to be handled"</>
     }
   }
-  console.log(ArchivesTypeCheck())
 
-  //might want to write better function to check content type
   const imageCheck = () => {
     if(data.image){
       return(
@@ -38,28 +54,16 @@ export const ActiveIntelModule = () => {
       return("")
     }
   }
-  const contentCheck = () => {
-    if(data.content){
-      return(
-        <>
-          {data.content.map((item)=>(
-              <>{item.time}<br/>{item.descriptions} <p/></>
-            ))}
-        </>
-      )
-    }else{
-      return("")
-    }
-  }
+
   return(
     <Widget
       dark={true}
-      title={data.title}
+      // title={data.title}
       content={
         <Tab content={
           <div>
-            {imageCheck()}
-            {contentCheck()}
+            {/* {imageCheck()} */}
+            {ArchivesTypeCheck()}
           </div>
         }/>
       }
