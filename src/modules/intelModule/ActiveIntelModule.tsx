@@ -7,7 +7,6 @@ import {getArchivesMockID, getNestedArchivesMockID, getArchivesMockData } from "
 export const ActiveIntelModule = () => {
   const params = useParams();
   
-  let intellist = getArchivesMockData();
   let intellistId = getArchivesMockID(parseInt(params.intelid));
   let secondId = getNestedArchivesMockID(parseInt(params.intelid))
   
@@ -18,9 +17,13 @@ export const ActiveIntelModule = () => {
   const data = x[0]
   
   console.log(params.type)
+  
 
   const ArchivesTypeCheck = () => {
     //handle things here
+    if(data){
+      console.log(data.content)
+    }
     if(params.type === "archives") {
       if(data.content){
         return(
