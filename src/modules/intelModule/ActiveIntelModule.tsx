@@ -1,7 +1,7 @@
 import React from "react";
 import { useParams } from "react-router-dom";
 import { Tab, Widget } from "../../components";
-import {getArchivesMockID, getNestedArchivesMockID, getArchivesMockData } from "../../utils/mockData/archivesMockData";
+import {getArchivesMockID, getNestedArchivesMockID} from "../../utils/mockData/archivesMockData";
 
 
 export const ActiveIntelModule = () => {
@@ -46,7 +46,7 @@ export const ActiveIntelModule = () => {
   }
 
   const imageCheck = () => {
-    if(data.image){
+    if(data){
       return(
         <>
           <img src={data.image} alt={"placeholder"}/>
@@ -65,7 +65,7 @@ export const ActiveIntelModule = () => {
       content={
         <Tab content={
           <div>
-            {/* {imageCheck()} */}
+            {imageCheck()}
             {ArchivesTypeCheck()}
           </div>
         }/>
