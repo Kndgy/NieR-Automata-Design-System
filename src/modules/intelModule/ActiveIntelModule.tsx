@@ -20,29 +20,23 @@ export const ActiveIntelModule = () => {
   
 
   const ArchivesTypeCheck = () => {
-    //handle things here
-    if(data){
-      console.log(data.content)
+    const typeMap = {
+      archives: data ? (
+        <>
+          test
+        </>
+      ) : "weird it seems the data is empty",
+      unit: <>unit content element placeholder</>,
+      tutorials: <>tutorials content element placeholder</>,
+      weaponstories: <>weapon stories content element placeholder</>,
+      picturebooks: <>picture books content element placeholder</>,
+      fishing: <>fishing content element placeholder</>,
+      novel: (<>novel content element placeholder</>)
     }
-    if(params.type === "archives") {
-      if(data.content){
-        return(
-          <>
-            {data.content.map((item)=>(
-                <div key={item.id}>{item.time}<br/>{item.descriptions} <p/></div>
-              ))}
-          </>
-        )
-      }else{
-        return "weird, it seems the data is empty"
-      }
-    }else if(params.type === "unit"){
-      return(
-        <> its a unit </>
-      )
-    }else{
-      return<>"archives yet to be handled"</>
-    }
+
+    const output = typeMap[params.type] || <>archives yet to be handled</>
+
+    return output;
   }
 
   const imageCheck = () => {
