@@ -55,7 +55,7 @@ export const ActiveIntelModule = () => {
   return(
     <Widget
       dark={true}
-      // title={data.title}
+      title={data.title}
       content={
         <Tab content={
           <div>
