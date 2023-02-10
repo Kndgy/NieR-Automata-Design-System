@@ -5,6 +5,7 @@ import {getArchivesMockID, getNestedArchivesMockID} from "../../utils/mockData/a
 
 
 export const ActiveIntelModule = () => {
+  //to do rewrite the archives data structure because it gives error to nested dropdown data
   const params = useParams();
   
   let intellistId = getArchivesMockID(parseInt(params.intelid));
