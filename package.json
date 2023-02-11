@@ -90,8 +90,8 @@
     "styled-components": "^5"
   },
   "peerDependencies": {
-    "styled-components": "^5",
-    "react-shuffle-text": "^1.0.6"
+    "react-shuffle-text": "^1.0.6",
+    "styled-components": "^5"
   },
   "resolutions": {
     "styled-components": "^5"
