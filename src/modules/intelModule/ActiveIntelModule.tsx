@@ -3,6 +3,7 @@ import { useParams } from "react-router-dom";
 import { Tab, Widget } from "../../components";
 import {getArchivesMockID, getNestedArchivesMockID} from "../../utils/mockData/archivesMockData";
 import { eliminateUndefined } from "../../utils/eliminateUndefinedJSON";
+import { Archives, Fishing, Novel, PictureBooks, Tutorials, Unit, WeaponStories } from "./shards";
 
 export const ActiveIntelModule = () => {
 
@@ -20,17 +21,15 @@ export const ActiveIntelModule = () => {
 
   const ArchivesTypeCheck = () => {
     const typeMap = {
-        archives: 1 ? (
-            <>
-            test
-            </>
+        archives: data ? (
+            <Archives/>
             ) : "weird it seems the data is empty",
-        unit: <>unit content element placeholder</>,
-        tutorials: <>tutorials content element placeholder</>,
-        weaponstories: <>weapon stories content element placeholder</>,
-        picturebooks: <>picture books content element placeholder</>,
-        fishing: <>fishing content element placeholder</>,
-        novel: (<>novel content element placeholder</>)
+        unit: <Unit/>,
+        tutorials: <Tutorials/>,
+        weaponstories: <WeaponStories/>,
+        picturebooks: <PictureBooks/>,
+        fishing: <Fishing/>,
+        novel: <Novel/>
     }
 
     const output = typeMap[params.type] || <>archives yet to be handled</>
@@ -51,7 +50,7 @@ export const ActiveIntelModule = () => {
       return("")
     }
   }
-  
+
 
   return(
     <Widget
