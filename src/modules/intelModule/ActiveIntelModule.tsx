@@ -6,7 +6,6 @@ import { eliminateUndefined } from "../../utils/eliminateUndefinedJSON";
 import { Archives, Fishing, Novel, PictureBooks, Tutorials, Unit, WeaponStories } from "./shards";
 
 export const ActiveIntelModule = () => {
-
   const params = useParams();
   let intellistId = getArchivesMockID(parseInt(params.intelid));
   let secondId = getNestedArchivesMockID(parseInt(params.intelid))
@@ -31,26 +30,10 @@ export const ActiveIntelModule = () => {
         fishing: <Fishing/>,
         novel: <Novel/>
     }
-
     const output = typeMap[params.type] || <>archives yet to be handled</>
 
     return output;
-    
   }
-
-  const imageCheck = () => {
-    if(data){
-      return(
-        <>
-          <img src={data.image} alt={"placeholder"}/>
-          <br/>
-        </>
-      )
-    } else {
-      return("")
-    }
-  }
-
 
   return(
     <Widget
@@ -59,7 +42,6 @@ export const ActiveIntelModule = () => {
       content={
         <Tab content={
           <div>
-            {imageCheck()}
             {ArchivesTypeCheck()}
           </div>
         }/>
