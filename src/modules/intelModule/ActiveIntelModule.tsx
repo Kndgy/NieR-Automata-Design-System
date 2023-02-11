@@ -2,29 +2,7 @@ import React from "react";
 import { useParams } from "react-router-dom";
 import { Tab, Widget } from "../../components";
 import {getArchivesMockID, getNestedArchivesMockID} from "../../utils/mockData/archivesMockData";
-
-function eliminateUndefined(data: any[]) {
-  const traverse = (obj: any) => {
-    if (!obj) return null;
-    if (Array.isArray(obj)) {
-      const result: any[] = [];
-      for (const item of obj) {
-        const subResult = traverse(item);
-        if (subResult) result.push(subResult);
-      }
-      return result.length > 0 ? result : null;
-    } else if (typeof obj === "object") {
-      const result: any = {};
-      for (const key of Object.keys(obj)) {
-        const value = traverse(obj[key]);
-        if (value) result[key] = value;
-      }
-      return Object.keys(result).length > 0 ? result : null;
-    }
-    return obj;
-  };
-  return traverse(data);
-}
+import { eliminateUndefined } from "../../utils/eliminateUndefinedJSON";
 
 export const ActiveIntelModule = () => {
 
@@ -69,8 +47,8 @@ export const ActiveIntelModule = () => {
     if(data){
       return(
         <>
-          {/* <img src={data.image} alt={"placeholder"}/> */}
-          <p/>
+          <img src={data.image} alt={"placeholder"}/>
+          <br/>
         </>
       )
     } else {
