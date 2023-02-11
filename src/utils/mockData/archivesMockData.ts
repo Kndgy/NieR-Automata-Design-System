@@ -36,8 +36,28 @@ let archivesMockData = [
                 id:5,
                 image:"",
                 content:["test lolol"],
+              },
+              {
+                  title:"second title",
+                  id:51,
+                  image:"",
+                  content:["test lolol"],
               }
             ]
+          },
+          {
+              title:"second Pearl Harbor Descent Recordsss",
+              id:30,
+              image:"",
+              content:[],
+              dropDownData:[
+                  {
+                      title:"first title",
+                      id:50,
+                      image:"",
+                      content:["test lolol"],
+                  }
+              ]
           }
         ]
       },
@@ -117,7 +137,7 @@ export function getArchivesMockData(){
 }
 
 export function getArchivesMockID(id){
-  return archivesMockData.map((item)=>item.archivesData.map((item)=>item.data.find((items)=>items.id === id)));
+    return archivesMockData.map((item) => item.archivesData.map((item) => item.data.find((items) => items.id === id)));
 }
 
 export function getNestedArchivesMockID(id){
