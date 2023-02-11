@@ -34,13 +34,20 @@ export const ActiveIntelModule = () => {
   let secondId = getNestedArchivesMockID(parseInt(params.intelid))
 
   const filteredIntelList = intellistId[0].filter(e => e!==undefined)
-  const result = eliminateUndefined(secondId)[0][0][0]
+  let result = eliminateUndefined(secondId)
+
+  if(result === null){
+    result = ""
+  }else{
+    result = result[0][0][0]
+  }
 
   const data = filteredIntelList.concat(result)[0]
+  console.log(data)
 
     const ArchivesTypeCheck = () => {
       const typeMap = {
-          archives: data ? (
+          archives: 1 ? (
               <>
               test
               </>
@@ -62,7 +69,7 @@ export const ActiveIntelModule = () => {
     if(data){
       return(
         <>
-          <img src={data.image} alt={"placeholder"}/>
+          {/* <img src={data.image} alt={"placeholder"}/> */}
           <p/>
         </>
       )
