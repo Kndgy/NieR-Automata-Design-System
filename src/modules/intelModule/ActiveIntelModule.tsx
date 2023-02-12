@@ -8,26 +8,25 @@ export const ActiveIntelModule = () => {
 
   const params = useParams();
   const paramType = params.type
-
+  console.log(paramType)
   let intellistId = getArchivesMockID(paramType, parseInt(params.intelid));
   let secondId = getNestedArchivesMockID( paramType, parseInt(params.intelid))
 
   const data = intellistId || secondId
-  console.log(data)
 
   const ArchivesTypeCheck = () => {
     const typeMap = {
         archives: 1 ? (
             <Archives content={"test"}/>
             ) : "weird it seems the data is empty",
-        unit: <Unit/>,
+        unitdata: <Unit/>,
         tutorials: <Tutorials/>,
         weaponstories: <WeaponStories/>,
         picturebooks: <PictureBooks/>,
-        fishing: <Fishing/>,
+        fishingencyclopedia: <Fishing/>,
         novel: <Novel/>
     }
-    const output = typeMap[params.type] || <>archives yet to be handled</>
+    const output = typeMap[paramType] || <>archives yet to be handled</>
 
     return output;
   }
