@@ -8,7 +8,7 @@ export const ActiveIntelModule = () => {
 
   const params = useParams();
   const paramType = params.type
-  console.log(paramType)
+
   let intellistId = getArchivesMockID(paramType, parseInt(params.intelid));
   let secondId = getNestedArchivesMockID( paramType, parseInt(params.intelid))
 
@@ -17,7 +17,7 @@ export const ActiveIntelModule = () => {
   const ArchivesTypeCheck = () => {
     const typeMap = {
         archives: 1 ? (
-            <Archives content={"test"}/>
+            <Archives/>
             ) : "weird it seems the data is empty",
         unitdata: <Unit/>,
         tutorials: <Tutorials/>,

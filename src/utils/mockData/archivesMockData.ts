@@ -10,7 +10,7 @@ let archivesMockData = [
             image:"",
             content:[
               {
-                content:"test"
+                content:"11b's escape plan"
               }
             ],
             descriptions:null,
@@ -31,7 +31,16 @@ let archivesMockData = [
                 image:"",
                 content:[
                   {
-                    content1:"content"
+                    data:[`A unit from the experimental YoRHa squadron that was utilized during the 14th Machine War. 
+                    Number 16 possessed a rough and tumble personality ideal for her role as a Gunner, 
+                    where she was required to attack foes from a distance. 
+                    Though she possessed a defiant streak that extended even to her superiors, 
+                    she was assigned to the mission anyway due to her tremendous offensive abilities.`, 
+                    `During her squad's assault on Mt. Ka'ala, Number 16 volunteered to stay behind and hold off the machine lifeform army so her companions could continue up to the mountain. 
+                    She fought with great courage alongside members of a local Resistance group, 
+                    and managed to hold off overwhelming numbers until the appearance of a Goliath that was unaffected by ordinary weaponry. 
+                    Seeing no other way to end the fight, she chose to destroy the enemy by overloading and detonating her own fusion reactor. 
+                    This act of self-sacrifice despite her defiant nature is one of remarkable interest, and likely merits further study.`]
                   }
                 ],
               },
@@ -41,7 +50,7 @@ let archivesMockData = [
                 image:"",
                 content:[
                   {
-                    contentVar:"lol"
+                    data2:["YoRHa: Scanner 21"]
                   }
                 ],
               }

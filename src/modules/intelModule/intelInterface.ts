@@ -1,3 +1,3 @@
 export interface IntelInterFace {
-    content?: string[] | {};
+    content?: Array<String>;
 }
