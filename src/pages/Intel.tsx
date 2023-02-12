@@ -9,37 +9,37 @@ const IntelList = [
   {
     name: "Archives",
     link:"/intel/archives/?type=",
-    type:"Archives",
+    type:"archives",
   },
   {
     name:"Unit Data",
-    link:"/intel/unit/?type=",
-    type:"Unit Data",
+    link:"/intel/unitdata/?type=",
+    type:"unitdata",
   },
   {
     name:"Tutorials",
     link:"/intel/tutorials/?type=",
-    type:"Tutorials",
+    type:"tutorials",
   },
   {
     name:"Weapon Stories",
     link:"/intel/weaponstories/?type=",
-    type:"Weapon Stories",
+    type:"weaponstories",
   },
   {
     name:"Picture Books",
     link:"/intel/picturebooks/?type=",
-    type:"Picture Books",
+    type:"picturebooks",
   },
   {
     name:"Fishing Encyclopedia",
-    link:"/intel/fishing/?type=",
-    type:"Fishing Encyclopedia"
+    link:"/intel/fishingencyclopedia/?type=",
+    type:"fishing"
   },
   {
     name:"Novel",
     link:"/intel/novel/?type=",
-    type:"Novel",
+    type:"novel",
   }
 ]
 
