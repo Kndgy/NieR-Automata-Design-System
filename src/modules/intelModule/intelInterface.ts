@@ -1,3 +1,3 @@
-export interface Intel {
- 
+export interface IntelInterFace {
+    content?: string[] | {};
 }
