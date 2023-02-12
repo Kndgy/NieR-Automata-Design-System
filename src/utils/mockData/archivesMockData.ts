@@ -3,19 +3,35 @@ let archivesMockData = [
     archivesData:[
       {
         IntelType : "Archives",
-        data : [],
+        data : [
+          {
+            title:"11B's Escape Plan",
+            id:11,
+            image:"",
+            content:["test"],
+            descriptions:null,
+          },
+        ],
         nestedData:[
           {
             title:"Pearl Harbor Descent Records",
             id:2,
             image:"",
-            content:[],
+            content:[
+              "test non dropdown content"
+            ],
             dropDownData:[
               {
-                title:"first title",
+                title:"YoRHa: Gunner 16",
                 id:4,
                 image:"",
-                content:["test"],
+                content:["this is data"],
+              },
+              {
+                title:"YoRHa: Scanner 21",
+                id:5,
+                image:"",
+                content:["this is data"],
               }
             ]
           }
@@ -96,7 +112,6 @@ let archivesMockData = [
             image:"",
             content:[],
             descriptions:null,
-
           },
         ],
         nestedData:[]
