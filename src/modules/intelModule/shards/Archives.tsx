@@ -1,8 +1,11 @@
+interface archives {
+ content?: string[] | {};
+}
 
-export const Archives = () => {
+export const Archives = ({content}:archives) => {
  return (
   <>
-   Archives
+   {content}
   </>
  )
 }

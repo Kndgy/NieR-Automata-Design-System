@@ -43,7 +43,7 @@ export const IntelModule = () => {
   }))
 
   const third = second[0].concat(first[0]);
-
+  // console.log(intellist)
   return (
     <div className={styles.IntelModule}>
       <div className={styles.IntelModuleContainer}>

@@ -18,10 +18,12 @@ export const ActiveIntelModule = () => {
   }
   const data = filteredIntelList.concat(result)[0]
 
+  console.log(data)
+
   const ArchivesTypeCheck = () => {
     const typeMap = {
         archives: data ? (
-            <Archives/>
+            <Archives content={data.content}/>
             ) : "weird it seems the data is empty",
         unit: <Unit/>,
         tutorials: <Tutorials/>,
