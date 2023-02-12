@@ -2,13 +2,17 @@ let archivesMockData = [
   {
     archivesData:[
       {
-        IntelType : "Archives",
+        IntelType : "archives",
         data : [
           {
             title:"11B's Escape Plan",
             id:11,
             image:"",
-            content:["test"],
+            content:[
+              {
+                content:"test"
+              }
+            ],
             descriptions:null,
           },
         ],
@@ -25,119 +29,174 @@ let archivesMockData = [
                 title:"YoRHa: Gunner 16",
                 id:4,
                 image:"",
-                content:["this is data"],
+                content:[
+                  {
+                    content1:"content"
+                  }
+                ],
               },
               {
                 title:"YoRHa: Scanner 21",
                 id:5,
                 image:"",
-                content:["this is data"],
+                content:[
+                  {
+                    contentVar:"lol"
+                  }
+                ],
               }
             ]
           }
         ]
       },
       {
-        IntelType : "Unit Data",
+        IntelType : "unitdata",
         data : [],
         nestedData:[
           {
-            title:"Pearl Harbor Descent Recordsss",
+            title:"Standard Machines",
             id:3,
             image:"",
             content:[],
             dropDownData:[
               {
-                title:"first title",
+                title:"Small Stubby",
                 id:5,
                 image:"",
-                content:["test lolol"],
+                content:["Small Stubby"],
               },
               {
-                  title:"second title",
+                  title:"Multi-tier Type",
                   id:51,
                   image:"",
-                  content:["test lolol"],
+                  content:["Multi-tier Type"],
               }
             ]
           },
           {
-              title:"second Pearl Harbor Descent Recordsss",
-              id:30,
+              title:"Androids",
+              id:2,
               image:"",
               content:[],
               dropDownData:[
                   {
-                      title:"first title",
-                      id:50,
+                      title:"YoRHa (Standard Armament)",
+                      id:1,
                       image:"",
-                      content:["test lolol"],
+                      content:["A Yorha member infected by a virus."],
                   }
               ]
           }
         ]
       },
       {
-        IntelType : "Tutorials",
+        IntelType : "tutorials",
         data : [
           {
-            title:"11B's Escape Plan",
-            id:9,
+            title:"Basic Controls",
+            id:1,
             image:"",
-            content:[],
+            content:[
+              {
+                contentVar:"yeah"
+              }
+            ],
             descriptions:null,
           },
+          {
+            title:"Combat Controls",
+            id:2,
+            image:"",
+            content:["Combat Controls"],
+            descriptions:null,
+          }
         ],
         nestedData:[]
       },
       {
-        IntelType : "Weapon Stories",
+        IntelType : "weaponstories",
+        data : [],
+        nestedData:[
+          {
+            title:"Small Swords",
+            id:1,
+            image:"",
+            content:[],
+            dropDownData:[
+              {
+                title:"Faith",
+                id:1,
+                image:"",
+                content:["Faith Desc"],
+              },
+              {
+                title:"Virtuous Contract",
+                id:2,
+                image:"",
+                content:["Virtuous Contract Desc"],
+              }
+            ]
+          }
+        ]
+      },
+      {
+        IntelType : "picturebooks",
         data : [
           {
-            title:"11B's Escape Plan",
-            id:10,
+            title:"A Reason to Live",
+            id:1,
             image:"",
             content:[],
             descriptions:null,
           },
-        ],
-        nestedData:[]
-      },
-      {
-        IntelType : "Picture Books",
-        data : [
           {
-            title:"11B's Escape Plan",
-            id:11,
+            title:"Treasured Items",
+            id:2,
             image:"",
             content:[],
             descriptions:null,
-          },
+          }
         ],
         nestedData:[]
       },
       {
-        IntelType : "Fishing Encyclopedia",
+        IntelType : "fishingencyclopedia",
         data : [
           {
-            title:"11B's Escape Plan",
-            id:11,
+            title:"Killifish",
+            id:1,
             image:"",
-            content:[],
+            content:["A small freshwater fish"],
             descriptions:null,
-
           },
+          {
+            title:"Carp Machine",
+            id:2,
+            image:"",
+            content:["A harmless machine lifeform resembling a carp."],
+            descriptions:null,
+          }
         ],
         nestedData:[]
       },
       {
-        IntelType : "Novel",
+        IntelType : "novel",
         data : [
           {
-            title:"test",
-            id:99,
+            title:"Devola & Popola's Memories",
+            id:1,
             image:"",
-            content:[],
+            content:[`As members of the same model, all that was elft to them was the stigma of being labeled "rampant androids." Unable to
+                      endure further persecution, they began their long march to a city located a great distance away.`,
+                    `Leaning upon each another.`,
+                    `Burdened with an unforgibable sin.`],
+            descriptions:null,
+          },
+          {
+            title:"9S's Memories",
+            id:2,
+            image:"",
+            content:["FOllowing his fight to death with A2, 9S's vital functions start to shut down, and his memories begin to disappear. On the verge of death, however, 9S finds his resolve."],
             descriptions:null,
           },
         ],
@@ -151,10 +210,27 @@ export function getArchivesMockData(){
   return archivesMockData[0].archivesData.map((items)=>items);
 }
 
-export function getArchivesMockID(id){
-    return archivesMockData.map((item) => item.archivesData.map((item) => item.data.find((items) => items.id === id)));
+export function getArchivesMockID(intelType, id) {
+  return archivesMockData
+    .flatMap(item => item.archivesData)
+    .filter(item => item.IntelType === intelType)
+    .flatMap(item => item.data)
+    .find(content => content.id === id) || null;
 }
 
-export function getNestedArchivesMockID(id){
-  return archivesMockData.map((item)=>item.archivesData.map((item)=>item.nestedData.map((items)=>items.dropDownData.find((product)=>product.id === id))));
+export function getNestedArchivesMockID(intelType, id) {
+  const data = archivesMockData
+    .flatMap(item => item.archivesData)
+    .filter(item => item.IntelType === intelType)
+    .map(item => item.nestedData)
+    .flat();
+
+  const dropDownData = data.find(content => {
+    return content.dropDownData && content.dropDownData.find(dropDown => dropDown.id === id);
+  });
+
+  const result = dropDownData ? dropDownData.dropDownData.find(dropDown => dropDown.id === id) : null;
+
+  return result;
 }
+
