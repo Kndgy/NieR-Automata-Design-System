@@ -120,7 +120,7 @@ let archivesMockData = [
                   {
                       title:"YoRHa (Standard Armament)",
                       id:1,
-                      image:"",
+                      image: ["YoRHa (Standard Armament) Image Link"] ,
                       content:["A Yorha member infected by a virus."],
                   }
               ]

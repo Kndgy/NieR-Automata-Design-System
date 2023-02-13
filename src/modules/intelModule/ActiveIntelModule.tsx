@@ -14,6 +14,8 @@ export const ActiveIntelModule = () => {
 
   const data = intellistId || secondId
 
+  console.log(data)
+
   const ArchivesTypeCheck = () => {
     const typeMap = {
         archives: 1 ? (
@@ -30,6 +32,18 @@ export const ActiveIntelModule = () => {
 
     return output;
   }
+  
+  // should i add image check to each shards because of image slideshow? future problem
+
+  const ImageCheck = () => {
+    if(data.image){
+      if(Array.isArray(data.image)){
+        return <> {data.image} </>
+      }else return <> not an array image </>
+    }else{
+      return <>theres no image</>
+    }
+  }
 
   return(
     <Widget
@@ -38,6 +52,7 @@ export const ActiveIntelModule = () => {
       content={
         <Tab content={
           <div>
+            {ImageCheck()}
             {ArchivesTypeCheck()}
           </div>
         }/>
