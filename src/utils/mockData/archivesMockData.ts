@@ -10,7 +10,36 @@ let archivesMockData = [
             image:"",
             content:[
               {
-                content:"11b's escape plan"
+                time:"00:02:13 ",
+                descriptions:"Reactivation complete. A check of my body reveals various failures.Communication functions have been destroyed. I cannot contact my team or bunker. I leave a draft of this message here as a log."
+              },
+              {
+                time:"00:10:13",
+                descriptions:"I verify the plan once more. Using my supposed destruction in this sortie as a guide, I sever all communication. I then pass beneath the abandoned factory and escape. Further analysis reveals that I took anti-air fire while in the flight unit resulting in damage to my body. No matter-it can be repaired."
+              },
+              {
+                time:"00:15:21",
+                descriptions:"I'm Cold. My sensory systems seem to be failing."  
+              },
+              {
+                time:"00:33:12",
+                descriptions:"Noise has started to cloud my vision. Virus warnings appear frequently. It is unclear whether I am infected of it the system is in error."  
+              },
+              {
+                time:"00:33:21",
+                descriptions:"Noise has started to cloud my vision. Virus warnings appear frequently. It is unclear whether I am infected of it the system is in error."  
+              },
+              {
+                time:"00:33:31",
+                descriptions:"I'm scared. I want to go back to the bunker, but I can't restore communications."  
+              },
+              {
+                time:"00:38:00",
+                descriptions:"This can't continue. I can't stay here. I have to run... YoRHa squadron was wrong... I have to find somewhere safer... I'm scared. I'm so scared."  
+              },
+              {
+                time:"00:45:00",
+                descriptions:"This can't continue. I can't stay here. I have to run... YoRHa squadron was wrong... I have to find somewhere safer... I'm scared. I'm so scared."  
               }
             ],
             descriptions:null,
