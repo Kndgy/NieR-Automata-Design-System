@@ -41,7 +41,7 @@ export const ActiveIntelModule = () => {
         return <> {data.image} </>
       }else return <> not an array image </>
     }else{
-      return <>theres no image</>
+      return <></>
     }
   }
 
