@@ -4,7 +4,6 @@ import { Tab, Widget } from "../../components";
 import {getArchivesMockID, getNestedArchivesMockID} from "../../utils/mockData/archivesMockData";
 import { Archives, Fishing, Novel, PictureBooks, Tutorials, Unit, WeaponStories } from "./shards";
 import styles from './IntelModule.module.scss'
-import unit from '../../unit.png'
 
 export const ActiveIntelModule = () => {
 
@@ -39,13 +38,22 @@ export const ActiveIntelModule = () => {
 
   const ImageCheck = () => {
     if(data.image){
-      console.log(unit)
-      console.log(data.image[0].unit)
       if(Array.isArray(data.image)){
-        return <div className={styles.image}> <img src={data.image[0].unit} alt="text" /> </div>
-      }else return 
-    }else{
-      return <></>
+        return <>an array of images</> 
+        // <div className={styles.image}> <img src={data.image.unit} alt="text" /> </div>
+      }else {
+        return ( 
+          <div className={styles.ActiveIntelContent}>
+            <div className={styles.imageParent}>
+              <div className={styles.image}> <img src={data.image.unit} alt="text" /> 
+              </div>
+            </div>
+            <div className={styles.content}>{ArchivesTypeCheck()}</div>
+            </div>
+        )
+      }
+      }else{
+      return <>{ArchivesTypeCheck()}</>
     }
   }
 
@@ -55,10 +63,9 @@ export const ActiveIntelModule = () => {
       title={data.title}
       content={
         <Tab content={
-          <div className={styles.ActiveIntelContent}>
-            <div className={styles.imageParent}>{ImageCheck()}</div>
-            <div className={styles.content}>{ArchivesTypeCheck()}</div>
-          </div>
+            <>
+            {ImageCheck()}
+            </>
         }/>
       }
     />
