@@ -10,7 +10,7 @@ export const Unit = () => {
 
     const data = intellistId || secondId
 
-    // console.log(data.content)
+    console.log(data.content.map((items)=>items))
     
     const mapCheck = () => {
         if (!data.hasOwnProperty("content")) {
@@ -19,7 +19,7 @@ export const Unit = () => {
     
         switch (true) {
             case data.hasOwnProperty("content"):
-                return <> {data.content} </>
+                return <> {data.content.map((items,index)=><div key={index+1}>{items}<br/></div>)} </>
             default:
                 return <>weird, it seems the unit data is empty</>;
         }

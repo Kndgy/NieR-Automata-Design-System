@@ -29,3 +29,24 @@
     height: 100%;
   }
 }
+
+.ActiveIntelContent{
+  display: inline-flex;
+  justify-content: space-evenly;
+  gap: 2rem;
+  width: 100%;
+  height: 100%;
+  .imageParent{
+    background-color: #57544a;
+    width: 40%;
+    display: flex;
+    word-wrap: break-word;
+    .image{
+      width: 100%;
+      display: flex;
+    }
+  }
+  .content{
+    width: 60%;
+  }
+}

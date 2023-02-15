@@ -1,3 +1,5 @@
+import unit from '../../unit.png'
+
 let archivesMockData = [
   {
     archivesData:[
@@ -109,8 +111,8 @@ let archivesMockData = [
                   {
                       title:"YoRHa (Standard Armament)",
                       id:1,
-                      image: ["YoRHa (Standard Armament) Image Link"] ,
-                      content:["A Yorha member infected by a virus."],
+                      image: [{unit}] ,
+                      content:["A Yorha member infected by a virus.", `Having Completely lost all sense of self, it is hostile toward all uninfected androids`],
                   }
               ]
           }
