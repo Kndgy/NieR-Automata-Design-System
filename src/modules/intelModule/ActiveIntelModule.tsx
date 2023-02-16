@@ -33,14 +33,11 @@ export const ActiveIntelModule = () => {
 
     return output;
   }
-  
-  // should i add image check to each shards because of image slideshow? future problem
 
   const ImageCheck = () => {
     if(data.image){
       if(Array.isArray(data.image)){
         return <>an array of images</> 
-        // <div className={styles.image}> <img src={data.image.unit} alt="text" /> </div>
       }else {
         return ( 
           <div className={styles.ActiveIntelContent}>
