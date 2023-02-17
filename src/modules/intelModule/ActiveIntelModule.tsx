@@ -34,6 +34,10 @@ export const ActiveIntelModule = () => {
     return output;
   }
 
+  const handleModal = () => {
+    return console.log("hello")
+  }
+
   const ImageCheck = () => {
     if(data.image){
       if(Array.isArray(data.image)){
@@ -42,7 +46,7 @@ export const ActiveIntelModule = () => {
         return ( 
           <div className={styles.ActiveIntelContent}>
             <div className={styles.imageParent}>
-              <div className={styles.image}> <img src={data.image.unit} alt="text" /> 
+              <div onClick={handleModal} className={styles.image}> <img src={data.image.unit} alt="text" /> 
               </div>
             </div>
             <div className={styles.content}>{ArchivesTypeCheck()}</div>
